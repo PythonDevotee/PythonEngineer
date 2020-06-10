@@ -1,0 +1,107 @@
+认识 Linux
+编程怎么学？
+
+linux常用操作
+一：目录
+		1.查看目录:ls
+		2.进入目录：cd
+		3.快捷操作
+			向上：cd ..
+			后退：cd -
+			回到home(首页，家):cd ~
+			进入根目录：cd /
+		4.查看目录结构：tree
+		5.新建目录：
+			多级目录：mkdir
+			如：mkdir -p one/two/three 
+		6.复制：cp -r + 原目录 + 目标目录
+		7.删除：rm -r
+
+二：文件：
+		1.新建：touch
+		2.复制：cp + 文件名 + 目录
+		3.删除：rm
+		4.移动/重命名：mv
+		5.查看：cat
+		6.编辑：
+			vim
+			sublime/gidit
+			其他
+
+认识 Linux
+编程怎么学？
+
+linux常用操作
+一：目录
+		1.查看目录:ls
+		2.进入目录：cd
+		3.快捷操作
+			向上：cd ..
+			后退：cd -
+			回到home(首页，家):cd ~
+			进入根目录：cd /
+		4.查看目录结构：tree
+		5.新建目录：
+			多级目录：mkdir
+			如：mkdir -p one/two/three 
+		6.复制：cp -r + 原目录 + 目标目录
+		7.删除：rm -r
+
+二：文件：
+		1.新建：touch
+		2.复制：cp + 文件名 + 目录
+		3.删除：rm
+		4.移动/重命名：mv
+		5.查看：cat
+		6.编辑：
+			vim
+			sublime/gidit
+			其他
+
+linux中 Git 和 Github 基本操作
+Git 版本控制工具
+Github 代码托管平台、开源社区
+
+使用 git add 命令，将创建或修改的文件添加到本地的 暂存区，这里保存的是你的临时更改
+使用 git commit 命令，提交文件到 本地仓库
+使用 git push 命令，将本地代码库同步到 远端仓库
+
+1.配置git
+git config --global user.name "PythonDevotee"
+git config --global user.email "374698715@qq.com"
+git commit -m "说明注释"
+
+2.链接 Github 仓库
+git remote add origin 仓库链接
+#    远程  添加 仓库
+
+拷贝（下载）到本地仓库
+git clone 下载地址
+
+3.提交（上传）到远程仓库
+git push origin master  
+#   推送 仓库小名   分支名
+git push origin master  # 提交仓库小名和分支
+
+Git 管理的项目进程中，有一条默认的主分支 - master 即可。（想象 Git 是一棵树，master 就是树干，树干上还可以生出很多分支来，如 master 2.0、master 3.0 等）
+
+
+
+
+linux系统 flask 框架
+
+$ export FLASK_APP=hello.py
+$ export FLASK_ENV=development
+$ flask run -h 0.0.0.0 -p 8080   
+
+export FLASK_APP=hello.html
+
+
+
+GET：浏览器通知服务器只获取页面上的信息并且发送回来。这可能是最常用的方法。
+HEAD：浏览器告诉服务器获取信息，但是只对头信息感兴趣，不需要整个页面的内容。应用应该处理起来像接收到一个 GET 请求但是不传递实际内容。在 Flask 中你完全不需要处理它，底层的 Werkzeug 库会为你处理的。
+POST：浏览器通知服务器它要在 URL 上提交一些信息，服务器必须保证数据被存储且只存储一次。这是 HTML 表单通常发送数据到服务器的方法。
+PUT：同 POST 类似，但是服务器可能触发了多次存储过程，多次覆盖掉旧值。现在你就会问这有什么用，有许多理由需要如此去做。考虑下在传输过程中连接丢失：在这种情况下浏览器和服务器之间的系统可能安全地第二次接收请求，而不破坏其它东西。该过程操作 POST 方法是不可能实现的，因为它只会被触发一次。
+DELETE：移除给定位置的信息。
+OPTIONS：给客户端提供一个快速的途径来指出这个 URL 支持哪些 HTTP 方法。从 Flask 0.6 开始，自动实现了该功能。
+

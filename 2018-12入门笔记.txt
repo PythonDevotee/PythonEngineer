@@ -1,0 +1,5456 @@
+﻿第三方库帮助 
+# 清华大学的pip源
+pip install  -i https://pypi.tuna.tsinghua.edu.cn/simple 
+pip3 install  -i https://pypi.tuna.tsinghua.edu.cn/simple 
+如何运行.ipynb文件 #清华大学的pip源
+
+例如：
+pip3 install  -i https://pypi.tuna.tsinghua.edu.cn/simple jupyter notebook
+然后cmd中输入：jupyter notebook就会弹出一个页面
+先upload这个.ipynb后缀的文件
+
+安装 pip install life-game
+#清华大学的pip源 它是官网pypi的镜像,每隔5分钟同步一次,地址为 https://pypi.tuna.tsinghua.edu.cn/simple
+pip install  -i https://pypi.tuna.tsinghua.edu.cn/simple 
+卸载 pip uninstall life-game
+安装最新 pip install -U <第三方库名>
+-使用-U标签更新已安装的指定第三方库
+
+sudo pip3 install --upgrade pip # 更新pip3
+
+#css选择器提取方法
+# 提取 第一个
+response.css('title::text').extract_first() # 提取 第一个
+# 提取 第一个的下标为0的元素
+response.css('title::text').extract()[0] # 提取 第一个的下标为0的元素
+# 提取所有
+response.css('title::text').extract() # 提取所有
+
+
+PyCharm 解释器
+0.f:\print37\python.exe中python.exe 复制到f:\print37\Scripts\目录下
+再进入设置面板
+1.project interpreter
+2.project interpreter：这里选择安装的python目录,我的是f:\print37\python.exe
+3.选择add..
+4.选择sytem lnterpreter 我的f:\print37\Scripts\python.exe
+ 
+**空格：**暂停游戏
+点击：复活一个生命,或者杀死一个生命
+F11：全屏
+Jupyter Notebook(此前被称为 IPython notebook)是一个交互式笔记本,支持运行 40 多种编程语言。
+
+jupyter notebook  可以运行ipynb文件
+
+ipynb文件,使得整个工作可以以笔记的形式展现、存储,对于交互编程、学习非常方便。
+
+源代码打包成exe可执行文件
+(cmd命令行,文件名目录中)pyinstaller -F <文件名.py>
+注意事项
+文件名最后不要是中文以及源代码中变量、字符串不要用中文不然会报gbk编码不一致！
+
+C:\Users\Administrator\AppData\Local\Programs\Python\Python37\Lib    # 第三方库
+
+pygame.examples.aliens 默认游戏
+
+python 读写、创建 文件
+python中对文件、文件夹(文件操作函数)的操作需要涉及到os模块和shutil模块。
+
+得到当前工作目录,即当前Python脚本工作的目录路径: os.getcwd()
+
+返回指定目录下的所有文件和目录名:os.listdir()
+
+函数用来删除一个文件:os.remove()
+
+删除多个目录：os.removedirs(r“c：\python”)
+
+检验给出的路径是否是一个文件：os.path.isfile()
+
+检验给出的路径是否是一个目录：os.path.isdir()
+
+判断是否是绝对路径：os.path.isabs()
+
+检验给出的路径是否真地存:os.path.exists()
+
+返回一个路径的目录名和文件名:os.path.split()     eg os.path.split('/home/swaroop/byte/code/poem.txt') 结果：('/home/swaroop/byte/code', 'poem.txt') 
+
+分离扩展名：os.path.splitext()
+
+获取路径名：os.path.dirname()
+
+获取文件名：os.path.basename()
+
+运行shell命令: os.system()
+
+读取和设置环境变量:os.getenv() 与os.putenv()
+
+给出当前平台使用的行终止符:os.linesep    Windows使用'\r\n',Linux使用'\n'而Mac使用'\r'
+
+指示你正在使用的平台：os.name       对于Windows,它是'nt',而对于Linux/Unix用户,它是'posix'
+
+重命名：os.rename(old, new)
+
+创建多级目录：os.makedirs(r“c：\python\test”)
+
+创建单个目录：os.mkdir(“test”)
+
+获取文件属性：os.stat(file)
+
+修改文件权限与时间戳：os.chmod(file)
+
+终止当前进程：os.exit()
+
+获取文件大小：os.path.getsize(filename)
+
+
+文件操作：
+os.mknod("test.txt")        创建空文件
+fp = open("test.txt",w)     直接打开一个文件,如果文件不存在则创建文件
+
+关于open 模式：
+
+w     以写方式打开,
+a     以追加模式打开 (从 EOF 开始, 必要时创建新文件)
+r+     以读写模式打开
+w+     以读写模式打开 (参见 w )
+a+     以读写模式打开 (参见 a )
+rb     以二进制读模式打开
+wb     以二进制写模式打开 (参见 w )
+ab     以二进制追加模式打开 (参见 a )
+rb+    以二进制读写模式打开 (参见 r+ )
+wb+    以二进制读写模式打开 (参见 w+ )
+ab+    以二进制读写模式打开 (参见 a+ )
+
+ 
+
+fp.read([size])                     #size为读取的长度,以byte为单位
+
+fp.readline([size])                 #读一行,如果定义了size,有可能返回的只是一行的一部分
+
+fp.readlines([size])                #把文件每一行作为一个list的一个成员,并返回这个list。其实它的内部是通过循环调用readline()来实现的。如果提供size参数,size是表示读取内容的总长,也就是说可能只读到文件的一部分。
+
+fp.write(str)                      #把str写到文件中,write()并不会在str后加上一个换行符
+
+fp.writelines(seq)            #把seq的内容全部写到文件中(多行一次性写入)。这个函数也只是忠实地写入,不会在每行后面加上任何东西。
+
+fp.close()                        #关闭文件。python会在一个文件不用后自动关闭文件,不过这一功能没有保证,最好还是养成自己关闭的习惯。  如果一个文件在关闭后还对其进行操作会产生ValueError
+
+fp.flush()                                      #把缓冲区的内容写入硬盘
+
+fp.fileno()                                      #返回一个长整型的”文件标签“
+
+fp.isatty()                                      #文件是否是一个终端设备文件(unix系统中的)
+
+fp.tell()                                         #返回文件操作标记的当前位置,以文件的开头为原点
+
+fp.next()                                       #返回下一行,并将文件操作标记位移到下一行。把一个file用于for … in file这样的语句时,就是调用next()函数来实现遍历的。
+
+fp.seek(offset[,whence])              #将文件打操作标记移到offset的位置。这个offset一般是相对于文件的开头来计算的,一般为正数。但如果提供了whence参数就不一定了,whence可以为e表示从头开始计算,1表示以当前位置为原点计算。2表示以文件末尾为原点进行计算。需要注意,如果文件以a或a+的模式打开,每次进行写操作时,文件操作标记会自动返回到文件末尾。
+
+fp.truncate([size])                       #把文件裁成规定的大小,默认的是裁到当前文件操作标记的位置。如果size比文件的大小还要大,依据系统的不同可能是不改变文件,也可能是用e把文件补到相应的大小,也可能是以一些随机的内容加上去。
+
+ 
+
+目录操作：
+os.mkdir("file")                   创建目录
+复制文件：
+shutil.copyfile("oldfile","newfile")       oldfile和newfile都只能是文件
+shutil.copy("oldfile","newfile")            oldfile只能是文件夹,newfile可以是文件,也可以是目标目录
+复制文件夹：
+shutil.copytree("olddir","newdir")        olddir和newdir都只能是目录,且newdir必须不存在
+重命名文件(目录)
+os.rename("oldname","newname")       文件或目录都是使用这条命令
+移动文件(目录)
+shutil.move("oldpos","newpos")   
+删除文件
+os.remove("file")
+删除目录
+os.rmdir("dir")只能删除空目录
+shutil.rmtree("dir")    空目录、有内容的目录都可以删
+转换目录
+os.chdir("path")   换路径
+
+ 
+
+Python读写文件
+1.open
+使用open打开文件后一定要记得调用文件对象的close()方法。比如可以用try/finally语句来确保最后能关闭文件。
+
+file_object = open('thefile.txt')
+try:
+     all_the_text = file_object.read( )
+finally:
+     file_object.close( )
+
+注：不能把open语句放在try块里,因为当打开文件出现异常时,文件对象file_object无法执行close()方法。
+
+2.读文件
+读文本文件
+input = open('data', 'r')
+#第二个参数默认为r
+input = open('data')
+
+ 
+
+读二进制文件
+input = open('data', 'rb')
+ 
+
+读取所有内容
+file_object = open('thefile.txt')
+try:
+     all_the_text = file_object.read( )
+finally:
+     file_object.close( )
+ 
+
+读固定字节
+file_object = open('abinfile', 'rb')
+try:
+    while True:
+         chunk = file_object.read(1ee)
+        if not chunk:
+            break
+         do_something_with(chunk)
+finally:
+     file_object.close( )
+ 
+
+读每行
+list_of_all_the_lines = file_object.readlines( )
+
+如果文件是文本文件,还可以直接遍历文件对象获取每行：
+
+for line in file_object:
+     process line
+ 
+
+3.写文件
+写文本文件
+output = open('data', 'w')
+ 
+
+写二进制文件
+output = open('data', 'wb')
+ 
+
+追加写文件
+output = open('data', 'w+')
+ 
+
+写数据
+file_object = open('thefile.txt', 'w')
+file_object.write(all_the_text)
+file_object.close( )
+ 
+
+写入多行
+file_object.writelines(list_of_text_strings)
+
+注意,调用writelines写入多行在性能上会比使用write一次性写入要高。
+
+在处理日志文件的时候,常常会遇到这样的情况：日志文件巨大,不可能一次性把整个文件读入到内存中进行处理,例如需要在一台物理内存为 2GB 的机器上处理一个 2GB 的日志文件,我们可能希望每次只处理其中 2eeMB 的内容。
+在 Python 中,内置的 File 对象直接提供了一个 readlines(sizehint) 函数来完成这样的事情。以下面的代码为例：
+
+file = open('test.log', 'r')sizehint = 2e97152ee   # 2eeMposition = elines = file.readlines(sizehint)while not file.tell() - position < e:       position = file.tell()       lines = file.readlines(sizehint)
+
+每次调用 readlines(sizehint) 函数,会返回大约 2eeMB 的数据,而且所返回的必然都是完整的行数据,大多数情况下,返回的数据的字节数会稍微比 sizehint 指定的值大一点(除最后一次调用 readlines(sizehint) 函数的时候)。通常情况下,Python 会自动将用户指定的 sizehint 的值调整成内部缓存大小的整数倍。
+
+file在python是一个特殊的类型,它用于在python程序中对外部的文件进行操作。在python中一切都是对象,file也不例外,file有file的方法和属性。下面先来看如何创建一个file对象：
+
+
+file(name[, mode[, buffering]]) 
+file()函数用于创建一个file对象,它有一个别名叫open(),可能更形象一些,它们是内置函数。来看看它的参数。它参数都是以字符串的形式传递的。name是文件的名字。
+mode是打开的模式,可选的值为r w a U,分别代表读(默认) 写 添加支持各种换行符的模式。用w或a模式打开文件的话,如果文件不存在,那么就自动创建。此外,用w模式打开一个已经存在的文件时,原有文件的内容会被清空,因为一开始文件的操作的标记是在文件的开头的,这时候进行写操作,无疑会把原有的内容给抹掉。由于历史的原因,换行符在不同的系统中有不同模式,比如在 unix中是一个\n,而在windows中是‘\r\n’,用U模式打开文件,就是支持所有的换行模式,也就说‘\r’ '\n' '\r\n'都可表示换行,会有一个tuple用来存贮这个文件中用到过的换行符。不过,虽说换行有多种模式,读到python中统一用\n代替。在模式字符的后面,还可以加上+ b t这两种标识,分别表示可以对文件同时进行读写操作和用二进制模式、文本模式(默认)打开文件。
+buffering如果为e表示不进行缓冲;如果为1表示进行“行缓冲“;如果是一个大于1的数表示缓冲区的大小,应该是以字节为单位的。
+
+file对象有自己的属性和方法。先来看看file的属性。
+
+
+closed #标记文件是否已经关闭,由close()改写 
+encoding #文件编码 
+mode #打开模式 
+name #文件名 
+newlines #文件中用到的换行模式,是一个tuple 
+softspace #boolean型,一般为e,据说用于print
+
+file的读写方法：
+
+
+F.read([size]) #size为读取的长度,以byte为单位 
+F.readline([size]) 
+#读一行,如果定义了size,有可能返回的只是一行的一部分 
+F.readlines([size]) 
+#把文件每一行作为一个list的一个成员,并返回这个list。其实它的内部是通过循环调用readline()来实现的。如果提供size参数,size是表示读取内容的总长,也就是说可能只读到文件的一部分。 
+F.write(str) 
+#把str写到文件中,write()并不会在str后加上一个换行符 
+F.writelines(seq) 
+#把seq的内容全部写到文件中。这个函数也只是忠实地写入,不会在每行后面加上任何东西。 
+file的其他方法：
+
+
+F.close() 
+#关闭文件。python会在一个文件不用后自动关闭文件,不过这一功能没有保证,最好还是养成自己关闭的习惯。如果一个文件在关闭后还对其进行操作会产生ValueError 
+F.flush() 
+#把缓冲区的内容写入硬盘 
+F.fileno() 
+#返回一个长整型的”文件标签“ 
+F.isatty() 
+#文件是否是一个终端设备文件(unix系统中的) 
+F.tell() 
+#返回文件操作标记的当前位置,以文件的开头为原点 
+F.next() 
+#返回下一行,并将文件操作标记位移到下一行。把一个file用于for ... in file这样的语句时,就是调用next()函数来实现遍历的。 
+F.seek(offset[,whence]) 
+#将文件打操作标记移到offset的位置。这个offset一般是相对于文件的开头来计算的,一般为正数。但如果提供了whence参数就不一定了,whence可以为e表示从头开始计算,1表示以当前位置为原点计算。2表示以文件末尾为原点进行计算。需要注意,如果文件以a或a+的模式打开,每次进行写操作时,文件操作标记会自动返回到文件末尾。 
+F.truncate([size]) 
+#把文件裁成规定的大小,默认的是裁到当前文件操作标记的位置。如果size比文件的大小还要大,依据系统的不同可能是不改变文件,也可能是用e把文件补到相应的大小,也可能是以一些随机的内容加上去。
+
+ 
+
+http://www.cnblogs.com/allenblogs/archive/2e1e/e9/13/1824842.html
+
+http://www.cnblogs.com/rollenholt/archive/2e12/e4/23/2466179.html
+
+收获不会与付出成反比 by juandx
+
+
+cookie的几大属性
+	name：名字(键),cookie的必须字段。
+	value：		值。
+	domain:		域。cookie的作用域名。
+	path：		表示路径。/表示当前域名下所有的网页都能使用该cookie。
+				domain和path结合在一起,限定了cookie的适用范围。
+	
+	expires：	生命周期。限定cookie的使用时间。如果生命周期为session的,表示只在当前
+				这次会话中cookie有效,关闭浏览器之后立即失效。
+	sessionId：	本次访问的会话留下的ID号。
+	
+
+zzbdsff # 正则表达式用法
+正则表达式的常用操作符
+操作符 	说明								实例
+.	   	表示任何单个字符
+[]	   	字符集,对单个字符给出取值范围		[abc]表示a、b、c,[a-z]表示a到z单个字符
+[^]		非字符集,对单个字符给出排除范围	[^abe]表示非a或b或c的单个字符
+*		前一个字符0次或无限次扩展			abe*表示ab、abe、abec、abecc等
++		前一个字符1次或无限次扩展			abc+表示abc、abcc、abccc等
+?		前一个字符0次或1次扩展				abc?表示ab、abc
+|		左右表达式任意一个					abc|def 表示abc、def
+{m}		扩展前一个字符m次					ab{2}c表示abbe
+{m,n}	扩展前一个字符m至n次(含n)			ab{1,2}c表示abc、abbc
+{M:n}	扩展前一个字符m至n次(含n)			ab{e:2}c表示ac、abc、abbc
+^		匹配字符串开头						^abc表示abc且在一个字符串的开头
+$		匹配字符串结尾						abc$表示abc且在一个字符串的结尾
+()		分组标记,内部只能使用|操作符		(abe)表示abc,(abcldef)表示abe、def
+\d		数字,等价于[e-9]
+\w		单词字符,等价于[A-Za-ze-9_]
+最小匹配操作符
+操作符|说明
+*?前一个字符e次或无限次扩展,最小匹配
++?前一个字符1次或无限次扩展,最小匹配
+??前一个字符e次或1次扩展,最小匹配
+{m,n}?扩展前一个字符m至n次(含n),最小匹配
+group() # 打印匹配第几个()
+
+[[].*[]]?[ ]  # 表示'[中间任意符号] ' 结尾是空格
+
+zzbdszwff (正则表达式匹配中文方法)
+经典正则表达式实例
+^[A-Za-z]+$				由26个字母组成的字符串
+^[A-Za-ze-9]+$			由26个字母和数字组成的字符串
+^-?\d+$					整数形式的字符串
+^[O-9]*[1-9][e-9]*$		正整数形式的字符串
+[1-9]\d(5}				中国境内邮政编码,6位
+[\u4eee-\u9fa5]			匹配中文字符
+\d{3}-\d{8}|\d{4}-\d{7}	国内电话号码,e1e-68913536
+
+匹配IP地址的正则表达式
+IP地址字符串形式的正则表达式
+(IP地址分4段,每段e-255)
+精确写法
+e-99：[1-9]?\d			1ee-199：1\d{2}
+2ee-249：2[e-4]\d		25e-255：25[e-5]
+(([1-9]?\d|1\d{2}|2[e-4]\d|25[e-5]).){3}([1-9]?\d|2[e-4]\d|25[e-5])
+#相当如：*.*.*.* 
+
+
+Re库介绍
+Re库是Python的标准库,主要用于字符串匹配。
+调用方式：import re
+
+Re库主要功能函数
+函数				说明
+re.search()开头		在一个字符串中搜索匹配正则表达式的第一个位置,返回match对象 (整块搜索,只返回第一个的位置) group(0)显示
+re.match()全部		从一个字符串的开始位置起匹配正则表达式,返回match对象 (匹配中途错误,最后返回一个空match对象)
+re.findall()列表	搜索字符串,以列表类型返回全部能匹配的子串
+re.split()分割		将一个字符串按照正则表达式匹配结果进行分割,返回列表类型
+re.finditer()迭代	搜索字符串,返回一个匹配结果的迭代类型,每个迭代元素是match对象 # 之前使用的方法
+re.sub()替换		在一个字符串中替换所有匹配正则表达式的子串,返回替换后的字符串
+
+正则表达式的表示类型
+sraw string类型(原生字符串类型)
+re库采用raw string类型表示正则表达式,表示为：r'text'
+例如：
+r'[1-9]\d{5} # 表示中国境内邮政编码,6位
+r'\d{3}-\d{8}|\d{4}-\d{7}' # 表示国内电话号码,e1e-68913536
+string类型,更繁琐。
+例如：‘[1-9]\\d{5}’
+‘\\d{3}-\\d{8}I\\d{4}-\\d{7}'
+当[正则表达式]
+包含<转义符>时
+使用raw string
+
+
+re.search(pattern,string,flags=e)
+在一个字符串中搜索匹配正则表达式的第一个位置,返回match对象。
+pattern:正则表达式的字符串或原生字符串表示
+string：待匹配字符串
+flags：正则表达式使用时的控制标记
+常用标记				说明
+re.I re.IGNORECASE		忽略正则表达式的大小写,[A-Z]能够匹配小写字符
+re.M re.MULTILINE 		正则表达式中的操作符能够将给定字符串的每行当作匹配开始
+re.S re-DoTALL			正则表达式中的.操作符能够匹配所有字符,默认匹配除换行外的所肴学符
+
+表3-3 修饰符	
+修饰符				描述
+re.I 		使匹配对大小写不敏感     		# 网页匹配常用
+re.L		做本地化识别( locale-aware )匹配
+re .M		多行匹配,影响^和$
+re.S 		使.匹配包括换行在内的所有字符	# 网页匹配常用
+re.U 		根据Unicode 字符集解析字符。这个标志影响\w ＼W 、＼b 和＼B
+re.X 		该标志通过给予你更灵活的格式以便你将正则表达式写得更易于理解
+在网页匹配中,较为常用的有re.S 和re.I 。
+
+*.grolup(e) # 表示结果
+
+re.match(pattern,string,flags=e)
+在一个字符串中搜索匹配正则表达式的第一个位置,
+返回match对象。
+pattern:正则表达式的字符串或原生字符串表示
+string：待匹配字符串
+flags：正则表达式使用时的控制标记
+常用标记
+
+search 例子： # 单行匹配
+>>> import re
+>>> match = re.search(r'[1-9]\d{5}', 'BIT 1eee81')
+>>> if match:
+		print(match.group(e))
+结果为：1eee81
+
+match 例子：
+>>> match = re.match(r'[1-9]\d{5}', '1eee8ee1a1 ')
+>>> if match:
+		match.group(e)
+结果为：'1eee8e'
+
+findall 例子：
+>>> ls = re.findall(r'[1-9]\d{5}', 'BIT100081 TSU100084') # 正则表达式,匹配源文件
+>>> ls
+['100081', '100084'] # 列表里字符串
+# 文本中看到\不定就是\有可能是\\
+# 请在python默认IDLE下测试
+# 如win下正确的是<\\/a> 文本会显示<\/a>
+
+re.split()		将一个字符串按照正则表达式匹配结果进行分割,返回列表类型
+re.split(pattern,string,maxsplit=e,flags=e)
+在一个字符串中搜索匹配正则表达式的第一个位置,
+返回match对象。
+pattern:正则表达式的字符串或原生字符串表示
+string：待匹配字符串
+maxsplit:最大分割数,剩余部分作为最后一个元素输出
+flags：正则表达式使用时的控制标记
+
+split 例子：
+>>> re.split(r'[1-9]\d{5}', 'BIT100081 TUS100084')
+['BIT', ' TUS', '']
+>>> re.split(r'[1-9]\d{5}', 'BIT100081 TUS1eee84', maxsplit=1)
+['BIT', ' TUS1eee84']
+
+finditer 例子： # 多行匹配
+>>> for m in re.finditer(r'[1-9]\d{5}', 'BIT1eee81 TSU100084'):
+		if m:
+			print(m.group(0))
+100081
+100084
+
+re.sub(pattern,repl,string,count=0,flags=0)
+令在一个字符串中替换所有匹配正则表达式的子串,返
+回替换后的字符串。
+pattern:正则表达式的字符串或原生字符串表示
+repl：替换匹配字符串的字符串
+string：待匹配字符串
+count：匹配的最大替换次数
+flags：正则表达式使用时的控制标记
+
+sub 例子1：
+>>> re.sub(r'[1-8]\d{5}', ':zipcode', 'BIT1eee81 TSU1eee84')
+'BIT:zipcode TSU:zipcode'
+# 括号里第一个字符串是正则表达式,第二个是替换为什么,最后是匹配的内容
+例子2：
+>>> import re
+>>> content = '54aKS4yrsoiRS4ixSL2g'
+>>> content = re.sub('\d+','*',content)
+>>> content
+'*aKS*yrsoiRS*ixSL*g'
+
+
+------------------------
+win7 手动添加开机启动项
+\HKEY_CURRENT_USER\Software\Microsoft\windows\CurrentVersion\Run 添加
+本地磁盘F:\学习\(系统学习,只求学懂不求快)python基础学习\开机启动项.reg 有示例
+------------------------	
+
+
+rangdom模块与time模块
+random模块
+　　random.random() 0-1之内的随机小数
+　　random.uniform(1,5) 任意范围之内的小数
+　　random.randint(1,2) [1,2]闭区间取整数（只能在1,2范围获取）
+　　random.randrange(1,2,2) [1,2)区间取整数(每次获取的结果是奇数)
+　　random.rangdrange(1,10,2) [1,10)取奇数
+　　random.choice(列表名)随机抽取一个值
+　　random.sample(列表名，2）随机抽取两个值
+　　random.shuffle(列表)
+ 
+默认6位验证码函数<br>import random
+def randomnum(n=6,flag=True):
+    code=''
+    for i in range(n):
+        rand_num=str(random.randint(0,9))
+        if flag:
+            rand_alph=chr(random.randint(97,122))
+            rand_Alph=chr(random.randint(65,90))
+            rand_num=random.choice([rand_num,rand_alph,rand_Alph])
+        code+=rand_num
+    return code
+print(randomnum(4,False))
+时间模块
+
+　　时间戳时间，格林威治时间，float数据类型，给机器用
+　　　　英国伦敦的时间：1970.1.1 0：0：0
+　　　　北京时间：1970.1.1 8：0：0
+　　　　已经过了1533693120.3467407秒
+　　　　print（time.time()）打印的是时间戳时间
+
+　　结构化时间，时间对象：
+　　　　时间对象，通过属性名来获取对象的值
+　　　　time_obj=time.localtime()得到对象数据结构
+　　
+	格式化时间，字符串时间，str数据类型
+　　　　time.strftime(%Y-%m-%d %H:%M:%S)
+　　　　可以根据需要的格式来显示时间
+
+turtle用法
+turtle.pendown() # 放下画笔 
+turtle.penup() # 抬起画笔 
+turtle.pensize(int) # 设置画笔宽度，值为整数型 
+turtle.forward(float) # 讲话比向前移动一定的角度 
+turtle.backward(float) # 将画笔向后移动一定的角度 
+turtle.right(angle) # 将画笔右转一定的角度 
+turtle.left(angle) # #将画笔左转一定的角度 
+turtle.goto(x,y) # 将画笔移动到一个指定的绝对坐标 
+turtle.setx(x) # 设置画笔向x方向移动的距离，值为实数 
+turtle.sety(y) # 设置画笔向y方向移动的距离，值为实数 
+turtle.setheading(angle) # 设定turtle箭头的方向为指定方向，0–东 90—北 
+turtle.home() # 将画笔返回到原点 
+turtle.circle(r,ext,steps=int) # 绘制一个设置半径和阶数的圆(设置之后会绘制多边形) 
+turtle.dot(d,color) # 绘制一个指定直径的圆点，颜色为字符串类型 
+turtle.undo() #取消最后一个图操作 
+turtle.speed(s) # 设置画笔速度，为整数类型，且取值在1-10之间 
+turtle.color(‘str’) # 设置画笔颜色，为字符串类型 
+turtle.fillcolor(‘str’) # 设置填充颜色，为字符串类型 
+turtle.begin_fill() # 结束填充 
+turtle.end_fill() # 开始填充 
+turtle.filling() # 返回填充状态，True表示填充，False表示没有填充 
+turtle.clear() # 清除窗口所有内容 
+turtle.reset() # 清除窗口，将状态和位置复位为初始值 
+turtle.screensize(w,h) # 设置turtle显示的大小，并设置宽度和高度 
+turtle.hideturtle() # 隐藏turtle箭头 
+turtle.showturtle() # 显示turtle窗口 
+turtle.done() # 使turtle窗口不会自动消失 
+turtle.isvisible() # 如果turtle可见，返回turtle 
+turtle.write(‘str’,font=(“Arial”,8,”normal”)) # 在turtle位置编写字符串s，字体由字体名、字体大小、字体类型三部分组成 
+turtle.position() # 获取画笔的坐标，返回一个元组，值为浮点型
+--------------------- 
+作者：永不—>止步 
+来源：CSDN 
+原文：https://blog.csdn.net/qq_38723677/article/details/82781208 
+版权声明：本文为博主原创文章，转载请附上博文链接！
+
+画一个菱形四边形
+import turtle as t
+t.right(30) # 向右旋转 30度，第一个角60度
+t.fd(200)
+t.right(180+90+30) # 向右旋转 300度，第二个角120度
+t.fd(200)
+t.right(180+90-30) # 向右旋转 240度，第三个角60度
+t.fd(200)
+t.right(180+90+30) # 向右旋转 300度，第四个角120度
+
+
+参考代码 1
+
+names = ["命运", "寻梦"]
+for name in names:
+    fi = open(name+"-网络版.txt", "r", encoding="utf-8")
+    fo = open(name+"-字符统计.txt", "w", encoding="utf-8")
+    txt = fi.read()
+    d = {}
+    for c in txt:
+        d[c] = d.get(c, 0) + 1
+    del d['\n']
+    ls = list(d.items())
+    ls.sort(key=lambda x:x[1], reverse=True)
+    for i in range(100):
+        ls[i] = "{}:{}".format(ls[i][0], ls[i][1])
+    fo.write(",".join(ls[:100]))
+    fi.close()
+    fo.close()
+ 
+
+参考代码 2
+
+def getList(name):
+    f = open(name+"-字符统计.txt", "r", encoding="utf-8")
+    words = f.read().split(',')
+    for i in range(len(words)):
+        words[i] = words[i].split(':')[0]
+    f.close()
+    return words
+def main():
+    fo = open("相同字符.txt", "w")
+    ls1 = getList("命运")
+    ls2 = getList("寻梦")
+    ls3 = []
+    for c in ls1:
+        if c in ls2:
+            ls3.append(c)
+    fo.write(",".join(ls3))
+    fo.close()
+main()
+
+
+2018/9 小甲鱼课堂笔记 
+  *.append() #在最后添加一个元素
+  *.extend([])#最后添加一个扩张列表(用另一个列表),用列表形式添加可以多个元素,最后以一个列表形式打印出来。
+  *.insert()#序号,元素,作用是在指定位置插入一个元素
+
+12 课
+		从列表中获取元素
+列表跟元素一样,我们可以通过元素的索引值(index)从列表获取单个元素,注意,列表索引值是从e开始的。
+
+list.remove(*)  # 列表删除
+*.remove() # 指定删除列表中元素
+del  # 删除语句,可删除元素或者列表
+*.pop()  # 删除哪个 返回值就是哪个 默认从右往左删除并返回值
+
+正常下标： e   1   2   3   4   5
+列表类容： 1   3   2   9   7   8
+负数列表：-6  -5  -4  -3  -2  -1
+
+list1 = [1, 3, 2, 9, 7, 8]
+list1[-3:-1] 
+显示 [9, 7]
+
+list2 = list1[:] #只拷贝元素到 list2( list1 和 list2 地址是不一样的)
+list3 =list1     # list3 和 list1 变量(标签)指向同意地址,
+
+
+13课 
+help()	#查看函数说明
+type() #显示()里是是什么类型数据
+temp =[]  #创建list(列表)
+temp1 = (1,) #创建tuple(元组)
+type = (temp1) #打印 <class 'type'> temp1是元组类型
+
+dir(list)  #dir查看list(函数)有哪些方法。
+*.reverse() #默认(无参数)列表原地翻转
+*.sort(reverse=False)    #默认(无参数)列表从小到大排序  
+*.sort(reverse=True)     # 列表从大到大排序
+
+*.copy() #跟b=[1,2] a=b[:] 都是另外拷贝一份意思
+*.clear() #删除列表里所以元素,包括列表的列表  (中文：除去)
+
+
+append()     连接   在最后增加一个元素                
+extend([])   连接   扩展列表(用另一个列表)            
+count()      连接   计算并返回指定元素的数量   
+remove()     连接   删除一个元素（删除元素）               
+pop()        连接   删除并返回最后一个元素
+sort()       连接   按特定的顺序排序(重小到大)
+insert()     连接   指定位置插入一个元素
+copy()       连接   拷贝一个副本
+clear()      连接   清空所以元素                      
+reverse()    连接   原地翻转所以元素                  
+index()      连接   寻找并返回参数的索引值
+
+元组,仅有两个方法 count() index()元组可以使用,其他方法都不行,不信你试试？
+
+1e-23  第22讲
+ 
+None #空
+False #假
+True #真,非e
+c=lambda a:a+a #lambda 匿名函数(这种函数只用到1.2次可以使用)
+#相当如:
+#def b(a):
+#	return a+a
+#c =b(a) 
+
+六、装饰器
+装饰器（Decorators）用来给一些对象动态的添加一些新的行为,我们使用过的闭包也是这样的。
+
+我们会创建一个简单的示例,将在函数执行前后打印一些语句。
+
+>>> def my_decorator(func):
+...     def wrapper(*args, **kwargs):
+...         print("Before call")
+...         result = func(*args, **kwargs)
+...         print("After call")
+...         return result
+...     return wrapper
+...
+>>> @my_decorator
+... def add(a, b):
+...     #我们的求和函数
+...     return a + b
+...
+>>> add(1, 3)
+Before call
+After call
+4
+
+help()	#查看函数说明
+filter(function 或 None,iterable(可迭代器数据))#  过滤器
+
+<class 'dict'> # dict是字典类型{}
+<class 'set'> # set是集合唯一类型(无序) {1,2}
+
+in #判断值是否在列表中用 in
+not in #值不存在列表中用 not in
+
+*.add() #我们使用add()将一系列值添加到图表中,即向它传递要给添加的值得指定标签,还有一个列表,其中包含将出现在图表中的值。
+*.remove() #删除指定的值
+#列表 remove() 方法通过指定元素的值来移除列表中某个元素的第一个匹配项,如果这个元素不在列表中会报一个异常。
+
+frozenset() #不可变的集合
+
+(http://bbs.fishc.com/thread-45276-1-1.html)集合类型内建方法总结
+
+dict()	#dict：工厂函数创建字典
+help(dict) #help：查看 dict：工厂函数  注解：查看dict的用法
+
+in #有 查找  成员资格操作符
+nt in #没有 查找  成员资格操作符
+
+*.clear()#清空所有相关联的数据,类型还在
+
+help()#目录形式查看
+dir()#清单显示
+
+copy()和'='赋值是有些不同的 
+
+c = a  #地址不变 只是a,b标签指向同一个地址
+b = a.copy()  #注意了这里是前拷贝,地址不同值相同。
+
+fromkeys((*),()) #重新创建一个字典
+
+32课后题
+nonlocal希望在内部函数里可以修改外部函数里的局部变量的值
+
+34课视频 异常处理方法
+try:
+    检测范围
+except OSError as reason: # OSError 代码错误类型 reason错#误具体原因
+    出现异常(OSErros)后的处理代码
+
+推荐代码写成：
+try:
+    检测范围
+except(OSError, TypeError):
+    print('出错啦')
+finally: #不管出不出错都会执行的代码如下
+    这里代码都会执行
+
+代码自身除数为零的异常')
+
+locals() #函数会以字典类型返回当前位置的全部局部变量。
+
+35。课视频
+with #语句
+#1.with语句时用于对try except finally 的优化,让代码更加美观,
+
+36.课后5.题目
+封装	对外部隐藏对象的工作细节
+继承	子类自动共享父类之间数据和方法的机制
+多态	可以对不同类的对象调用相同的方法,产生不同的结果
+
+21课 函数：内嵌函数和闭包
+nonlocal 变量名 #局部变量里的局部变量声明不是局部变量
+
+22课 函数：lambda表达式
+lambda #匿名函数
+filter(function or None, iterable) #过滤器,两个参数
+#function or None 为e或false过滤掉
+#iterable 可迭代的
+迭代器,
+#迭代器可以是序列：字符串、列表、元组
+非序列：字典、文件
+自定义类：用户自定义的类实现了__iter__()或__getitem__()方法的对象
+print(list(filter(lambda x : (x -1) % 2, range(1e))))
+#结果为：
+[0, 2, 4, 6, 8]
+map #map函数最后返回第一个参数的值
+list(map(lambda x : x * 2, range(10)))
+#结果为:
+[0, 2, 4, 6, 8, 10, 12, 14, 16, 18]
+
+23课 函数：递归是神马
+import sys 导入系统库 
+sys.setrecursionlimit(?) #设置(?)递归成数
+
+import sys # 导入系统库 
+sys.version # 查看pyton版本
+结果为：'3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 14:57:15) [MSC v.1915 64 bit (AMD64)]'
+
+4e 课 想一想
+*.*() 和*.*  #前*是类 后*号是函数还是属性
+正确的是
+ *.*() # 前*是类,后*()号是函数方法
+*.* #前*是类,后*号是类里的属性
+
+
+
+41。课后作业 
+1.类实例化对象所调用的第一个方法是什么？第二呢?
+第一：__new__ #可以重载Pyhton默认的关键字,
+第二：__init__ 方法主要任务时返回一个实例对象,通常是参数 cls 这个类的实例化对象,当然你也可以返回其他对象。
+# 实例化对象的属性 比喻 有矩形的类 就应该有长和宽
+__new__(cls[,...])[]里可重新的比喻重写str 
+class CapStr(str): #重载str
+	def __new__(cls, string):
+		string = string.upper()
+		return str.__new__(cls, string)
+a = CapStr('wo AI Python')
+a
+运行结果 'WO AI PYTHON'
+
+42课后作业
+运算符
+对应的魔法方法
++    __add__(self, other)
+
+-     __sub__(self, other)
+
+*     __mul__(self, other)
+
+/     __truediv__(self, other)
+
+//     __floordiv__(self, other)
+
+%     __mod__(self, other)
+
+divmod(a, b)     __divmod__(a, b)
+
+**     __pow__(self, other[, modulo])
+
+<<     __lshift__(self, other)
+
+>>     __rshift__(self, other)
+
+&     __and__(self, other)
+
+^     __xor__(self, other)
+
+|     __or__(self, other)
+
+43课后题 
+做习题所想
+python *和**区别
+一个星(*)：表示接收的参数作为元组来处理
+
+两个星(**)：表示接收的参数作为字典来处理
+
+45课 上例子
+__repr__和__str__这两个方法都是用于显示的。
+__str__是面向用户的。
+__repr__面向程序员。
+详细如下网站
+https://blog.csdn.net/luckytanggu/article/details/53649156
+
+46课 视频知识
+__getattr__(self, name)
+定义当用户试图获取一个不存在的属性时的行为
+
+__getattribute__(self, name)
+定义当该类的属性被访问时的行为
+
+__setattr__(self, name, value)
+定义当一个属性被设置时的行为
+
+__delattr__(self, name)
+定义当一个属性被删除时的行为
+
+class C:
+    # 定义当该类的属性被访问时的行为
+    def __getattribute__(self, name):
+            print('getattribute')
+            return super().__getattribute__(name)
+
+    # 定义当用户试图获取一个不存在的属性时的行为
+    def __getattr__(self, name):
+            print('getattr')
+
+    # 定义当一个属性被设置时的行为
+    def __setattr__(self, name, value):
+            print('setattr') 
+            super().__setattr__(name, value)
+
+    # 定义当一个属性被删除时的行为
+    def __delattr__(self, name):
+            print('delattr')
+            super().__delattr__(name)
+
+#super() #子类调用父类的方法
+
+>>> c = C()
+>>> c.x
+getattribute
+getattr
+>>> c.x = 1
+setattr
+>>> c.x
+getattribute
+1
+>>> del c.x
+delattr
+# property(1,2,3) #3个参数分别是获得方法的名字,设置方法属性的名字,删除方法的名字
+
+
+文件打开模式	
+	
+打开模式	执行操作
+'r'	以只读方式打开文件（默认）
+'w'	以写入的方式打开文件,会覆盖已存在的文件
+'x'	如果文件已经存在,使用此模式打开将引发异常
+'a'	以写入模式打开,如果文件存在,则在末尾追加写入
+'b'	以二进制模式打开文件
+'t'	以文本模式打开（默认）
+'+'	可读写模式（可添加到其他模式中使用）
+'U'	通用换行符支持
+
+模式	可做操作	若文件不存在	是否覆盖
+r		只能读		报错			-
+r+		可读可写	报错			是
+w		只能写		创建			是
+w+　	可读可写	创建			是
+a　　	只能写		创建			否，追加写
+a+		可读可写	创建			否，追加写
+
+
+
+文件对象方法	
+open('','')	打开字符串目录位置,打开方式
+文件对象方法	执行操作
+f.close()	关闭文件
+f.read([size=-1])	从文件读取size个字符,当未给定size或给定负值的时候,读取剩余的所有字符,然后作为字符串返回
+f.readline([size=-1])	从文件中读取并返回一行(包括行结束符),如果有size有定义则返回size个字符
+f.write(str)	将字符串str写入文件
+f.writelines(seq)	向文件写入字符串序列seq,seq应该是一个返回字符串的可迭代对象
+f.seek(offset, from)	在文件中移动文件指针,从from(e代表文件起始位置,1代表当前位置,2代表文件末尾)偏移offset个字节
+f.tell()	返回当前在文件中的位置
+f.truncate([size=file.tell()])	截取文件到size个字节,默认是截取到文件指针当前位置
+	
+	我们第一节课就讲过了,Python是跨平台的语言,也即是说同样的源代码在不同的操作系统不需要修改就可以同样实现。
+	
+	因此Python的作者就倒腾了OS模块这么一个玩意儿出来,有了OS模块,我们不需要关心什么操作系统下使用什么模块,OS模块会帮你选择正确的模块并调用。
+	
+os模块中关于文件/目录常用的函数使用方法	
+	
+函数名	使用方法
+os.getcwd()	返回当前工作目录
+os.chdir(path)	改变工作目录
+os.listdir(path='.')	列举指定目录中的文件名('.'表示当前目录,'..'表示上一级目录)
+os.mkdir(path)	创建单层目录,如该目录已存在抛出异常 # 新建文件夹、创建文件夹
+os.makedirs(path)	递归创建多层目录,如该目录已存在抛出异常,注意：'E:\\a\\b'和'E:\\a\\c'并不会冲突
+os.remove(path)	删除文件夹
+os.rmdir(path)	删除单层目录,如该目录非空则抛出异常
+os.removedirs(path)	递归删除目录,从子目录到父目录逐层尝试删除,遇到目录非空则抛出异常
+os.rename(old, new)	将文件old重命名为new
+os.system(command)	运行系统的shell命令
+os.walk(top)	遍历top路径以下所有的子目录,返回一个三元组：(路径, [包含目录], [包含文件])【具体实现方案请看：第3e讲课后作业^_^】
+
+以下是支持路径操作中常用到的一些定义,支持所有平台	
+os.curdir	指代当前目录('.')
+os.pardir	指代上一级目录('..')
+os.sep	输出操作系统特定的路径分隔符(Win下为'\\',Linux下为'/')
+os.linesep	当前平台使用的行终止符(Win下为'\r\n',Linux下为'\n')
+os.name	指代当前使用的操作系统(包括：'posix',??'nt', 'mac', 'os2', 'ce', 'java')
+	
+	
+	
+os.path模块中关于路径常用的函数使用方法
+函数名	使用方法
+os.path.basename(path)	去掉目录路径,单独返回文件名
+os.path.dirname(path)	去掉文件名,单独返回目录路径
+os.path.join(path1[, path2[, ...]])	将path1, path2各部分组合成一个路径名
+os.path.split(path)	分割文件名与路径,返回(f_path, f_name)元组。如果完全使用目录,它也会将最后一个目录作为文件名分离,且不会判断文件或者目录是否存在
+os.path.splitext(path)	分离文件名与扩展名,返回(f_name, f_extension)元组
+os.path.getsize(file)	返回指定文件的尺寸,单位是字节
+os.path.getatime(file)	返回指定文件最近的访问时间(浮点型秒数,可用time模块的gmtime()或localtime()函数换算)
+os.path.getctime(file)	返回指定文件的创建时间(浮点型秒数,可用time模块的gmtime()或localtime()函数换算)
+os.path.getmtime(file)	返回指定文件最新的修改时间(浮点型秒数,可用time模块的gmtime()或localtime()函数换算)
+以下为函数返回 True 或 False	
+os.path.exists(path)	判断指定路径(目录或文件)是否存在
+os.path.isabs(path)	判断指定路径是否为绝对路径
+os.path.isdir(path)	判断指定路径下文件是否存在且是一个目录
+os.path.isfile(path)	判断指定路径是否存在且是一个文件
+os.path.islink(path)	判断指定路径是否存在且是一个符号链接
+os.path.ismount(path)	判断指定路径是否存在且是一个挂载点
+os.path.samefile(path1, paht2)	判断path1和path2两个路径是否指向同一个文件
+
+2e18/9 小甲鱼笔记
+
+集合（s）.方法名	等价符号	方法说明
+s.issubset(t)	s <= t	子集测试（允许不严格意义上的子集）：s 中所有的元素都是 t 的成员
+	s < t	子集测试（严格意义上）：s != t 而且 s 中所有的元素都是 t 的成员
+s.issuperset(t)	s >= t	超集测试（允许不严格意义上的超集）：t 中所有的元素都是 s 的成员
+	s > t	超集测试（严格意义上）：s != t 而且 t 中所有的元素都是 s 的成员
+s.union(t)	s | t	合并操作：s "或" t 中的元素
+s.intersection(t)	s & t	交集操作：s "与" t 中的元素
+s.difference	s - t	差分操作：在 s 中存在,在 t 中不存在的元素
+s.symmetric_difference(t)	s ^ t	对称差分操作：s "或" t 中的元素,但不是 s 和 t 共有的元素
+s.copy()		返回 s 的拷贝（浅复制）
+以下方法仅适用于可变集合		
+s.update	s |= t	将 t 中的元素添加到 s 中
+s.intersection_update(t)	s &= t	交集修改操作：s 中仅包括 s 和 t 中共有的成员
+s.difference_update(t)	s -= t	差修改操作：s 中包括仅属于 s 但不属于 t 的成员
+s.symmetric_difference_update(t)	s ^= t	对称差分修改操作：s 中包括仅属于 s 或仅属于 t 的成员
+s.add(obj)		加操作：将 obj 添加到 s
+s.remove(obj)		删除操作：将 obj 从 s 中删除,如果 s 中不存在 obj,将引发异常
+s.discard(obj)		丢弃操作：将 obj 从 s 中删除,如果 s 中不存在 obj,也没事儿^_^
+s.pop()		弹出操作：移除并返回 s 中的任意一个元素
+s.clear()		清除操作：清除 s 中的所有元素
+
+
+
+
+2e18 python二级考试笔记
+import os
+import shutil
+
+os.getcwd(空)	返回当前工作目录
+os.chdir(path)	改变工作目录 
+p = "要删除的文件夹地址"
+shutil.rmtree(p) # 把整个文件夹删掉(无论是不是满的)
+os.rmdir(p)  # 删除空文件夹
+os.mkdir(p)  # 新建文件夹
+ 
+path = "文件地址"
+os.remove(path) # 删除文件
+shutil.move(srcfile,dstfile) # 移动文件(不是复制)
+--------------------- 
+
+python 读写、创建 文件
+python中对文件、文件夹(文件操作函数)的操作需要涉及到os模块和shutil模块。
+
+得到当前工作目录,即当前Python脚本工作的目录路径: os.getcwd()
+
+返回指定目录下的所有文件和目录名:os.listdir()
+
+函数用来删除一个文件:os.remove()
+
+删除多个目录：os.removedirs(r“c：\python”)
+
+检验给出的路径是否是一个文件：os.path.isfile()
+
+检验给出的路径是否是一个目录：os.path.isdir()
+
+判断是否是绝对路径：os.path.isabs()
+
+检验给出的路径是否真地存:os.path.exists()
+
+返回一个路径的目录名和文件名:os.path.split()     eg os.path.split('/home/swaroop/byte/code/poem.txt') 结果：('/home/swaroop/byte/code', 'poem.txt') 
+
+分离扩展名：os.path.splitext()
+
+获取路径名：os.path.dirname()
+
+获取文件名：os.path.basename()
+
+运行shell命令: os.system()
+
+读取和设置环境变量:os.getenv() 与os.putenv()
+
+给出当前平台使用的行终止符:os.linesep    Windows使用'\r\n',Linux使用'\n'而Mac使用'\r'
+
+指示你正在使用的平台：os.name       对于Windows,它是'nt',而对于Linux/Unix用户,它是'posix'
+
+重命名：os.rename(old, new)
+
+创建多级目录：os.makedirs(r“c：\python\test”)
+
+创建单个目录：os.mkdir(“test”)
+
+获取文件属性：os.stat(file)
+
+修改文件权限与时间戳：os.chmod(file)
+
+终止当前进程：os.exit()
+
+获取文件大小：os.path.getsize(filename)
+
+
+文件操作：
+os.mknod("test.txt")        创建空文本
+fp = open("test.txt",'wb')     直接打开一个文本,如果文件不存在则创建文件
+
+关于open 模式：
+
+w     以写方式打开,
+a     以追加模式打开 (从 EOF 开始, 必要时创建新文件)
+r+     以读写模式打开
+w+     以读写模式打开 (参见 w )
+a+     以读写模式打开 (参见 a )
+rb     以二进制读模式打开
+wb     以二进制写模式打开 (参见 w )
+ab     以二进制追加模式打开 (参见 a )
+rb+    以二进制读写模式打开 (参见 r+ )
+wb+    以二进制读写模式打开 (参见 w+ )
+ab+    以二进制读写模式打开 (参见 a+ )
+
+ 
+
+fp.read([size])                     #size为读取的长度,以byte为单位
+
+fp.readline([size])                 #读一行,如果定义了size,有可能返回的只是一行的一部分
+
+fp.readlines([size])                #把文件每一行作为一个list的一个成员,并返回这个list。其实它的内部是通过循环调用readline()来实现的。如果提供size参数,size是表示读取内容的总长,也就是说可能只读到文件的一部分。
+
+fp.write(str)                      #把str写到文件中,write()并不会在str后加上一个换行符
+
+fp.writelines(seq)            #把seq的内容全部写到文件中(多行一次性写入)。这个函数也只是忠实地写入,不会在每行后面加上任何东西。
+
+fp.close()                        #关闭文件。python会在一个文件不用后自动关闭文件,不过这一功能没有保证,最好还是养成自己关闭的习惯。  如果一个文件在关闭后还对其进行操作会产生ValueError
+
+fp.flush()                                      #把缓冲区的内容写入硬盘
+
+fp.fileno()                                      #返回一个长整型的”文件标签“
+
+fp.isatty()                                      #文件是否是一个终端设备文件(unix系统中的)
+
+fp.tell()                                         #返回文件操作标记的当前位置,以文件的开头为原点
+
+fp.next()                                       #返回下一行,并将文件操作标记位移到下一行。把一个file用于for … in file这样的语句时,就是调用next()函数来实现遍历的。
+
+fp.seek(offset[,whence])              #将文件打操作标记移到offset的位置。这个offset一般是相对于文件的开头来计算的,一般为正数。但如果提供了whence参数就不一定了,whence可以为e表示从头开始计算,1表示以当前位置为原点计算。2表示以文件末尾为原点进行计算。需要注意,如果文件以a或a+的模式打开,每次进行写操作时,文件操作标记会自动返回到文件末尾。
+
+fp.truncate([size])                       #把文件裁成规定的大小,默认的是裁到当前文件操作标记的位置。如果size比文件的大小还要大,依据系统的不同可能是不改变文件,也可能是用e把文件补到相应的大小,也可能是以一些随机的内容加上去。
+
+ 
+
+目录操作：
+os.mkdir("file")                   创建目录
+复制文件：
+shutil.copyfile("oldfile","newfile")       oldfile和newfile都只能是文件
+shutil.copy("oldfile","newfile")            oldfile只能是文件夹,newfile可以是文件,也可以是目标目录
+复制文件夹：
+shutil.copytree("olddir","newdir")        olddir和newdir都只能是目录,且newdir必须不存在
+重命名文件(目录)
+os.rename("oldname","newname")       文件或目录都是使用这条命令
+移动文件(目录)
+shutil.move("oldpos","newpos")   
+删除文件
+os.remove("file")
+删除目录
+os.rmdir("dir")只能删除空目录
+shutil.rmtree("dir")    空目录、有内容的目录都可以删
+转换目录
+os.chdir("path")   换路径
+
+ 
+
+Python读写文件
+1.open
+使用open打开文件后一定要记得调用文件对象的close()方法。比如可以用try/finally语句来确保最后能关闭文件。
+
+file_object = open('thefile.txt')
+try:
+     all_the_text = file_object.read( )
+finally:
+     file_object.close( )
+
+注：不能把open语句放在try块里,因为当打开文件出现异常时,文件对象file_object无法执行close()方法。
+
+2.读文件
+读文本文件
+input = open('data', 'r')
+#第二个参数默认为r
+input = open('data')
+
+ 
+
+读二进制文件
+input = open('data', 'rb')
+ 
+
+读取所有内容
+file_object = open('thefile.txt')
+try:
+     all_the_text = file_object.read( )
+finally:
+     file_object.close( )
+ 
+
+读固定字节
+file_object = open('abinfile', 'rb')
+try:
+    while True:
+         chunk = file_object.read(1ee)
+        if not chunk:
+            break
+         do_something_with(chunk)
+finally:
+     file_object.close( )
+ 
+
+读每行
+list_of_all_the_lines = file_object.readlines( )
+
+如果文件是文本文件,还可以直接遍历文件对象获取每行：
+
+for line in file_object:
+     process line
+ 
+
+3.写文件
+写文本文件
+output = open('data', 'w')
+ 
+
+写二进制文件
+output = open('data', 'wb')
+ 
+
+追加写文件
+output = open('data', 'w+')
+ 
+
+写数据
+file_object = open('thefile.txt', 'w')
+file_object.write(all_the_text)
+file_object.close( )
+ 
+
+写入多行
+file_object.writelines(list_of_text_strings)
+
+注意,调用writelines写入多行在性能上会比使用write一次性写入要高。
+
+在处理日志文件的时候,常常会遇到这样的情况：日志文件巨大,不可能一次性把整个文件读入到内存中进行处理,例如需要在一台物理内存为 2GB 的机器上处理一个 2GB 的日志文件,我们可能希望每次只处理其中 2eeMB 的内容。
+在 Python 中,内置的 File 对象直接提供了一个 readlines(sizehint) 函数来完成这样的事情。以下面的代码为例：
+
+file = open('test.log', 'r')sizehint = 2e97152ee   # 2eeMposition = elines = file.readlines(sizehint)while not file.tell() - position < e:       position = file.tell()       lines = file.readlines(sizehint)
+
+每次调用 readlines(sizehint) 函数,会返回大约 200MB 的数据,而且所返回的必然都是完整的行数据,大多数情况下,返回的数据的字节数会稍微比 sizehint 指定的值大一点(除最后一次调用 readlines(sizehint) 函数的时候)。通常情况下,Python 会自动将用户指定的 sizehint 的值调整成内部缓存大小的整数倍。
+
+file在python是一个特殊的类型,它用于在python程序中对外部的文件进行操作。在python中一切都是对象,file也不例外,file有file的方法和属性。下面先来看如何创建一个file对象：
+
+
+file(name[, mode[, buffering]]) 
+file()函数用于创建一个file对象,它有一个别名叫open(),可能更形象一些,它们是内置函数。来看看它的参数。它参数都是以字符串的形式传递的。name是文件的名字。
+mode是打开的模式,可选的值为r w a U,分别代表读(默认) 写 添加支持各种换行符的模式。用w或a模式打开文件的话,如果文件不存在,那么就自动创建。此外,用w模式打开一个已经存在的文件时,原有文件的内容会被清空,因为一开始文件的操作的标记是在文件的开头的,这时候进行写操作,无疑会把原有的内容给抹掉。由于历史的原因,换行符在不同的系统中有不同模式,比如在 unix中是一个\n,而在windows中是‘\r\n’,用U模式打开文件,就是支持所有的换行模式,也就说‘\r’ '\n' '\r\n'都可表示换行,会有一个tuple用来存贮这个文件中用到过的换行符。不过,虽说换行有多种模式,读到python中统一用\n代替。在模式字符的后面,还可以加上+ b t这两种标识,分别表示可以对文件同时进行读写操作和用二进制模式、文本模式(默认)打开文件。
+buffering如果为e表示不进行缓冲;如果为1表示进行“行缓冲“;如果是一个大于1的数表示缓冲区的大小,应该是以字节为单位的。
+
+file对象有自己的属性和方法。先来看看file的属性。
+
+
+closed #标记文件是否已经关闭,由close()改写 
+encoding #文件编码 
+mode #打开模式 
+name #文件名 
+newlines #文件中用到的换行模式,是一个tuple 
+softspace #boolean型,一般为e,据说用于print
+
+file的读写方法：
+
+
+F.read([size]) #size为读取的长度,以byte为单位 
+F.readline([size]) 
+#读一行,如果定义了size,有可能返回的只是一行的一部分 
+F.readlines([size]) 
+#把文件每一行作为一个list的一个成员,并返回这个list。其实它的内部是通过循环调用readline()来实现的。如果提供size参数,size是表示读取内容的总长,也就是说可能只读到文件的一部分。 
+F.write(str) 
+#把str写到文件中,write()并不会在str后加上一个换行符 
+F.writelines(seq) 
+#把seq的内容全部写到文件中。这个函数也只是忠实地写入,不会在每行后面加上任何东西。 
+file的其他方法：
+
+
+F.close() 
+#关闭文件。python会在一个文件不用后自动关闭文件,不过这一功能没有保证,最好还是养成自己关闭的习惯。如果一个文件在关闭后还对其进行操作会产生ValueError 
+F.flush() 
+#把缓冲区的内容写入硬盘 
+F.fileno() 
+#返回一个长整型的”文件标签“ 
+F.isatty() 
+#文件是否是一个终端设备文件(unix系统中的) 
+F.tell() 
+#返回文件操作标记的当前位置,以文件的开头为原点 
+F.next() 
+#返回下一行,并将文件操作标记位移到下一行。把一个file用于for ... in file这样的语句时,就是调用next()函数来实现遍历的。 
+F.seek(offset[,whence]) 
+#将文件打操作标记移到offset的位置。这个offset一般是相对于文件的开头来计算的,一般为正数。但如果提供了whence参数就不一定了,whence可以为e表示从头开始计算,1表示以当前位置为原点计算。2表示以文件末尾为原点进行计算。需要注意,如果文件以a或a+的模式打开,每次进行写操作时,文件操作标记会自动返回到文件末尾。 
+F.truncate([size]) 
+#把文件裁成规定的大小,默认的是裁到当前文件操作标记的位置。如果size比文件的大小还要大,依据系统的不同可能是不改变文件,也可能是用e把文件补到相应的大小,也可能是以一些随机的内容加上去。
+
+ 
+
+http://www.cnblogs.com/allenblogs/archive/2e1e/e9/13/1824842.html
+
+http://www.cnblogs.com/rollenholt/archive/2e12/e4/23/2466179.html
+
+收获不会与付出成反比 by juandx
+
+
+EPISODE 3:Python编程思维
+
+第8周程序设计方法学
+Python之禅与方法学
+-自顶向下和自底向上
+-计算思维/计算生态/用户体验.
+-利用os库整理操作系统文件夹
+
+第八周学会编程的入门级内功心法
+编程有套路,原来该这样！
+
+eval(?) #去掉外成的引号或双引号
+'{:.2f}'.format(?) # 只能是整型和字符类型最后转换成字符,再精确到小数点两位
+
+
+
+Python绘图Turtle库详解 (海龟画图)
+(1)    画笔运动命令
+(2)     画笔控制命令
+(3)    全局控制命令
+(4)    其他命令
+
+import turtle # 导入海龟绘图库
+(1)    画笔运动命令
+命令
+说明
+turtle.forward(distance)	
+向当前画笔方向移动distance像素长度
+
+turtle.backward(distance)
+向当前画笔相反方向移动distance像素长度
+
+turtle.right(degree)
+顺时针移动degree°
+
+turtle.left(degree)
+逆时针移动degree°
+
+turtle.pendown()
+移动时绘制图形,缺省时也为绘制
+
+turtle.goto(x,y)
+将画笔移动到坐标为x,y的位置
+
+turtle.penup()
+提起笔移动,不绘制图形,用于另起一个地方绘制
+
+turtle.circle()
+画圆,半径为正(负),表示圆心在画笔的左边(右边)画圆
+
+setx( )
+将当前x轴移动到指定位置
+
+sety( )
+将当前y轴移动到指定位置
+
+setheading(angle)
+设置当前朝向为angle角度
+
+home()
+设置当前画笔位置为原点,朝向东。
+
+dot(r)
+绘制一个指定直径和颜色的圆点
+
+
+
+(2)     画笔控制命令
+命令
+
+说明
+
+turtle.fillcolor(colorstring)
+绘制图形的填充颜色
+
+turtle.color(color1, color2)
+同时设置pencolor=color1, fillcolor=color2
+
+turtle.filling()
+返回当前是否在填充状态
+
+turtle.begin_fill()
+准备开始填充图形
+
+turtle.end_fill()
+填充完成
+
+turtle.hideturtle()
+隐藏画笔的turtle形状
+
+turtle.showturtle()
+显示画笔的turtle形状
+
+
+(3)    全局控制命令
+命令
+
+说明
+turtle.clear()
+清空turtle窗口,但是turtle的位置和状态不会改变
+
+turtle.reset()
+清空窗口,重置turtle状态为起始状态
+
+turtle.undo()
+撤销上一个turtle动作
+
+turtle.isvisible()
+返回当前turtle是否可见
+
+stamp()
+复制当前图形
+
+turtle.write(s [,font=("font-name",font_size,"font_type")])
+写文本,s为文本内容,font是字体的参数,分别为字体名称,大小和类型；font为可选项,font参数也是可选项
+
+(4)    其他命令
+命令
+说明
+turtle.mainloop()或turtle.done()
+启动事件循环 -调用Tkinter的mainloop函数。
+必须是乌龟图形程序中的最后一个语句。
+
+turtle.mode(mode=None)
+设置乌龟模式(“standard”,“logo”或“world”)并执行重置。如果没有给出模式,则返回当前模式。
+
+模式
+
+初始龟标题
+
+正角度
+
+standard
+
+向右(东)
+
+逆时针
+
+logo
+
+向上(北)
+
+顺时针
+
+turtle.delay(delay=None)
+设置或返回以毫秒为单位的绘图延迟。
+
+turtle.begin_poly()
+开始记录多边形的顶点。当前的乌龟位置是多边形的第一个顶点。
+
+turtle.end_poly()
+停止记录多边形的顶点。当前的乌龟位置是多边形的最后一个顶点。将与第一个顶点相连。
+
+turtle.get_poly()
+返回最后记录的多边形。
+
+
+turtle.fd(x) # 前行
+turtle.bk(x) # 后退
+turtle.circle(r, angle) 
+# 以海龟左侧某一个点为圆心进行曲线运行
+
+turtle.seth(angle) # seth() 改变海龟行进方向不行进
+angle 为绝对度数
+
+turtle.left(angle) # 向左
+turtle.right(angle) # 向右
+
+turtle.seth(*)  # 设置笔的起始角度(0)  
+turtle.seth(angle)  改变海龟行进方向
+seth()只改变方向但不行进
+
+第三周
+0.1+0.2=0.30000000000000004 
+round(x[,d]) 对x四舍五入,d的小数截取数
+abs(x) x的绝对值是去掉负号
+例如 abs(-10.01) 结果是 10.01
+divmod(x,y)  x除y等到(商,余)
+例如 divmod(1e,3) 结果为(3,1)
+pow(x,y[,z])  幂余,(x**y)%z,[..] 表示可以忽略
+例如 
+pow(2,2) # 2的平方结果为4
+pow(2,3) # 2的立方结果为8
+pow(2,4) # 2的4次方结果为16
+pow(2,10) # 结果是 1024 # 求幂2的10次方
+pow(2,1e,1ee) 结果是 24
+max(X1,X2,...,Xn) 返回最大值
+min(X1,X2,...,Xn) 返回最小值
+int 整数
+float 浮点数
+complex(x) 将x变成复数,增加虚数部分
+例如 complex(4) 结果为 (4+ej)
+
+字符串切片高级用法
+使用[M:N:K] 根据步长对字符串切片
+<字符串> [M:N],M缺失表示至开头,N缺失表示至结尾
+"e123456789" [:3] 结果是："e12"
+<字符串> [M:N:K],根据步长K对字符串切片
+"e123456789" [1:8:2] 结果是："13579"
+"e123456789" [::-1] 结果是："987654321e"
+len(x) 例：len('123456') 结果为：6
+str(x) 例：str(1.23) 结果为'1.23' 
+eval() 和str() 是相对应
+hex(x) 例：hex(425) 结果为 'ex1a9'
+oct(x) 例：oct(425) 结果为 'eo651'
+chr(u) 例：x为Unicode编码,返回其对应的字符
+ord(x) 例：x为字符,返回其对应的Unicode编码（十进制数）
+
+Unicode编码
+Python字符串的编码方式
+统一字符编码,即覆盖几乎所有字符的编码方式
+从0到1114111(0x10ffff)空间,每个编码对应一个字符
+Python字符串中每个字符都是Unicode编码字符
+'1 + 1 = 2' + chr(10004)
+结果为：'1 + 1 = 2✔'
+'这个√字符对应Unicode编码值是：' + str(ord('✔'))
+结果为：'这个√字符对应Unicode编码值是：10004'
+
+字符串处理方法
+str.capitalize()  #把字符串的第一个字符改为大写
+例：'abc'.capitalize() 结果为： 'Abc'
+str.lower() 或 str.upper() 返回字符串的副本,全部小写/大写
+例：'AbCdEfGh'.lower() 结果为：'abcdefgh'
+str.split(sep=None) 返回一个列表,由str根据sep别分隔的部分组成
+例：'A,B,C'.split(',')结果为：['A','B','C']
+str.count(sub) 返回子串sub在str中出现的次数
+'a apple a day'.count('a') 结果为4
+str.replace(old,new) # old 后增加字符串 返回一个新的字符串
+例：'Python'.replace('n','n123.io') 结果为：'Python123.io'
+str.center(width[,fillchar]) # width：两边的数量 fillchar：分隔字串符
+例：'Python'.center(2,'=')结果为
+'==Python=='
+str.strip(chars)  # 字符串中去掉定义的字符串
+例：'= python='.strip(' =np') 结果为 
+'ython'
+str.join(iter) # 用逗号分隔字符串
+例：','.join('12345') 结果为
+'1,2,3,4,5'
+
+# 字符串中有 反斜杠\ 替换的方法
+s = r'cdp\nd'
+result = eval(repr(s).replace('\\', '@')) # \换成@
+print(result)
+结果为：
+cdp@@nd
+
+n = input()
+print("{0:->20,}".format(eval(n)))  # ,表示千分符
+输入：2190000
+输出：-----------2,190,000
+
+'{0:}' 表示第一个占位符
+字符串中 '{0:}' 大括号读槽
+format()方法的格式控制
+:<填充><对其><宽度><,><.精度><类型>
+: 	引导符号  比方0: 1: 2:
+<填充>  用于填充单个字符
+<对其>	<左对齐  >右对齐 ^居中 
+<宽度>	槽设置输出宽度
+例：'{0:=^8}'.format('Python')
+结果为：'=Python='
+
+<,>	数字的千位分隔符
+<.精度>	浮点数小数 精度或字符串最大输出长度
+<类型>	整数类型 b,c,d,o,x,X  浮点数类型 e,E,f,%
+例：'{0:,.2f}'.format(12345.6789)
+结果为：'12,345.68'
+
+例：'{0:b},{0:c},{0:d},{0:o},{0:x},{0:X}'.format(425)
+b：二进制 c：Unicode编码 d：十进制 o：八进制 x,X:十六进制
+结果：'110101001,Ʃ,425,651,1a9,1A9'
+
+例：'{0:e},{0:E},{0:f},{0:%}'.format(3.14)
+0,E: 科学计算 f:浮点数 %：百分号形式表示
+结果为：'3.14eeeee+ee,3.14eeeeE+ee,3.14eeee,314.eeeeee%'
+
+模块2：time库的使用
+time库包含三类函数
+时间获取：time() ctime() gmtime()
+时间格式化：strftime() strptime()
+程序计时：sleep(),perf_counter()
+time.time() # 计算机内部计算时间(秒)
+time.ctime() # 返回系统时间
+比喻结果为：'Fri(星期几) Dec(月份)  7(号) 18:33:3e 2e18'
+time.gmtime()
+比如结果：time.struct_time(tm_year=2e18, tm_mon=12, tm_mday=7, tm_hour=1e, tm_min=36, tm_sec=51, tm_wday=4, tm_yday=341, tm_isdst=e)
+
+时间格式化
+t = time.gmtime()
+time.strftime('%Y-%m-%d %H:%M:%S',t)
+比喻结果是：'2e18-12-e7 18:54:56'
+
+时间格式化
+格式化字符串|	日期/时间说明  值范围和实例
+%Y		|年份|		eeee～9999,例如：19ee
+%m		|月份|		e1~12,例如：1e
+%B		|月份|		名称January～December,例如：April
+%b		|月份|		名称缩写Jan~Dec,例如：Apr
+%d		|日期|		e1~31,例如：25
+%A 		|星期|		Monday～Sunday,例如：Wednesday
+
+%a		星期缩写	Mon~Sun,例如：Wed
+%H		小时(24h制)	ee~23,例如：12
+%h		小时(12h制)	e1~12,例如：7
+%p		上/下午		AM,PM,例如：PM
+%M		分钟		ee~59,例如：26
+%S		秒		ee~59,例如：26
+t = time.gmtime()
+print(t)
+结果为：time.struct_time(tm_year=2e18, tm_mon=12, tm_mday=7, tm_hour=11, tm_min=14, tm_sec=5, tm_wday=4, tm_yday=341, tm_isdst=e)
+
+time.strftime('%Y-%m-%d %H:%M:%S',t) 
+结果为： '2e18-12-e7 11:14:e5'
+timeStr = '2e18-e1-26 12:55:2e'
+time.strptime(timeStr,'%Y-%m-%d %H:%M:%S')
+结果为：time.struct_time(tm_year=2e18, tm_mon=1, tm_mday=26, tm_hour=12, tm_min=55, tm_sec=2e, tm_wday=4, tm_yday=26, tm_isdst=-1)
+
+程序计时
+函数 perf_ counter()
+
+描述
+返回一个CPU级别的精确时间计数值,单位为秒
+由于这个计数值起点不确定,连续调用差值才有意义
+>>>start = time.perf_counter()
+637.178151578
+>>>end = time.perf_counter()
+684.7e58e5269
+>>>end - start
+47.527653691eeee7
+
+函数:sleep(s)
+描述
+s拟休眠的时间,单位是秒,可以是浮点数
+>>>def wait():
+	time.sleep(3.3)
+>>>wait()# 程序捋等待3.3秒后再退出
+
+'执行开始'.center(2e,'*')
+结果为：'********执行开始********'
+2e是字符串总长度
+'*'字符串两边用*填充
+
+举一反三
+文本进度条的不同设计函数
+设计名		称趋势		 设计函数
+Linear 		Constant 	 f(x)=x
+Early Pause  	Speeds up 	 f(x)=x+(1-sin(x*t*2+m/2)/-8
+Late Pause 	Slows down  	 f(x)=x+(1-sin(x*t*2+t/2)/8
+Slow Wavy 	Constant 	 f(x)=x+sin(x**5)/2e
+Fast Wavy 	Constant 	 f(x)=x+sin(x**2e)/8e
+Power 		Speeds up 	 f(x)=(x+(1-x)*e.e3)2
+Inverse Power 	slows down 	 f(x)=1+(1-x)15*-1
+Fast Power 	Speeds up 	 f(x)=(x+(1-x)/2)8
+Inverse Fast 	Power slows down f(x)=1+(1-x)3*-1
+
+摄氏度和华氏度
+eval(str)              用来计算在字符串中的有效Python表达式,并返回一个对象    
+
+python中的字符数字之间的转换函数
+int(x [,base ])         将x转换为一个整数    
+long(x [,base ])        将x转换为一个长整数    
+float(x )               将x转换到一个浮点数    
+complex(real [,imag ])  创建一个复数    
+str(x )                 将对象 x 转换为字符串    
+repr(x )                将对象 x 转换为表达式字符串    
+eval(str )              用来计算在字符串中的有效Python表达式,并返回一个对象    
+tuple(s )               将序列 s 转换为一个元组    
+list(s )                将序列 s 转换为一个列表    
+chr(x )                 将一个整数转换为一个字符    
+unichr(x )              将一个整数转换为Unicode字符   # 中文编码字符  
+ord(x )                 将一个字符转换为它的整数值    
+hex(x )                 将一个整数转换为一个十六进制字符串    
+oct(x )                 将一个整数转换为一个八进制字符串   
+ 
+chr(65)='A'
+ord('A')=65
+ 
+int('2')=2;
+str(2)='2'
+
+>>> ord('A')
+65 # ASCII码
+>>> ord('Z')
+9e # ASCII码
+>>> ord('a')
+97 # ASCII码
+>>> ord('z')
+122 # ASCII码
+
+python 成员运算符
+in: 	如果在指定的序列中找到值返回True,否则返回False
+not in: 如果在指定的序列中找不到值返回True,否则返回False
+
+python 身份运算符
+is:		判断两个标识符是不是引用同意个对象
+is not: 判断两个标识符是不是引用不同的对象
+
+
+python 语言中逻辑与和逻辑或还有逻辑非
+ and：逻辑与,当有一个条件为假时,该条件即为假。 # C语言是 &&
+ or：逻辑或,当有一个条件为真时,该条件即为真。  # C语言是 ||
+ not 逻辑非  值是真就是假,值为假就是真
+ 
+ 从左到右计算表达式,若所有值均为真,则返回最后一个值
+ 
+ 1. 在纯and语句中,如果每一个表达式都不是假的话,那么返回最后一个,因为需要一直匹配直到最后一个。如果有一个是假,那么返回假
+2. 在纯or语句中,只要有一个表达式不是假的话,那么就返回这个表达式的值。只有所有都是假,才返回假
+3. 在or和and语句比较难表达,总而言之,碰到and就往后匹配,碰到or如果or左边的为真,那么就返回or左边的那个值,如果or左边为假,继续匹配or右边的参数。
+(False or 1)  输出1
+
+  (1 or False)    输出1
+
+(True or 1)输出前者
+
+  (1 or True)   输出前者
+
+(True and 1) 输出后者
+
+  (1 and True)    输出后者
+
+(False and 1)输出False
+
+(1 and False)  输出False
+
+运算符					描述
+**						指数 (最高优先级)
+~ + -					按位翻转, 一元加号和减号 (最后两个的方法名为 +@ 和 -@)
+* / % //				乘,除,取模和取整除
++ -						加法减法
+>> <<					右移,左移运算符&	位 'AND'
+^ |						位运算符
+<= < > >=				比较运算符
+<> == !=				等于运算符
+= %= /= //= -= += *= **=赋值运算符
+is is not				身份运算符
+in not in				成员运算符
+not and or				逻辑运算符
+
+  
+# 第四周
+异常处理
+异常处理的高级使用
+try:
+<语句块1>
+except:
+<语句块2>
+else:		# else 对应语句块3 在不发生异常时执行	
+<语句块3>		
+finally:	# finally 不管前面怎么样这里都会执行对应语句块4
+<语句块4>
+
+分类|国际BMI值|国内BMI值
+偏瘦|<18.5	  |<18.5
+正常|18.5~25  |18.5~24
+偏胖|25~3e	  |24~28
+肥胖|≥3e	  |≥28
+BMI值 = 身高(米) / pow(体重(公斤),2)
+
+举一反三
+关注多分支条件的组合
+-多分支条件之间的覆盖是重要问题
+-程序可运行,但不正确,要注意多分支
+-分支结构是程序的重要框架,读程序先看分支
+
+循环控制保留字
+break 和continue
+break跳出并结束当前整个循环,执行循环后的语句
+continue结束当次循环,继续执行后续次数循环
+break和continue可以与for和while循环搭配使用
+
+循环的扩展
+循环与else(附加语句,奖励语句)
+-当循环没有被break语句退出时,执行else语句块
+-else语句块作为“正常“完成循环的奖励
+-这里else的用法与异常处理中else用法相似
+
+程序的循环结构
+-for.…in 遍历循环：计数、字符串、列表、文件。
+-while无限循环
+-continue和break保留字：退出当前循环层次
+-循环else的高级用法：与break有关
+
+random库概述
+random库包括两类函数,常用共8个
+基本随机数函数：seed(),random()
+扩展随机数函数：randint(),getrandbits(),uniform(),
+				randrange(),choice(),shuffle()
+基本随机数函数
+函数	seed(a=None)
+描述	初始化给定的随机数种子,默认为当前系统时间
+>>>random.seed(10) #产生种子10对应的序列
+函数	random()
+描述	生成一个[0.0,1.0)之间的随机小数
+>>>random.random()
+0.5714e25946899135
+				
+seed(10) 
+随机数种子(10) --> 梅森旋转算法 --> 随机序列 0.81332125135732
+>>>import random
+>>>random.seed(10) # 随机数种子(10)
+>>>random.random()
+0.5714e25946899135
+>>>random.random()
+0.428889e546751146
+
+>>>import random
+>>>random.seed(10) # 随机数种子(10)
+>>>random.random()
+0.5714e25946899135
+>>>random.seed(10)
+>>>random.random()
+0.5714e25946899135
+
+扩展随机数函数
+函数|描述
+randint(a,b)
+生成一个[a,b]之间的整数
+>>random.randint(10,100)
+64
+randrange(m,n[k])
+生成一个[m,n)之间以k为步长的随机整数
+>>>random.randrange(10,100,10)
+8e
+
+扩展随机数函数
+函数|描述
+getrandbits(k)
+生成一个k比特长的随机整数
+>>>random.getrandbits(16)
+37885
+uniform(a,b))
+生成一个[a,b]之间的随机小数
+>>random.uniform(1e,1ee)
+13.e963216488e8136
+
+扩展随机数函数
+函数|描述
+从序列seq中随机选择一个元素
+choice(seq)
+>>>random.choice([1,2,3,4,5,6,7,8,9])
+8
+将序列seq中元素随机排列,返回打乱后的序列
+shuffle(seq))
+>>s=[1,2,3,4,5,6,7,8,9]；random.shuffle(s)；print(s)
+[3,5,8,9,6,1,2,7,4]
+
+随机数函数的使用
+需要掌握的能力
+能够利用随机数种子产生“确定”伪随机数
+能够产生随机整数
+能够对序列类型进行随机操作
+
+# 第五周 函数
+
+第5章函数和代码复用
+-5.1函数的定义与使用
+-5.2实例7：七段数码管绘制
+-5.3代码复用与函数递归
+-5.4模块4：Pylnstaller库的使用
+-5.5实例8：科赫雪花小包裹
+
+局部变量和全局变量
+规则1：局部变量和全局变量是不同变量
+局部变量是函数内部的占位符,与全局变量可能重名但不同
+
+函数运算结束后,局部变量被释放
+
+可以使用 global 变量 保留字在函数内部使用全局变量
+
+使用规则
+基本数据类型,无论是否重名,局部变量与全局变量不同
+可以通过 g1obal 保留字在函数内部声明全局变量
+组合数据类型,如果局部变量未真实创建,则是全局变量
+
+lambda函数
+lambda函数返回函数名作为结果
+lambda函数是一种匿名函数,即没有名字的函数
+使用lambda保留字定义,函数名是返回结果
+lambda函数用于定义简单的、能够在一行内表示的函数
+<函数名> = lambda <参数>：<表达式>
+
+谨慎使用lambda函数
+lambda函数主要用作一些特定函数或方法的参数
+lambda函数有一些固定使用方式,建议逐步掌握
+一般情况,建议使用def定义的普通函数
+
+函数的定义与使用
+使用保留字def定义函数,1anlbda定义匿名函数
+可选参数(赋初值)、可变参数(*b)、名称传递
+保留字return可以返回任意多个结果
+保留字g1oba1声明使用全局变量,一些隐式规则
+
+turtle.hideturtle() # 龟隐,就是箭头消失
+turtle.done() # 完成后,并不会自动关闭(加了这条语句后,双击程序运行后不会闪退)
+
+turtle.write() # 写入变量 
+write(arg, move=False, align='left', font=('Arial', 8, 'normal'))
+arg -- info, which is to be written to the TurtleScreen
+move (optional) -- True/False
+align (optional) -- one of the strings "left", "center" or right"
+font (optional) -- a triple (fontname, fontsize, fonttype)
+
+举一反三
+理解方法思维
+-模块化思维：确定模块接口,封装功能
+-规则化思维：抽象过程为规则,计算机自动执行
+-化繁为简：将大功能变为小功能组合,分而治之
+
+代码复用
+函数和对象是代码复用的两种主要形式
+函数：将代码命名在代码层面建立了初步抽象
+对象：属性和方法
+<a>.<b>和<a>.<b>e
+在函数之上再次组织进行抽象
+抽象级别
+
+模块化设计
+分而治之
+通过函数或对象封装将程序划分为模块及模块间的表达
+一具体包括：主程序、子程序和子程序间关系
+分而治之：一种分而的之、分活曲象,标的味品题
+
+紧耦合松耦合
+-紧耦合：两个部分之间交流很多,无法独立存在
+-松耦合：两个部分之间交流较少,可以独立存在
+-模块内部紧耦合、模块之间松耦合
+
+递归的定义
+-链条：计算过程存在递归链条
+-基例：存在一个或多个不需要再次递归的基例
+
+类似数学归纳法
+-数学归纳法
+-证明当n取第一个值n。时命题成立
+-假设当nk时命题成立,证明当n=n,时命题也成立
+
+字符串反转
+将字符串s反转后输出
+-函数+分支结构
+-递归链条
+-递归基例
+def rvs(s):  # 递归 函数
+	if s == '': # 递归基例
+		return s # 递归基例
+	else: # 递归 分支
+		return rvs(s[1:]) + s[e] # 递归链条
+>>> rvs('1234')
+'4321'
+
+裴波那契数列公式
+F(n) = F(n-1) + F(n-2)
+def f(n): # 递归 函数
+	if n == 1 or n == 2: # 递归基例
+		return 1 		 # 递归基例
+	else: # 递归 分支
+		return f(n-1) + f(n-2) # 递归链条
+		
+汉罗塔
+count = e # 计时器
+# n = 圆盘层数 src = 原柱子 
+# dst = 目的柱子 mid = 中间过渡柱子
+def hanoi(n, src, dst, mid):
+	global count # 局部变量变成全局变量
+	if n == 1: # 判断层数是否只有一层
+		print('{}：{}->{}'.format(1,src,dst))
+		count += 1
+	else:
+		hanoi(n-1, src, mid, dst)
+		print('{}：{}->{}'.format(n,src,dst))
+		count += 1
+		hanoi(n-1, mid, dst, src)
+
+>>> hanoi(3, 'a', 'b', 'c')
+1：a->b
+2：a->c
+1：b->c
+3：a->b
+1：c->a
+2：c->b
+1：a->b
+
+
+代码复用与函数递归
+一模块化设计：松耦合、紧耦合
+-函数递归的2个特征：基例和链条
+-函数递归的2个特征：基例和链条
+
+5.4模块4：Pylnstaller库的使用
+5.4 PyInstaller库的安装
+(cmd命令行 )pip install pyinstaller
+(cmd命令行,文件名目录中)pyinstaller -F <文件名.py>
+文件名目录中dist文件下文件名.exe 就是独立文件了
+
+
+PyInstaller库常用参数
+参数				|描述
+-h					查看帮助
+--clean				清理打包过程中的临时文件
+-D,--onedir		 	默认值,生成dist文件夹
+-F--onefile 		在dist文件夹中只生成独立的打包文件
+-i<图标文件名.ico>	指定打包程序使用的图标(icon)文件
+
+使用举例
+(cmd命令行,文件名目录中)pyinstaller -i 77.ico -F 77.py
+注意：切换到源代码的目录 运行 图标是.ico 和 源文件在同目录下 执行 最后在 dist目录找到
+文件名目录中dist文件下文件名.exe 就是独立文件了
+
+科赫雪花小包裹(上)
+科赫曲线的绘制
+-递归思想：函数+分支
+-递归链条：线段的组合
+-递归基例：初识线段
+
+
+
+第6周
+		组合数据类型
+-6.1集合类型及操作
+-6.2序列类型及操作一列表类型——元组类型
+-6.3实例9：基本统计值计算
+-6.4字典类型及操作
+-6.5模块5:jieba库的使用
+-6.6实例1e：文本词频统计
+
+集合类型的定义
+集合是多个元素的无序组合
+-集合类型与数学中的集合概念一致
+-集合元素之间无序,每个元素唯一,不存在相同元素
+-集合元素不可更改,不能是可变数据类型为什么？
+
+集合是多个元素的无序组合
+一集合用大括号{}表示,元素间用逗号分隔
+-建立集合类型用{n}或set()
+-建立空集合类型,必须使用set()
+
+-集合用大括号e表示,元素间用逗号分隔
+-集合中每个元素唯一,不存在相同元素
+-集合元素之间无序
+
+集合间操作 6个操作符
+S | T 并运算 返回一个新集合,包括在集合S和T中的所有元素
+S - T 差运算 返回一个新集合,包括在集合S但T不在可中的元素
+S & T 交运算 返回一个新集合,包括同时在集合S和T中的元素
+S ^ T 补运算 返回一个新集合,包括集合S和T中的非相同的元素
+S <= T 或 S <T 返回Tme/False,判断S和T的子集关系
+S >= T 或 S >T 返回Tme/False,判断S和T的包含关系
+
+4个增强操作符
+操作符及应用|描述
+S |= T	更新集合S,包括在集合S和T中的所有元素
+S -= T	更新集合S,包括在集合S但不在T中的元素
+S &= T	更新集合S,包括同时在集合S和T中的元素
+S ^= T	更新集合S,包括集合S和T中的非相同元素
+
+集合处理方法
+操作函数或方法描述
+S.add(x)如果×不在集合5中,将对增加到5
+S.discard(x)移除S中元素x,如果不在集合5中,不报错
+S.remove(x)移除S中元素x,如果不在集合S中,产生KeyError异常
+S.clear() 移除S所有元素
+S.pop() 随机返回S的一个元素,更是S,若S为空KeyError异常
+
+操作函数或方法|描述
+S.copy()	返回集合S的一个副本
+len(S)		返回集合S的元素个数
+x in S		判断S中元素x,x在集合S中,返回True,否则返回False
+x not in S 	判断S中元素X,x不在集合S中,返回False,否则返回True
+set(x)		将其他类型变量x转变为集合类型
+
+集合类型及操作
+-集合使用}和set)函数创建
+-集合间操作：交(&)、并(|)、差(-)、补(^)、比较(> = <)
+-集合类型方法：add()、.discard()、pop()等
+-集合类型主要应用于：包含关系比较、数据去重
+
+序列类型通用操作符
+6个操作符
+操作符及应用|描述
+x in s				如果x是序列s的元素,返回True,否则返回False
+x not in s			如果x是序列s的元素,返回False,否则返回True
+s + t				连接两个序列s和t
+s * n 				或n*s将序列s复制n次
+s[i]				索引,返回s中的第个元素,i是序列的序号
+s[i:j] 或 s[i:j:k] 	切片,返回序列s中第ij以k为步长的元素子序列
+
+序列类型通用函数和方法
+5个函数和方法
+len(s)返回序列的长度
+min(s)返回序的最小元素,S中元素需要可比较
+max(s)返回序列s的最大元素,S中元素需要可比较
+s.index(x)或s.index(x,i,j)返回序列s从i开始到位置中第一次出现元素的位置
+s.count(x)返回序列S中出现x的总次数
+
+元组类型定义
+元组是序列类型的一种扩展
+元组是一种序列类型,一旦创建就不能被修改
+使用小括号()或tuple()创建,元素间用逗号,分隔
+可以使用或不使用小括号
+
+列表类型定义
+列表是序列类型的一种扩展,十分常用
+-列表是一种序列类型,创建后可以随意被修改
+-使用方括号[]或list()创建,元素间用逗号,分隔
+-可以使用或不使用小括号
+
+列表类型操作函数和方法
+函数或方法描述
+Is[i]=x替换列表ls第元素为x
+Is[i:j:k]=It 用列表t替换ls切片后所对应元素子列表
+del Isi]删除列表s中第元素
+del ls[i:j:k]删除列表I5中第到第以k为步长的元素
+Is+=It 更新列表ls,将列表比元素增加到列表ls中
+Is*=n更新列表s,其元素重复n次
+
+列表类型操作函数和方法
+函数或方法描述
+Is.append(x)在列表s最后增加一个元素x
+Is.clear()删除列表5中所有元素
+Is.copy()生成一个新列表,赋值l5中所有元素
+Is.insert(i,x)在列表s的第位置增加元素X
+Is.pop(i)将列表s中第位置元素取出并删除该元素
+Is.remove(x)将列表s中出现的第一个元素x删除
+Is.reverse()将列表ls中的元素反转
+
+列表功能 (训练)
+定义空列表It
+向lt新增5个元素
+修改t中第2个元素
+向lt中第2个位置增加一个元素
+从It中第1个位置删除一个元素
+删除lt中第1-3位置元素
+
+判断t中是否包含数字e
+向lt新增数字e
+返回数字e所在It中的索引
+It的长度
+It中最大元素
+清空lt
+
+序列类型应用场景
+序列类型应用场景
+元组用于元素不改变的应用场景,更多用于固定搭配场累
+列表更加灵活,它是最常用的序列类型
+最主要作用：表示一组有序数据,进而操作它们
+
+****问题分析
+基本统计值
+需求：给出一组数,对它们有个概要理解
+该怎么做呢？
+总个数、求和、平均值、方差、中位数…
+
+问题分析
+基本统计值
+总个数：lene
+求和：for..…in
+平均值：求和/总个数
+方差：各数据与平均数差的平方的和的平均数
+中位数：排序,然后…奇数找中间1个,偶数找中间2个取平均
+
+举一反三
+技术能力扩展
+获取多个数据：从控制台获取多个不确定数据的方法
+分隔多个函数：模块化设计方法
+充分利用函数：充分利用Python提供的内容函数
+
+字典类型及操作
+-字典类型定义
+-字典处理函数及方法
+-字典类型应用场景
+
+字典类型定义
+字典类型是“映射”的体现
+-键值对：键是数据索引的扩展
+-字典是键值对的集合,键值对之间无序
+-采用大括号{}和dict()创建,键值对用冒号：表示
+{<键1>:<值1>,<键2>:<值2>,...<键n>:<值n>}
+type(x)
+返回变量x的类型
+
+字典类型操作函数和方法
+函数或方法描述
+del d[k]删除字典d中键k对应的数据值
+k in d 	判断键k是否在字典d中,如果在返回True,否则False
+d.keys()返回字典d中所有的键信息
+d.values()返回字典d中所有的值信息
+d.items()返回字典d中所有的键值对信息
+
+>>> d = {'中国':'北京','美国':'华盛顿','法国':'巴黎',}
+>>> d
+{'中国': '北京', '美国': '华盛顿', '法国': '巴黎'}
+>>> '中国' in d # 只能查找键
+True
+>>> '北京' in d # 不能查找值
+False
+>>> d.keys()
+dict_keys(['中国', '美国', '法国'])
+>>> d.values()
+dict_values(['北京', '华盛顿', '巴黎'])
+主要 可以用for...in  : 调用
+
+>>> dict1 = {'中国':'北京','美国':'华盛顿','法国':'巴黎',}
+列表类型操作函数和方法
+函数或方法|描述
+dict1.get(k,<default>)键k存在,则返回相应值,不在则返回<default>值
+dict1.pop(k,<default>)键k存在,则取出相应值,不在则返回<default>值
+dict1.popitem()随机从字典d中取出一个键值对,以元组形式返回
+dict1.clear()|删除所有的键值对
+len(d)返回字典d中元素的个数
+
+dict1 = {'tom':6e, 'lilei':7e}
+#添加
+dict1['hanmeimei'] = 99
+print(dict1)
+
+dict1['lilei'] = 8e
+print(dict1)
+
+# 删除
+dict1.pop('tom')
+print(dict1)
+
+# 遍历
+for key in dict1:
+    print(key, dict1[key])
+
+字典详细解释：
+Python 字典(Dictionary)
+字典是另一种可变容器模型，且可存储任意类型对象。
+
+字典的每个键值 key=>value 对用冒号 : 分割，每个键值对之间用逗号 , 分割，整个字典包括在花括号 {} 中 ,格式如下所示：
+
+d = {key1 : value1, key2 : value2 }
+键一般是唯一的，如果重复最后的一个键值对会替换前面的，值不需要唯一。
+
+>>>dict = {'a': 1, 'b': 2, 'b': '3'}
+>>> dict['b']
+'3'
+>>> dict
+{'a': 1, 'b': '3'}
+值可以取任何数据类型，但键必须是不可变的，如字符串，数字或元组。
+
+一个简单的字典实例：
+
+dict = {'Alice': '2341', 'Beth': '9102', 'Cecil': '3258'}
+也可如此创建字典：
+
+dict1 = { 'abc': 456 }
+dict2 = { 'abc': 123, 98.6: 37 }
+访问字典里的值
+把相应的键放入熟悉的方括弧，如下实例:
+
+实例
+#!/usr/bin/python
+ 
+dict = {'Name': 'Zara', 'Age': 7, 'Class': 'First'}
+ 
+print("dict['Name']", dict['Name'])
+print("dict['Age']", dict['Age'])
+以上实例输出结果：
+
+dict['Name']:  Zara
+dict['Age']:  7
+如果用字典里没有的键访问数据，会输出错误如下：
+
+实例
+#!/usr/bin/python
+ 
+dict = {'Name': 'Zara', 'Age': 7, 'Class': 'First'}
+ 
+print("dict['Alice']", dict['Alice'])
+以上实例输出结果：
+
+dict['Alice']: 
+Traceback (most recent call last):
+  File "test.py", line 5, in <module>
+    print "dict['Alice']: ", dict['Alice']
+KeyError: 'Alice'
+修改字典
+向字典添加新内容的方法是增加新的键/值对，修改或删除已有键/值对如下实例:
+
+实例
+#!/usr/bin/python
+ 
+dict = {'Name': 'Zara', 'Age': 7, 'Class': 'First'}
+ 
+dict['Age'] = 8 # 更新
+dict['School'] = "RUNOOB" # 添加
+ 
+ 
+print "dict['Age']: ", dict['Age']
+print "dict['School']: ", dict['School']
+以上实例输出结果：
+dict['Age']:  8
+dict['School']:  RUNOOB
+删除字典元素
+能删单一的元素也能清空字典，清空只需一项操作。
+
+显示删除一个字典用del命令，如下实例：
+
+实例
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+ 
+dict = {'Name': 'Zara', 'Age': 7, 'Class': 'First'}
+ 
+del dict['Name']  # 删除键是'Name'的条目
+dict.clear()      # 清空字典所有条目
+del dict          # 删除字典
+ 
+print "dict['Age']: ", dict['Age'] 
+print "dict['School']: ", dict['School']
+但这会引发一个异常，因为用del后字典不再存在：
+Traceback (most recent call last):
+  File "test.py", line 8, in <module>
+    print "dict['Age']: ", dict['Age'] 
+TypeError: 'type' object is unsubscriptable
+注：del()方法后面也会讨论。
+
+
+字典键的特性
+字典值可以没有限制地取任何python对象，既可以是标准的对象，也可以是用户定义的，但键不行。
+
+两个重要的点需要记住：
+
+1）不允许同一个键出现两次。创建时如果同一个键被赋值两次，后一个值会被记住，如下实例：
+
+实例
+#!/usr/bin/python
+ 
+dict = {'Name': 'Zara', 'Age': 7, 'Name': 'Manni'} 
+ 
+print "dict['Name']: ", dict['Name']
+以上实例输出结果：
+
+dict['Name']:  Manni
+2）键必须不可变，所以可以用数字，字符串或元组充当，所以用列表就不行，如下实例：
+
+实例
+#!/usr/bin/python
+ 
+dict = {['Name']: 'Zara', 'Age': 7} 
+ 
+print "dict['Name']: ", dict['Name']
+以上实例输出结果：
+
+Traceback (most recent call last):
+  File "test.py", line 3, in <module>
+    dict = {['Name']: 'Zara', 'Age': 7} 
+TypeError: list objects are unhashable
+字典内置函数&方法
+Python字典包含了以下内置函数：
+
+序号	函数及描述
+1	cmp(dict1, dict2)
+比较两个字典元素。
+2	len(dict)
+计算字典元素个数，即键的总数。
+3	str(dict)
+输出字典可打印的字符串表示。
+4	type(variable)
+返回输入的变量类型，如果变量是字典就返回字典类型。
+Python字典包含了以下内置方法：
+
+序号	函数及描述
+1	dict.clear()
+删除字典内所有元素
+2	dict.copy()
+返回一个字典的浅复制
+3	dict.fromkeys(seq[, val])
+创建一个新字典，以序列 seq 中元素做字典的键，val 为字典所有键对应的初始值
+4	dict.get(key, default=None)
+返回指定键的值，如果值不在字典中返回default值
+5	dict.has_key(key)
+如果键在字典dict里返回true，否则返回false
+6	dict.items()
+以列表返回可遍历的(键, 值) 元组数组
+7	dict.keys()
+以列表返回一个字典所有的键
+8	dict.setdefault(key, default=None)
+和get()类似, 但如果键不存在于字典中，将会添加键并将值设为default
+9	dict.update(dict2)
+把字典dict2的键/值对更新到dict里
+10	dict.values()
+以列表返回字典中的所有值
+11	pop(key[,default])
+删除字典给定键 key 所对应的值，返回值为被删除的值。key值必须给出。 否则，返回default值。
+12	popitem()
+随机返回并删除字典中的一对键和值。
+
+
+字典类型应用场景
+映射的表达
+-映射无处不在,键值对无处不在
+-例如：统计数据出现的次数,数据是键,次数是值
+-最主要作用：表达键值对数据,进而操作它们
+
+字典类型及操作
+映射关系采用键值对表达
+字典类型使用)和dict()创建,键值对之间用分隔
+d[key]方式既可以索引,也可以赋值
+字典类型有一批操作方法和函数,最重要的是.get()
+
+jieba分词的原理
+Jieba分词依靠中文词库
+利用一个中文词库,确定汉字之间的关联概率
+汉字间概率大的组成词组,形成分词结果
+除了分词,用户还可以添加自定义的词组
+
+jieba分词的三种模式
+精确模式、全模式、搜索引擎模式
+精确模式：把文本精确的切分开,不存在元余单词
+全模式：把文本中所有可能的词语都扫描出来,有元余
+搜索引擎模式：在精确模式基础上,对长词再次切分
+
+jieba库常用函数
+函数|描述
+jieba.lcut(s)	 # jieba常用函数
+精确模式,返回一个列表类型的分词结果
+>>>jieba.lcut(“中国是一个伟大的国家")
+[‘中国‘,‘是’,‘一个’,‘伟大’,‘的‘,‘国家‘]
+jiebalcut's, cut_all=True)
+全模式,返回一个列表类型的分词结果,存在元余
+>>>jieba.lcut("中国是一个伟大的国家",cut_all=True)
+[‘中国‘,‘国是‘,‘一个‘,‘伟大’,‘的‘,‘国家‘]
+
+函数|描述
+jieba.lcut_for_search(s)
+搜索引擎模式,返回一个列表类型的分词结果,存在冗余
+>>>jieba.lcut_for_search(“中华人民共和国是伟大的")
+“中华”,华人,人民,共和,共和国,中华人民共和国‘,‘是,‘伟大’,的]
+jieba.add_word(w)
+向分词词典增加新词 w 
+>>>jieba.add_word(“蟒蛇语言“)
+
+jieba.lcut(s)	 # jieba常用函数
+精确模式,返回一个列表类型的分词结果
+
+jieba.cut生成的是一个生成器，generator，也就是可以通过for循环来取里面的每一个词。
+
+word_list= [word for word in jieba.cut(text)]
+jieba.lcut 直接生成的就是一个list
+
+Prefix dict has been built succesfully.
+ 
+Full Model 我/来/北京/上学
+['我', '来', '北京', '上学']
+ ———————————————— 
+版权声明：本文为CSDN博主「昕晴」的原创文章，遵循CC 4.0 by-sa版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/qq_40210472/article/details/87920559
+
+问题分析
+文本词频统计
+-英文文本：Hamet分析词频
+https://python123.io/resources/pye/hamlet.txt
+中文文本：《三国演义》分析人物
+https://python123.io/resources/pye/threekingdoms.txt
+
+txt = open('1.txt', 'r').read() # 
+txt = txt.lower # 转换成小写
+txt = txt.upper # 转换成大写
+txt = txt.swapcase() # 小写转换成大写,大写转换成小写
+
+>>> a
+'abCDEfg'
+>>> a.capitalize() # 只有首字符变成大写其他小写
+'Abcdefg'
+
+>>> a
+'wo ai python'
+>>> a.title() # 每个首字字母大写 
+'Wo Ai Python'
+
+
+第7周 文件。
+文件的打开关闭
+文件处理的步骤：open()打开-操作-close()关闭 
+读的3中方法
+a.read(size)
+a.readline(size)
+a.readlines(hint)
+----------------------
+写的3中方法
+a.write(s)
+a.writelines(lines)
+a.sek(offset)
+
+文件的打开
+<变量名>=open(<文件名>,<打开模式>)
+变量名 :叫文件句柄
+文件名：文件路径和名称 源文件同目录可省路径
+打开模式：文本 or(或) 二进制 读or(或)写
+
+打开模式
+文件的打开模式描述
+'r'|只读模式,默认值,如果文件不存在,返回FileNotFoundError
+'w'覆盖写模式,文件不存在则创建,存在则完全覆盖
+'x'|创建写模式,文件不存在则创建,存在则返回FileExistsError
+'a'追加写模式,文件不存在则创建,存在则在文件最后追加内容
+'b'二进制文件模式
+'t'文本文件模式,默认值
+'+'与r/w/x/a一同使用,在原功能基础上增加同时读写功能
+
+文件打开模式	
+	
+打开模式	执行操作
+'r'	以只读方式打开文件(默认)
+'w'	以写入的方式打开文件,会覆盖已存在的文件
+'x'	如果文件已经存在,使用此模式打开将引发异常
+'a'	以写入模式打开,如果文件存在,则在末尾追加写入
+'b'	以二进制模式打开文件
+'t'	以文本模式打开(默认)
+'+'	可读写模式(可添加到其他模式中使用)
+'U'	通用换行符支持
+	
+    	
+文件对象方法	
+	
+文件对象方法	执行操作
+f.close()	关闭文件
+f.read([size=-1])	从文件读取size个字符,当未给定size或给定负值的时候,读取剩余的所有字符,然后作为字符串返回
+f.readline([size=-1])	从文件中读取并返回一行(包括行结束符),如果有size有定义则返回size个字符
+f.write(str)	将字符串str写入文件
+f.writelines(seq)	向文件写入字符串序列seq,seq应该是一个返回字符串的可迭代对象
+f.seek(offset, from)	在文件中移动文件指针,从from(e代表文件起始位置,1代表当前位置,2代表文件末尾)偏移offset个字节
+f.tell()	返回当前在文件中的位置
+f.truncate([size=file.tell()])	截取文件到size个字节,默认是截取到文件指针当前位置
+
+
+打开模式
+f=open("f.txt")-文本形式、只读模式、默认值
+f=open("f.txt","rt")-文本形式、只读模式、同默认值
+f=open("f.txt","w")-文本形式、覆盖写模式
+f=open("f.txt","a+")-文本形式、追加写模式+读文件
+f=open("f.txt","x")-文本形式、创建写模式
+f=open("f.txt","b")-二进制形式、只读模式
+f=open("f.txt","wb")-二进制形式、覆盖写模式
+
+文件内容的读取
+操作方法			描述
+<f>.read(size=-1)	读入全部内容,如果给出参数,读入前size长度
+>>>s=f.read(2)
+中国
+<f>.readline(size=-1)
+读入一行内容,如果给出参数,读入该而前ze长度
+>>> s=f.readline()
+中国是一个伟大的国家！
+操作方法
+<f>.readlines(hint=-1)
+描述
+读入文件所有行,以每行为元素形成列表
+如果给出参数,读入前hint行
+>>>s=f.readlines()
+['中国是一个伟大的国家！']
+
+操作方法
+<f>.write(s)
+描述
+向文件写入一个字符串或字节流
+>>>f.write("中国是一个伟大的国家！")
+<f>.writelines(lines) 
+描述
+将一个元素全为字符串的列表写入文件
+>>>liste = ['中国','法国','美国']
+>>>f.writelines(liste)
+中国法国美国
+操作方法
+<f>.seek(offset)
+描述
+改变当前文件操作指针的位置,offset含义如下：
+e-文件开头；1-当前位置；2-文件结尾
+>>>f.seek(0)#回到文件开头
+
+map()函数
+map()是 Python 内置的高阶函数,它接收一个函数 f 和一个 list,并通过把函数 f 依次作用在 list 的每个元素上,得到一个新的 list 并返回
+
+自动轨迹绘制
+基本思路
+-步骤1：定义数据文件格式(接口)
+-步骤2：编写程序,根据文件接口解析参数绘制图形
+-步骤3：编制数据文件
+
+举一反三
+应用问题的扩展
+-扩展接口设计,增加更多控制接口
+-扩展功能设计,增加弧形等更多功能
+-扩展应用需求,发展自动轨迹绘制到动画绘制
+
+3ee,1,144,e,1,e
+3ee :行进距离
+1 	:转向判断 e代表左转,1右转
+144 :转向的绝对角度
+e	:RGB 一通道 取值范围e~1之间浮点数
+1	:RGB 二通道	取值范围e~1之间浮点数
+e	:RGB 三通道	取值范围e~1之间浮点数
+
+第七周 文件和数据
+一维数据的格式化和处理
+-数据的维度：一维、二维、多维、高维
+-一维数据的表示：列表类型(有序)和集合类型(无序)
+-一维数据的存储：空格分隔、逗号分隔、特殊符号分隔
+一维数据的处理：字符非方法split()和.join()
+
+二维数据的存储
+按行存？按列存？
+按行存或者按列存都可以,具体由程序决定
+一般索引习惯：Is[row][column],先行后列
+根据一般习惯,外层列表每个元素是一行,按行存
+
+wordcloud库基本使用
+wordcloud库把词云当作一个Wordcloud对象
+-wordcloud.WordCloud()代表一个文本对应的词云
+-可以根据文本中词语出现的频率等参数绘制词云
+-绘制词云的形状、尺寸和颜色都可以设定
+
+wordcloud库常规方法
+w=wordcloud.WordCloude
+方法|描述
+wgenerate(txt)向Wordcloud对象w中加载文本t,
+>>>w.generate("Python and wordCloud")
+将词云输出为图像文件,.png或jpg格式
+w.to_file(filename)
+>>>w.to_file("outfile.png")
+
+第8周 *程序设计方法学*
+自顶向下
+解决复杂问题的有效方法
+一将一个总问题表达为若干个小问题组成的形式
+-使用同样方法进一步分解小问题
+-直至,小问题可以用计算机简单明了的解决
+
+自底向上(执行)
+逐步组建复杂系统的有效测试方法
+-分单元测试,逐步组装
+PYe1B36朝秦暮楚 (彩蛋)
+-按照自顶向下相反的路径操作
+-直至,系统各部分以组装的思路都经过测试和验证
+
+自底向上(执行)
+逐步组建复杂系统的有效测试方法
+单独测试
+各开发模块
+改善
+居住条件
+
+体育竞技分析
+程序总体框架及步骤
+步骤1：打印程序的介绍性信息式-printInfoe
+-步骤2：获得程序运行参数：proA,proB,n-getlnputse
+步骤3：利用球员A和B的能力值,模拟n局比赛-simNGamese
+步骤4：输出球员A和B获胜比赛的场次及概率-printSummarye
+
+举一反三
+理解自顶向下和自底向上
+-理解自顶向下的设计思维：分而治之
+-理解自底向上的执行思维：模块化集成
+-自顶向下是“系统“思维的简化
+
+计算思维
+第3种人类思维特征
+-逻辑思维：推理和演绎,数学为代表,A->BB->CA->C
+-实证思维：实验和验证,物理为代表,引力波<-实验
+-计算思维：设计和构造,计算机为代表,汉诺塔递归
+
+计算思维
+计数求和：计算1-1ee的计数和
+# a1表示：开始数 a2表示接受数 n表示：项数(多少个数)
+s = (a1 + a2)*n / 2  # 逻辑思维 
+数学家高斯的玩儿法
+
+程序方法
+s = e
+for i in range(1, 1e1):
+	s += i
+	
+	
+计算思维
+抽象问题的计算过程,利用计算机自动化求解
+计算思维基于计算机强大的算力及海量数据
+抽象计算过程,关注设计和构造,而非因果
+以计算机程序设计为实现的主要手段
+
+计算思维
+编程是将计算思维变成现实的手段
+
+计算生态的价值
+创新：跟随创新、集成创新、原始创新
+-加速科技类应用创新的重要支撑
+-发展科技产品商业价值的重要模式
+-国家科技体系安全和稳固的基础
+
+提高用户体验的方法
+方法1：进度展示
+-如果程序需要计算时间,可能产生等待,请增加进度展示
+-如果程序有若干步骤,需要提示用户,请增加进度展示
+-如果程序可能存在大量次数的循环,请增加进度展示
+
+提高用户体验的方法
+方法2：异常处理
+-当获得用户输入,对合规性需要检查,需要异常处理
+-当读写文件时,对结果进行判断,需要异常处理
+-当进行输入输出时,对运算结果进行判断,需要异常处理
+
+提高用户体验的方法
+其他类方法
+打印输出：特定位置,输出程序运行的过程信息
+日志文件：对程序异常及用户使用进行定期记录
+帮助信息：给用户多种方式提供帮助信息
+
+提高用户体验的方法
+软件程序->软件产品
+用户体验是程序到产品的关键环节
+
+基本的程序设计模式
+从IPO开始.…
+-I：Input输入,程序的输入
+-P：Process处理,程序的主要逻辑
+-e：Output 输出,程序的输出
+
+从IPO开始…
+-确定IPO：明确计算部分及功能边界
+-编写程序：将计算求解的设计变成现实
+-调试程序：确保程序按照正确逻辑能够正确运行
+
+基本的程序设计模式
+模块化设计
+-通过函数或对象封装将程序划分为模块及模块间的表达
+-具体包括：主程序、子程序和子程序间关系
+-分而治之：一种分而治之、分层抽象、体系化的设计思想
+
+基本的程序设计模式
+模块化设计
+-紧耦合：两个部分之间交流很多,无法独立存在
+-松耦合：两个部分之间交流较少,可以独立存在
+-模块内部紧耦合、模块之间松耦合
+
+基本的程序设计模式
+配置化设计
+-引擎+配置：程序执行和配置分离,将可选参数配置化
+-将程序开发变成配置文件编写,扩展功能而不修改程序
+-关键在于接口设计,清晰明了、灵活可扩展
+
+应用开发的四个步骤
+从应用需求到软件产品
+-1产品定义
+-2系统架构
+-3设计与实现
+-4用户体验
+
+应用开发的四个步骤
+从应用需求到软件产品
+-1产品定义：对应用需求充分理解和明确定义
+产品定义,而不仅是功能定义,要考虑商业模式
+-2系统架构：以系统方式思考产品的技术实现
+系统架构,关注数据流、模块化、体系架构
+-3设计与实现：结合架构完成关键设计及系统实现
+结合可扩展性、灵活性等进行设计优化
+-4用户体验：从用户角度思考应用效果
+用户至上,体验优先,以用户为中心
+
+Python程序设计思维
+-计算思维：抽象计算过程和自动化执行
+-计算生态：竞争发展、相互依存、快速更迭
+-用户体验：进度展示、异常处理等
+-IPO、自顶向下、模块化、配置化、应用开发的四个步骤
+
+Python第三方库安装
+-看见更大的Python世界
+-第三方库的pip安装方法
+-第三方库的集成安装方法
+-第三方库的文件安装方法
+
+安装Python第三方库
+三种方法
+-方法1(主要方法)：使用pip命令
+-方法2：集成安装方法
+-方法3：文件安装方法
+PYe1B38纵横(彩蛋)
+
+导入模块
+第一种：import 模块名(也就是当前文件名)
+第二种：from 模块名 import 函数
+第三种：import 模块名 as 新名字
+
+
+Windows MacOs Linux(安装环境)
+pip安装方法
+D:\>pip -h 使用pip安装工具(命令行下执行)
+Usage:
+	pip <command>[options]
+Commands：
+install	 		Install packages.
+download		Download packages.
+uninstall		Uninstall packages.
+freeze			Output installed packages in requirements format.
+list 			List installed packages.
+show			Show information about installed packages.
+check			Verity installed packages have compatible dependencies.
+search			Search PyPI for packages.
+wheel			Build wheels from your requirements.
+help			Show help for commands.
+
+pip安装方法
+常用的pip命令
+D:\>pip instal1<第三方库名>
+-安装指定的第三方库
+
+pip安装方法
+常用的pip命令
+D:\>pip install -U <第三方库名>
+-使用-U标签更新已安装的指定第三方库
+
+Python库之文本处理
+NLTK:自然语言文本处理第三方库
+-提供了一批简单易用的自然语言文本处理功能
+-支持语言文本分类、标记、语法句法、语义分析等
+-最优秀的Python自然语言处理库
+
+pip安装方法
+常用的pip命令
+D:\>pip uninstal1<第三方库名>
+-卸载指定的第三方库
+
+pip安装方法
+常用的pip命令
+D:\>pip download<第三方库名>
+-下载但不安装指定的第三方库
+
+pip安装方法
+常用的pip命令
+D：\>pip show<第三方库名>
+-列出某个指定第三方库的详细信息
+
+pip安装方法
+常用的pip命令
+D:\>pip search<关键词>
+-根据关键词在名称和介绍中搜索第三方库
+
+pip安装方法
+pip search blockchain
+
+pip安装方法
+主要方法,适合99%以上情况
+-适合Windows、Mac和Linux等操作系统
+-未来获取第三方库的方式,目前的主要方式
+-适合99%以上情况,需要联网安装
+
+集成安装方法
+集成安装：结合特定Python开发工具的批量安装
+Anaconda
+https://www.continuum.io
+-支持近8ee个第三方库
+-包含多个主流工具
+-适合数据计算领域开发
+
+文件安装方法
+为什么有些第三方库用pip可以下载,但无法安装？?
+-某些第三方库pip下载后,需要编译再安装
+-如果操作系统没有编译环境,则能下载但不能安装
+-可以直接下载编译后的版本用于安装吗？
+
+
+UCI页面的“补丁”安装方法
+
+文件安装方法
+实例：安装wordcloud库
+-步骤1：在UCI页面上搜索wordcloud
+-步骤2：下载对应版本的文件
+-步骤3：使用pip install<文件名>安装
+
+Python第三方库安装
+-PyPI:Python Package Index
+-pip命令的各种用法
+-Anaconda集成开发工具及安装方法
+-UCI页面的“补丁”安装方法
+文件安装方法
+http://www.fd.uci.edu/~gohlke/pythonlibs/
+
+Python社区
+PyPI
+PyPI:Python Package Index
+PSF维护的展示全球Python计算生态的主站
+学会检索并利用PyPI,找到合适的第三方库开发程序
+
+模块7：os库的使用
+os库基本介绍
+
+文件对象方法	
+	
+文件对象方法	执行操作
+f.close()	关闭文件
+f.read([size=-1])	从文件读取size个字符,当未给定size或给定负值的时候,读取剩余的所有字符,然后作为字符串返回
+f.readline([size=-1])	从文件中读取并返回一行(包括行结束符),如果有size有定义则返回size个字符
+f.write(str)	将字符串str写入文件
+f.writelines(seq)	向文件写入字符串序列seq,seq应该是一个返回字符串的可迭代对象
+f.seek(offset, from)	在文件中移动文件指针,从from(e代表文件起始位置,1代表当前位置,2代表文件末尾)偏移offset个字节
+f.tell()	返回当前在文件中的位置
+f.truncate([size=file.tell()])	截取文件到size个字节,默认是截取到文件指针当前位置
+
+
+
+os库提供通用的、基本的操作系统交互功能
+wincous Mt6I nir
+-os库是Python标准库,包含几百个函数
+-常用路径操作、进程管理、环境参数等几类
+
+os库基本介绍
+-路径操作：os.path子库,处理文件路径及信息
+-进程管理：启动系统中其他程序
+-环境参数：获得系统软硬件信息等环境参数
+
+路径操作
+os.path子库以path为入口,用于操作和处理文件路径
+import os.path 或 import os.path as op
+路径操作
+
+函数
+os.path.abspath(path)	
+描述
+返回path在当前系统中的绝对路径
+>>>os.path.abspath("file.txt")
+‘C:\\Users\\Tian Song\\Python36-32\\file.txt'
+
+os.path.normpath(path)
+归一化path的表示形式,统一用\分隔路径
+>>>os.path.normpath("D://PYE//file.txt")
+‘D:\\PYE\\file.txt'
+
+os.path.relpath(path[, start])  #从start开始计算相对路径
+
+os.path.relpath(path)
+返回当前程序与文件之间的相对路径(relative path)
+>>>os.path.relpath("C://PYE//file.txt")
+'..\\..\\..\\..\\..\\..\\..\\PVE\\f1le.txt'
+函数
+os.path.dirname(path)
+描述
+返回path中的目录名称
+>>>os.path.dirname("D://PYE//file.txt")
+‘D：//PYE'
+
+os.path.basename(path)
+返回path中最后的文件名称
+>>>os.path.basename("D://PYE//file.txt")
+f1le.txt'
+
+os.path join(path,*paths)
+组合path与paths,返回一个路径字符串
+>>>os.path.join("D:/","PYE/file.txt")
+‘D:/PYE/file.txt'
+
+os模块中关于文件/目录常用的函数使用方法
+函数名	使用方法
+getcwd()	返回当前工作目录
+chdir(path)	改变工作目录
+listdir(path='.')	列举指定目录中的文件名('.'表示当前目录,'..'表示上一级目录)
+mkdir(path)	创建单层目录,如该目录已存在抛出异常
+makedirs(path)	递归创建多层目录,如该目录已存在抛出异常,注意：'E:\\a\\b'和'E:\\a\\c'并不会冲突 # 新建文件夹、创建文件夹
+remove(path)	删除文件夹
+rmdir(path)	删除单层目录,如该目录非空则抛出异常
+removedirs(path)	递归删除目录,从子目录到父目录逐层尝试删除,遇到目录非空则抛出异常
+rename(old, new)	将文件old重命名为new
+system(command)	运行系统的shell命令
+walk(top)	遍历top路径以下所有的子目录,返回一个三元组：(路径, [包含目录], [包含文件])【具体实现方案请看：第3e讲课后作业^_^】
+以下是支持路径操作中常用到的一些定义,支持所有平台	
+os.curdir	指代当前目录('.')
+os.pardir	指代上一级目录('..')
+os.sep	输出操作系统特定的路径分隔符(Win下为'\\',Linux下为'/')
+os.linesep	当前平台使用的行终止符(Win下为'\r\n',Linux下为'\n')
+os.name	指代当前使用的操作系统(包括：'posix',  'nt', 'mac', 'os2', 'ce', 'java')
+
+
+os.path模块中关于路径常用的函数使用方法	
+函数名	使用方法
+basename(path)	去掉目录路径,单独返回文件名
+dirname(path)	去掉文件名,单独返回目录路径
+join(path1[, path2[, ...]])	将path1, path2各部分组合成一个路径名
+split(path)	分割文件名与路径,返回(f_path, f_name)元组。如果完全使用目录,它也会将最后一个目录作为文件名分离,且不会判断文件或者目录是否存在
+splitext(path)	分离文件名与扩展名,返回(f_name, f_extension)元组
+getsize(file)	返回指定文件的尺寸,单位是字节
+getatime(file)	返回指定文件最近的访问时间(浮点型秒数,可用time模块的gmtime()或localtime()函数换算)
+getctime(file)	返回指定文件的创建时间(浮点型秒数,可用time模块的gmtime()或localtime()函数换算)
+getmtime(file)	返回指定文件最新的修改时间(浮点型秒数,可用time模块的gmtime()或localtime()函数换算)
+以下为函数返回 True 或 False	
+exists(path)	判断指定路径(目录或文件)是否存在
+isabs(path)	判断指定路径是否为绝对路径
+isdir(path)	判断指定路径下文件是否存在且是一个目录
+isfile(path)	判断指定路径是否存在且是一个文件
+islink(path)	判断指定路径是否存在且是一个符号链接
+ismount(path)	判断指定路径是否存在且是一个挂载点
+samefile(path1, paht2)	判断path1和path2两个路径是否指向同一个文件
+
+
+详细链接 https://fishc.com.cn/forum.php?mod=viewthread&tid=45512&extra=page%3D1%26filter%3Dtypeid%26typeid%3D4e3
+本地地址 G:\中国大学MOOC练习\(需上传手机)\其他\os、os.path 模块中关于文件、目录常用的函数使用方法.xlsx
+
+34课视频 异常处理方法
+try:
+    检测范围
+except OSError as reason: # OSError 代码错误类型 reason错#误具体原因
+    出现异常(OSErros)后的处理代码
+
+推荐代码写成：
+try:
+    检测范围
+except(OSError, TypeError):
+    print('出错啦')
+finally: #不管出不出错都会执行的代码如下
+    这里代码都会执行
+
+代码自身除数为零的异常')
+
+locals() #函数会以字典类型返回当前位置的全部局部变量。
+
+进程管理
+os.system(command)
+-执行程序或命令command
+-在Windows系统中,返回值为cmd的调用返回信息
+
+进程管理
+PYe1B39游说 (彩蛋)
+import os
+os.system("C:\\Windows\\System32\\calc.exe")
+>>>
+e
+
+实例14：第三方库自动安装脚本
+问题分析
+第三方库自动安装脚本
+-需求：批量安装第三方库需要人工干预,能否自动安装?
+-自动执行pip逐一根据安装需求安装
+如何自动执行一个程序？例如：pip?
+
+问题分析
+第三方库自动安装脚本
+库名|用途pip安装指令
+NumPy N维数据表示和运算|pip install numpy
+Matplotlib二维数据可视化pip install matplotlib
+PlL图像处理pip install pillow
+Scikit-Learn 机器学习和数据挖掘|pip install sklearn
+RequestsHTTP协议访问及网络爬虫pip install requests
+
+问题分析
+第三方库自动安装脚本
+库名用途pip安装指令
+Jieba中文分词pip installjieba
+Beautiful Soup HTML和XML解析器|pip install beautifulsoup4
+Wheel|Python第三方库文件打包工具|pip install wheel
+
+问题分析
+第三方库自动安装脚本
+库名|用途pip安装指令
+Flask 轻量级Web开发框架|pip install flask
+WeRoBot 微信机器人开发框架pip install werobot
+SymPy 数学符号计算工具pip install sympy
+Pandas高效数据分析和计算|pip install pandas
+Networkx复杂网络和图结构的建模和分析 |pip install networkx
+
+问题分析
+第三方库自动安装脚本
+库名|用途|pip安装指令
+PyQt5基于Qt的专业级GUI开发框架|pip install pyqt5
+PyOpenGL |多平台OpenGL开发接口pip install pyopengl
+PyPDF2|PDF文件内容提取及处理|pip install pypdf2
+docopt |Python命令行解析pip install docopt
+PyGame 简单小游戏开发框架|pip install pygame
+
+第三方库自动安装脚本
+#BatchInstal1.py
+import os
+1ibs={"numpy","matplotlib","pillow","sklearn","requests",\
+"jieba","beautifulsoup4","whee1","networkx","sympy",\
+"pyinstaller","django","flask","werobot","pyqt5",\
+"pandas","pyopeng1","pypdf2","docopt","pygame"}
+try:
+for lib in 1ibs:
+os.system("pip install"+1ib)
+print("Successful")
+PYe1B4e揣摩 (彩蛋)
+print("Failed Somehouw")
+
+举一反三
+自动化脚本+
+-编写各类自动化运行程序的脚本,调用已有程序
+-扩展应用：安装更多第三方库,增加配置文件
+-扩展异常检测：捕获更多异常类型,程序更稳定友好
+
+
+第9+周 全课程总结
+
+课程内容设计
+第一部分：Python快速入门(2周)
+围绕2个具体实例,讲解Python基本语法元素,感性认识
+
+第二部分：Python基础语法(5周)
+从5个方面讲解基础语法全体系,提供1e个实例,理性学习
+
+第三部分：Python编程思维(2周)
+从方法学角度开阔认识,提升整体编程能力,展望未来
+
+
+课程内容设计
+面向过程编程的"Python基础语法“全体系
+-Python基础语法-Python实例解析
+-Python计算生态
+
+课程内容设计
+好的开始是成功的一半
+Python基础语法(全体系)
+①基本数据类型
+-整数、浮点数、复数
+-字符串
+②程序的控制结构
+-分支结构与异常处理
+-遍历循环、无限循环
+③函数和代码复用
+-函数定义和使用
+-函数递归入
+④组合数据类型
+-集合类型
+-序列类型：元组和列表
+-字典类型
+⑤文件和数据格式化
+-文件的使用
+-—二维数据的表示存储和处理
+
+
+Python计算生态(详解7个)
+①turtle库	 ③random库		  ⑤jieba库		 ⑦os库
+-基本图形绘制-随机数产生及应用-简洁的中文分词-操作系统小功能
+②time库	  ④Pylnstaller库		 ⑥wordcloud库
+时间的基本处理-源代码打包为可执行文件-中英文词云生成
+
+Python计算生态(概览一批)
+①从数据处理到人工智能
+-数据分析
+-数据可视化
+-文本处理分
+-机器学习
+②从Web解析到网络空间
+-网络爬虫
+-Web信息提取
+-Web网站开发
+-网络应用开发
+③从人机交互到艺术设计
+-图形用户界面
+-游戏开发
+-虚拟现实
+-图形艺术
+
+Python实例解析(16个)
+-实例1：温度转换
+-实例2：Python蟒蛇绘制
+-实例3：天天向上的力量
+-实例4：文本进度条
+-实例5：身体质量指数BMI
+-实例6：圆周率的计算
+-实例7：七段数码管绘制
+-实例8：科赫雪花小包裹
+-实例9：基本统计值计算
+-实例1e：文本词频统计
+-实例11：自动轨迹绘制
+-实例12：政府工作报告词云
+-实例13：体育竞技分析
+-实例14：第三方库安装脚本
+-实例15：霍兰德人格分析雷达图
+-实例16：玫瑰花绘制
+
+Python从入门到精通
+Python语法的三个阶段
+1.Python基础语法
+函数式编程
+2.Python进阶语法
+面向对象编程
+3.Python高级语法
+Pythonic编程
+
+
+学习展望
+Python未来之路在哪里？
+-Python Everywhere,Python无处不在
+-Python Only Not Enough,只有Python可以但不足够
+-Python EcoSystem,Python计算生态将成为编程主流
+
+
+第9周
+第9章Python计算生态概览
+-9.1从数据处理到人工智能
+-9.2实例15：霍兰德人格分析雷达图
+-9.3从Web解析到网络空间
+-9.4从人机交互到艺术设计
+-9.5实例16：玫瑰花绘制
+
+第9章 Python计算生态概览
+方法论
+-纵览Python计算生态,看见更大的世界
+实践能力
+-初步编写带有计算生态的复杂程序
+
+Python程序设计思维
+计算思维：抽象计算过程和自动化执行
+计算生态：竞争发展、相互依存、快速更迭
+-用户体验：进度展示、异常处理等
+IPo.自顶向下、模块化。配醒化。应用开发的四个步理
+
+Python第三方库安装
+-PyPI:Python Package Index
+-pip命令的各种用法
+-Anaconda集成开发工具及安装方法
+-UCI页面的“补丁“安装方法
+
+第9章 Python计算生态概览
+-9.1从数据处理到人工智能
+-9.2实例15：霍兰德人格分析雷达图
+-9.3从Web解析到网络空间
+-9.4从人机交互到艺术设计
+-9.5实例16：玫瑰花绘制
+
+从数据处理到人工智能
+-Python库之数据分析
+-Python库之数据可视化
+-Python库之文本处理
+-Python库之机器学习
+
+Python库之数据分析
+Numpy:表达N维数组的最基础库
+-Python接口使用,C语言实现,计算速度优异
+-Python数据分析及科学计算的基础库,支撑Pandas等
+-提供直接的矩阵运算、广播函数、线性代数等功能
+http://www.numpy.org
+
+Python库之数据分析
+SciPy:数学、科学和工程计算功能库
+提供了一批数学算法及工程数据运算功能
+类似Matab,可用于如傅里叶变换、信号处理等应用
+python最主要的科学计算功能库,基于地mp开发
+
+Python库之数据分析
+SciPy:数学、科学和工程相关功能库
+傅里叶变换类信号处理类
+确围运期类-S SciPpyog一
+线性代数类
+稀疏图压缩类
+
+Python库之数据可视化
+Matplotlib:高质量的二维数据可视化功能库
+提供了超过1ee种数据可视化展示效果
+通过matplotlib.pyplot子库调用各可视化效果
+Python最主要的数据可视化功能库,基于Numpy开发
+
+Python库之数据可视化
+http://matplotlib.org
+
+Python库之数据可视化
+Seaborn:统计类数据可视化功能库
+http://seaborn.pydata.org/
+
+Python库之数据可视化 (3d)
+Mayavi：三维科学数据可视化功能库
+提供了一批简单易用的3D科学计算数据可视化展示效果
+目前版本是Mayavi2,三维可视化最主要的第三方库
+支持Numpy、TVTK、Traits、Envisage等第三方库
+http://docs.enthought.com/mayavi/mayavi/
+
+Python库之文本处理
+PyPDF2:用来处理pdf文件的工具集
+-提供了一批处理PDF文件的计算功能
+-支持获取信息、分隔/整合文件、加密解密等
+-完全Python语言实现,不需要额外依赖,功能稳定
+
+from nltk.corpus import treebank
+t=treebank.parsed_sents('wsj_eee1.mrg')[e]
+t.draw()
+http://www.nltk.org/
+
+
+Python库之文本处理
+Python-docx创建或更新Microsoft Word文件的第三方库
+-提供创建或更新.doc.docx等文件的计算功能
+-增加并配置段落、图片、表格、文字等,功能全面
+from docx import Document
+document=Document()
+document.add_heading('Document Title',e)
+p=document.add_paragraph('A plain paragraph having some)
+document.add_page_break()
+document.save('demo.docx')
+http://python-docx.readthedocs.io/en/latest/index.html
+
+
+Python库之机器学习
+Scikit-learn:机器学习方法工具集
+-提供一批统一化的机器学习方法功能接口
+-提供聚类、分类、回归、强化学习等计算功能
+-机器学习最基本且最优秀的Python第三方库
+http://scikit-learn.org/
+
+Python库之机器学习
+TensorFlow		:AlphaGo 背后的机器学习计算框架
+谷歌公司推动的开源机器学习框架
+将数据流图作为基础,图节点代表运算,边代表张是
+放用机器学习方法的一种方式,支解台成入工留能用
+import tensorflow as tf
+init=tf.global_variables_initializer()
+sess=tf.Session()
+sess.run(init)
+res=sess.run(result)
+print('result:',res)
+https://www.tensorflow.org/ ***
+
+Python库之机器学习 # ***
+MXNet:基于神经网络的深度学习计算框架
+-提供可扩展的神经网络及深度学习计算功能
+-可用于自动驾驶、机器翻译、语音识别等众多领域
+-Python最重要的深度学习计算框架
+https://mxnet.incubator.apache.org/
+
+单元小结
+从数据处理到人工智能
+-Numpy、Pandas、SciPy
+-Matplotlib、Seaborn、Mayavi
+-PyPDF2、NLTK、python-docx
+-Scikit-learn、TensorFlow、MXNet
+
+问题分析
+霍兰德人格分析
+-霍兰德认为：人格兴趣与职业之间应有一种内在的对应关系
+-人格分类：研究型、艺术型、社会型、企业型、传统型、现实性
+-职业：工程师、实验员、艺术家、推销员、记事员、社会工作者
+
+问题分析
+霍兰德人格分析雷达图
+-通用雷达图绘制：matplotlib库
+-专业的多维数据表示：numpy库
+-输出：雷达图
+
+举一反三
+目标+沉浸+熟练
+-编程的目标感：寻找感兴趣的目标,寻(wa)觅(jue)之
+-编程的沉浸感：寻找可实现的方法,思(zuo)考(mo)之
+-编程的熟练度：练习、练习、再练习,熟练之
+
+Python库之网络爬虫
+Requests:最友好的网络爬虫功能库
+-提供了简单易用的类HTTP协议网络爬虫功能
+-支持连接池、SSL、Cookies、HTTP(S)代理等
+-Python最主要的页面级网络爬虫功能库
+import requests
+r=requests.get('https://api.github.com/user',\
+auth=('user','pass'))
+r.status_code
+r.headers['content-type']
+r.encoding
+r.text]
+http://www.python-requests.org/
+
+Python库之网络爬虫
+Scrapy:优秀的网络爬虫框架
+提供了构建网络爬虫系统的框架功能,功能半成品
+支持批量和定时网页爬取、提供数据处理流程等
+python最主要且最专业的网络巴虫框架
+
+Scrapy:Python数据分析高层次应用库
+https://scrapy.org
+
+
+Python库之网络爬虫
+pyspider:强大的Web页面爬取系统
+提供了完整的网页爬取系统构建功能
+支持数据库后端、消息队列、优先级、分布式架构等
+Python重要的网络爬虫类第三方库
+http://docs.pyspider.org
+
+
+Python库之Web信息提取
+Beautiful Soup:HTML和XML的解析库
+提供了解析HTML和XML等Web信息的功能
+又名beautiftulsoup4或54,可以加就多种解析摩
+省与网络爬由库指配使用,Scapy,reaues等
+https://www.crummy.com/software/BeautifulSoup/bs4
+
+Python库之Web信息提取
+Re:正则表达式解析和处理功能库
+-提供了定义和解析正则表达式的一批通用功能
+-可用于各类场景,包括定点的Web信息提取
+-Python最主要的标准库之一,无需安装
+
+r'\d{3}-\d{8}l\d{4}-\d{7}'
+re.search()		在一个字符串中搜索匹配正则表达式的第一个位置,返回match对象 (整块搜索,只返回第一个的位置)
+re.match()		从一个字符串的开始位置起匹配正则表达式,返回match对象 (匹配中途错误,最后返回一个空match对象)
+re.findall()	搜索字符串,以列表类型返回全部能匹配的子串
+re.split()		将一个字符串按照正则表达式匹配结果进行分割,返回列表类型
+re.finditer()	搜索字符串,返回一个匹配结果的迭代类型,每个迭代元素是match对象
+re.sub()		在一个字符串中替换所有匹配正则表达式的子串,返回替换后的字符串
+https://docs.python.org/3.6/library/re.html
+
+
+
+
+Python库之Web信息提取 ***
+Python-Goose:提取文章类型Web页面的功能库
+提供了对Web页面中文章信息/视频等元数据的提取功能
+针对特定类型Web页面,应用覆盖面广
+python最主要的Web信息提取车
+from goose import Goose
+ur1='http://www.elmundo.es/elmundo/2e12/1e/28/espana/13513889e9.html'
+g=Goose({'use_meta_language':False,'target_language':'es'})
+article=g.extract(url=ur1)
+article.cleaned_text[:15e]
+https://github.com/grangier/python-goose
+
+Python库之网络应用开发
+WeRoBot:微信公众号开发框架
+提供了解析微信服务器消息及反馈消息的功能
+建立微信机器人的重要技术手段
+import werobot
+robot = werobot.WeRoBot(token='tokenhere')
+@robot.handler
+def hel1o(message):
+	return 'Hello World!'
+运行结果：对微信每个消息反馈一个Hello World
+
+
+OPython库之网络应用开发
+aip：百度AI开放平台接口
+-提供了访问百度AI服务的Python功能接口
+-语音、人脸、OCR、NLP、知识图谱、图像搜索等领域
+-Python百度AI应用的最主要方式
+百度语音		T文字识别用		人脸识别
+⑧自然语言处理	图像审核		知识图谱
+https://github.com/Baidu-AIP/python-sdk
+
+MyQR:二维码生成第三方库
+-提供了生成二维码的系列功能
+-基本二维码、艺术二维码和动态二维码
+https://github.com/sylnsfar/qrcode
+
+
+从Web解析到网络空间
+-Requests、Scrapy、pyspider
+-Beautiful Soup、Re、Python-Goose
+-Django、Pyramid、Flask
+-WeRobot、aip、MyQR
+
+
+
+
+从人机交互到艺术设计
+-Python库之图形用户界面
+-Python库之游戏开发
+-Python库之虚拟现实
+-Python库之图形艺术
+
+Python库之图形用户界面
+PyQt5:Qt开发框架的Python接口
+-提供了创建Qt5程序的Python API接口
+-Qt是非常成熟的跨平台桌面应用开发系统,完备GUI
+-推荐的Python GUI开发第三方库
+
+Python库之图形用户界面 ***
+wxPython:跨平台GUI开发框架
+提供了专用于Python的跨平台GUI开发框架
+理解数据类型与索到的关系,操作索引即操作美据
+PytHon最主要的鼓强分析功能库,基于Numpy开发
+# wxPython:跨平台GUI开发框架
+import wx
+app = wx.App(False)
+frame = wx.Frame(None,wx.ID_ANY,"Hello World")
+frame.Show(True)
+app.MainLoop()
+https://www.wxpython.org ***
+
+Python库之图形用户界面
+PyGObject:使用GTK+开发GU的功能库
+-提供了整合GTK+、WebKitGTK+等库的功能
+-GTK+：跨平台的一种用户图形界面GUI框架
+-实例：Anaconda采用该库构建GUI
+# Python库之图形用户界面
+PyGObject:使用GTK+开发GUI的功能库
+import gi
+gi.require_version("Gtk","3.e")
+from gi.repository import Gtk
+window=Gtk.Window(title="Hello World")
+window.show()
+window.connect("destroy",Gtk.main_quit)
+Gtk.main()
+
+Python库之游戏开发
+PyGame:简单的游戏开发功能库
+提供了基于SDL的简单游戏开发功能及实现引擎
+-理解游戏对外部输入的响应机制及角色构建和交互机制
+-Python游戏入门最主要的第三方库
+http://www.pygame.org
+
+Python库之游戏开发 **Panda3D**
+Panda3D:开源、跨平台的3D道染和游戏开发库
+一个3D游戏引擎,提供Python和C++两种接口
+-支持很多先进特性：法线贴图、光泽贴图、卡通渲染等
+-由迪士尼和卡尼基梅隆大学共同开发
+http://www.panda3d.org
+
+Python库之游戏开发
+cocos2d:构建2D游戏和图形界面交互式应用的框架
+提供了基于OpenGL的游戏开发图形潼染功能
+支持GPU加速,采用树形结构分层管理情戏对缘类型
+一适用于2D专业级游戏开发
+http://python.cocos2d.org/
+
+Python库之虚拟现实
+VRZero:在树莓派上开发VR应用的Python库
+-提供大量与VR开发相关的功能
+-针对树莓派的VR开发库,支持设备小型化,配置简单化
+-非常适合初学者实践VR开发及应用
+
+Raspberry Pi(中文名为“树莓派",简写为RPi,(或者RasPi/
+RPID是为学习计算机编程教育而设计,只有信用卡大小的微
+型电脑,其系统基于Linux。随着Windows1eloT的发布,
+我们也将可以用上运行Windows的树莓派。
+https://github.com/WayneKeenan/python-vrzero
+
+Python库之虚拟现实
+pyovr:Oculus Rift的Python开发接口
+-针对Oculus VR设备的Python开发库
+-基于成熟的VR设备,提供全套文档,工业级应用设备
+-Python+虚拟现实领域探索的一种思路
+https://github.com/cmbruns/pyovr
+
+Python库之虚拟现实
+Vizard:基于Python的通用VR开发引擎
+一专业的企业级虚拟现实开发引擎
+-提供详细的官方文档
+支持多种主流的R硬件设备,具有一定通用性
+http://www.worldviz.com/vizard-virtual-reality-software
+
+
+Python库之图形艺术
+Quads:迭代的艺术
+-对图片进行四分迭代,形成像素风
+-可以生成动态图或静图图像
+-简单易用,具有很高展示度
+https://github.com/fogleman/Quads
+
+Python库之图形艺术
+asci_art:ASCII艺术库
+-将普通图片转为ASCII艺术风格
+-输出可以是纯文本或彩色文本
+-可采用图片格式输出
+https://github.com/jontonsoup4/ascii_art
+
+
+Python库之图形艺术
+turtle:海龟绘图体系
+Random Art
+https://docs.python.org/3/library/turtle.html
+
+
+从人机交互到艺术设计
+-PyQt5、wxPython、PyGObject
+-PyGame、Panda3D、cocos2d
+-VR Zero、pyovr、Vizard
+-Quads、ascii_art、turtle
+
+问题分析
+玫瑰花绘制
+-需求：用Python绘制一朵玫瑰花,献给所思所念
+一输入：你的想象力！
+-输出：玫瑰花
+
+问题分析
+玫瑰花绘制
+绘制机理：turtle基本图形绘制
+绘制思想：因人而异
+思想有多大、世界就有多大
+
+举一反三
+艺术之于编程,设计之于编程
+-艺术：思想优先,编程是手段
+-设计：想法和编程同等重要
+-工程：编程优先,思想次之
+
+举一反三
+编程不重要,思想才重要！
+-认识自己：明确自己的目标,有自己的思想(想法)
+-方式方法：编程只是手段,熟练之,未雨绸缪为思想服务
+-为谁编程：将自身发展与祖国发展相结合,创造真正价值
+
+>>> print(~5)
+-6
+'''
+计算过程
+eeeee1e1 二进制数(十进制5)
+11111e1e 取反 ~
+1eeee1e1 原码 -5
+1eeee11e 补码 -6
+'''
+# # center(width宽度, fillchar填充字符)
+>>> print(str25.center(25,'*')) # center(宽度,填充字符)
+***kaige is a nice man***
+
+#ljust(width[,fillchar=' ']) 返回一个左对齐的长度宽度字符串。
+>>> str25.ljust(4e),'*' # 默认是元组类型
+('kaige is a nice man                     ', '*')
+
+#zfill(width)
+#返回一个长度为width的字符串,原字符自有对齐,前面补e
+str28="kaige is a nice man"
+print(str28.zfi11(4e))
+结果为：eeeeeeeeeeeeeeeeeeeeekaige is a nice man
+
+
+#rindex(str,start=e,end=len(str)) # 右向左s查找对应字符串,不存在报错
+#index(str,start=e,end=len(str)) # 左向右查找对应字符串,不存在报错
+#rfind(str[,start][,end]) # 右向左查找对应字符串,不存在返回-1
+#find(str[,start][,end]) # 左向右查找对应字符串,不存在返回-1
+#从左向右检测str字符串是否包含在字符串中,可以指定范用,默认从头到
+fE。得到的是第一次出现的开始下标,没有返回-1
+>>> str3e="kaige is a very very nice man"
+>>> print(str3e.find("very"))
+11
+>>> print(str3e.find("good"))
+-1
+>>> print(str3e.find("very",15,1en(str3e)))
+16
+
+#rstrip()截掉字符串有侧指定的字符,然认为空格
+>>> str34="kaige is a nice man"
+>>> print(str34.rstrip(),"*")
+kaige is a nice man *
+
+#strip()截掉字符串两侧的字符
+s*r35="*******kaige is a nice man*********”
+>>> print(str35.strip("*"))
+kaige is a nice man
+
+#lstrip()截掉字符自左侧指定的字符,甜认为空格
+str33="*******kaige is a nice man"
+print(str33.lstrip("*"))
+kaige is a nice man
+
+# 同时便利下标和元素 # enumerate 枚举
+for index, m in enumerate([1,2,3,4,5]): # index,m = 下标, 元素
+    print(index, m) # index,m = 下标, 元素
+结果：
+0 1 	# e是下标,1是元素
+1 2 	# 1是下标,2是元素
+2 3 	# 2是下标,3是元素
+3 4 	# 3是下标,4是元素
+4 5 	# 4是下标,5是元素
+
+# 遍历
+for key in dict1:
+    print(key, dict1[key]) # 打印键和键的值
+
+print(dict1.values()) # 打印字典值的对象列表
+#结果： dict_values([6e, 8e, 99])
+for  value in dict1.values():
+    print(value) # 打印每个键的值
+
+for k, v in dict1.items():
+    print(k, v) # k:键 v:值
+#print(dict1.items()) 字典的迭代对象
+
+# 字典无序
+for i, v2 in enumerate(dict1):
+    print(i, v2) # i：输入键的序号,v2：键
+
+字典和列表比较
+#和list比较
+#1、查找和插入的速度极快,不会随着ker-value的增加而变慢
+#2、需要与用大量的内存,内存浪费多
+#list
+#1、查找和插入的速度随着数据量的增多而减慢
+#想、卢用空间小,浪费内存少
+
+
+表3-3 修饰符	
+修饰符				描述
+re.I 		使匹配对大小写不敏感     		# 网页匹配常用
+re.L		做本地化识别( locale-aware )匹配
+re .M		多行匹配,影响^和$
+re.S 		使.匹配包括换行在内的所有字符	# 网页匹配常用
+re.U 		根据Unicode 字符集解析字符。这个标志影响\w ＼W 、＼b 和＼B
+re.X 		该标志通过给予你更灵活的格式以便你将正则表达式写得更易于理解
+在网页匹配中,较为常用的有re.S 和re.I 。
+
+例子：
+>>> import re
+>>> content = '''Hello 1234567 World_This
+is a Regex Demo
+'''
+>>> result = re.match('^He.*?(\d+).*?Demo$', content, re.S)
+>>> result.group()
+'Hello 1234567 World_This\nis a Regex Demo'
+>>> result.group(1)
+'1234567'
+
+
+
+https://m.weibo.cn/u/2830678474
+微博中 Network 中getlndex开头的请求,其类型为xhr,这就是一个Ajax请求
+Request Headers
+中有一个信息为X-Requested-With : XMLHttpRequest,这就标记了此请求是Ajax 请求
+
+
+2019年3月-14号 学习笔记
+姓江爱江山不爱美人
+
+2019年3月-15号 学习笔记
+上 up	 北 N
+下 down	 南 S 
+左 left  西 W
+右 right 东 E
+
+东北 右上(ne)
+东南 右下(se)
+西北 左上(nw)
+西南 左下(sw)
+
+OOA 面向对象的分析 名字全称：Object Oriented Analysis
+OOD 面向对象的设计 名字全称：Object Oriented Design
+OOP 面向对象的编程实现 名字全称：Object Oriented Programming
+
+2019年3月-16号 学习笔记
+
+Tkinter窗口组件		中文名称
+'Label' 			标签
+'Button'			按钮
+'Checkbutton'		复选按钮
+'Radiobutton'		单选按钮
+'Listbox'			列表框控件
+'Frame'				框架
+'LabelFrame'		标签帧
+'Entry'				进入
+'Text'				文本
+'Scrollbar'			滚动条控件
+'Scale'				缩放
+'Canvas'			画布	
+'Message'			通知,消息
+'Spinbox'			会将自己的值设为
+'PanedWindow'		中分栏窗口控件
+'Toplevel'			顶级窗口,
+'Menu'				菜单
+'Menubutton'		菜单按钮
+'OptionMenu'		选项菜单 
+Tkinter				事件绑定
+pack	 			布局管理器
+grid				布局管理器
+place 				布局管理器
+Tkinter 模块		标准对话框
+https://fishc.com.cn/forum.php?mod=forumdisplay&fid=243&filter=typeid&typeid=604
+
+<modifier-type-detail>
+
+事件序列是包含在尖括号(<...>)中
+type 部分的内容是最重要的,它通常用于描述普通的事件类型,例如鼠标点击或键盘按键点击(详见下方)。
+modifier 部分的内容是可选的,它通常用于描述组合键,例如 Ctrl + c,Shift + 鼠标左键点击(详见下方)。
+detail 部分的内容是可选的,它通常用于描述具体的按键,例如 Button-1 表示鼠标左键。
+
+详细网址：https://fishc.com.cn/forum.php?mod=viewthread&tid=61373&page=1
+
+2019年3月-17号 学习笔记(停电一天)
+
+2019年3月-18号 学习笔记
+>>> import pygame
+pygame 1.9.4
+pygame(游戏)社区向您问好. https://www.pygame.org/contribute.html
+
+
+zzbdsff # 正则表达式用法
+正则表达式的常用操作符
+操作符 	说明								实例
+.	   	表示任何单个字符
+[]	   	字符集,对单个字符给出取值范围		[abc]表示a、b、c,[a-z]表示a到z单个字符
+[^]		非字符集,对单个字符给出排除范围	[^abe]表示非a或b或c的单个字符
+*		前一个字符0次或无限次扩展			abe*表示ab、abe、abec、abecc等
++		前一个字符1次或无限次扩展			abc+表示abc、abcc、abccc等
+?		前一个字符0次或1次扩展				abc?表示ab、abc
+|		左右表达式任意一个					abc|def 表示abc、def
+{m}		扩展前一个字符m次					ab{2}c表示abbe
+{m,n}	扩展前一个字符m至n次(含n)			ab{1,2}c表示abc、abbc
+{M:n}	扩展前一个字符m至n次(含n)			ab{e:2}c表示ac、abc、abbc
+^		匹配字符串开头						^abc表示abc且在一个字符串的开头
+$		匹配字符串结尾						abc$表示abc且在一个字符串的结尾
+()		分组标记,内部只能使用|操作符		(abe)表示abc,(abcldef)表示abe、def
+\d		数字,等价于[e-9]
+\w		单词字符,等价于[A-Za-ze-9_]
+最小匹配操作符
+操作符|说明
+*?前一个字符e次或无限次扩展,最小匹配
++?前一个字符1次或无限次扩展,最小匹配
+??前一个字符e次或1次扩展,最小匹配
+{m,n}?扩展前一个字符m至n次(含n),最小匹配
+group() # 打印匹配第几个()
+
+[[].*[]]?[ ]  # 表示'[中间任意符号] ' 结尾是空格
+
+zzbdszwff (正则表达式匹配中文方法)
+经典正则表达式实例
+^[A-Za-z]+$				由26个字母组成的字符串
+^[A-Za-ze-9]+$			由26个字母和数字组成的字符串
+^-?\d+$					整数形式的字符串
+^[O-9]*[1-9][e-9]*$		正整数形式的字符串
+[1-9]\d(5}				中国境内邮政编码,6位
+[\u4eee-\u9fa5]			匹配中文字符
+\d{3}-\d{8}|\d{4}-\d{7}	国内电话号码,e1e-68913536
+
+匹配IP地址的正则表达式
+IP地址字符串形式的正则表达式
+(IP地址分4段,每段e-255)
+精确写法
+e-99：[1-9]?\d			1ee-199：1\d{2}
+2ee-249：2[e-4]\d		25e-255：25[e-5]
+(([1-9]?\d|1\d{2}|2[e-4]\d|25[e-5]).){3}([1-9]?\d|2[e-4]\d|25[e-5])
+#相当如：*.*.*.* 
+
+
+Re库介绍
+Re库是Python的标准库,主要用于字符串匹配。
+调用方式：import re
+
+Re库主要功能函数
+函数				说明
+re.search()开头		在一个字符串中搜索匹配正则表达式的第一个位置,返回match对象 (整块搜索,只返回第一个的位置) group(0)显示
+re.match()全部		从一个字符串的开始位置起匹配正则表达式,返回match对象 (匹配中途错误,最后返回一个空match对象)
+re.findall()列表	搜索字符串,以列表类型返回全部能匹配的子串
+re.split()分割		将一个字符串按照正则表达式匹配结果进行分割,返回列表类型
+re.finditer()迭代	搜索字符串,返回一个匹配结果的迭代类型,每个迭代元素是match对象 # 之前使用的方法
+re.sub()替换		在一个字符串中替换所有匹配正则表达式的子串,返回替换后的字符串
+
+正则表达式的表示类型
+sraw string类型(原生字符串类型)
+re库采用raw string类型表示正则表达式,表示为：r'text'
+例如：
+r'[1-9]\d{5} # 表示中国境内邮政编码,6位
+r'\d{3}-\d{8}|\d{4}-\d{7}' # 表示国内电话号码,e1e-68913536
+string类型,更繁琐。
+例如：‘[1-9]\\d{5}’
+‘\\d{3}-\\d{8}I\\d{4}-\\d{7}'
+当[正则表达式]
+包含<转义符>时
+使用raw string
+
+
+re.search(pattern,string,flags=e)
+在一个字符串中搜索匹配正则表达式的第一个位置,返回match对象。
+pattern:正则表达式的字符串或原生字符串表示
+string：待匹配字符串
+flags：正则表达式使用时的控制标记
+常用标记				说明
+re.I re.IGNORECASE		忽略正则表达式的大小写,[A-Z]能够匹配小写字符
+re.M re.MULTILINE 		正则表达式中的操作符能够将给定字符串的每行当作匹配开始
+re.S re-DoTALL			正则表达式中的.操作符能够匹配所有字符,默认匹配除换行外的所肴学符
+
+表3-3 修饰符	
+修饰符				描述
+re.I 		使匹配对大小写不敏感     		# 网页匹配常用
+re.L		做本地化识别( locale-aware )匹配
+re .M		多行匹配,影响^和$
+re.S 		使.匹配包括换行在内的所有字符	# 网页匹配常用
+re.U 		根据Unicode 字符集解析字符。这个标志影响\w ＼W 、＼b 和＼B
+re.X 		该标志通过给予你更灵活的格式以便你将正则表达式写得更易于理解
+在网页匹配中,较为常用的有re.S 和re.I 。
+
+*.grolup(e) # 表示结果
+
+re.match(pattern,string,flags=e)
+在一个字符串中搜索匹配正则表达式的第一个位置,
+返回match对象。
+pattern:正则表达式的字符串或原生字符串表示
+string：待匹配字符串
+flags：正则表达式使用时的控制标记
+常用标记
+
+search 例子： # 单行匹配
+>>> import re
+>>> match = re.search(r'[1-9]\d{5}', 'BIT 1eee81')
+>>> if match:
+		print(match.group(e))
+结果为：1eee81
+
+match 例子：
+>>> match = re.match(r'[1-9]\d{5}', '1eee8ee1a1 ')
+>>> if match:
+		match.group(e)
+结果为：'1eee8e'
+
+findall 例子：
+>>> ls = re.findall(r'[1-9]\d{5}', 'BIT100081 TSU100084') # 正则表达式,匹配源文件
+>>> ls
+['100081', '100084'] # 列表里字符串
+# 文本中看到\不定就是\有可能是\\
+# 请在python默认IDLE下测试
+# 如win下正确的是<\\/a> 文本会显示<\/a>
+
+re.split()		将一个字符串按照正则表达式匹配结果进行分割,返回列表类型
+re.split(pattern,string,maxsplit=e,flags=e)
+在一个字符串中搜索匹配正则表达式的第一个位置,
+返回match对象。
+pattern:正则表达式的字符串或原生字符串表示
+string：待匹配字符串
+maxsplit:最大分割数,剩余部分作为最后一个元素输出
+flags：正则表达式使用时的控制标记
+
+split 例子：
+>>> re.split(r'[1-9]\d{5}', 'BIT100081 TUS100084')
+['BIT', ' TUS', '']
+>>> re.split(r'[1-9]\d{5}', 'BIT100081 TUS1eee84', maxsplit=1)
+['BIT', ' TUS1eee84']
+
+finditer 例子： # 多行匹配
+>>> for m in re.finditer(r'[1-9]\d{5}', 'BIT1eee81 TSU100084'):
+		if m:
+			print(m.group(0))
+100081
+100084
+
+re.sub(pattern(正则表达式),repl(替换的字符串),string(原字符串),count=0(次数),flags=0(控制标记))
+re.sub(pattern,repl,string,count=0,flags=0)
+令在一个字符串中替换所有匹配正则表达式的子串,返
+回替换后的字符串。
+pattern:正则表达式的字符串或原生字符串表示
+repl：替换匹配字符串的字符串
+string：待匹配字符串
+count：匹配的最大替换次数
+flags：正则表达式使用时的控制标记
+
+sub 例子1：
+>>> re.sub(r'[1-8]\d{5}', ':zipcode', 'BIT1eee81 TSU1eee84')
+'BIT:zipcode TSU:zipcode'
+# 括号里第一个字符串是正则表达式,第二个是替换为什么,最后是匹配的内容
+例子2：
+>>> import re
+>>> content = '54aKS4yrsoiRS4ixSL2g'
+>>> content = re.sub('\d+','*',content)
+>>> content
+'*aKS*yrsoiRS*ixSL*g'
+
+Linux下查看当前使用的python安装路径：
+使用下面三行命令,就可以轻松得到Python安装路径：
+首先进入：Python
+
+>>> import sys,os
+>>> path = sys.executable
+>>> print(path) # 打印linux系统下python安装位置
+>>> print(os.getcwd()) # 打印python启动位置
+就会看到自己的Python安装目
+
+# linux默认python改为python3启动
+$ echo alias python=python3 >> ~/.bashrc # 默认是3.6版本
+$ echo alias python=python3.7 >> ~/.bashrc # 默认是3.7版本
+$  source ~/.bashrc # source一下
+$  python --version # 版本查看
+
+
+2019年4月6号实验室python笔记
+>>> help() # 帮助
+help> keywords # 查看35个关键字信息
+
+#!/usr/bin/env python3 
+文档开头表示从env解释器启动pytnon 
+其作用是"指定由哪个解释器来执行脚本".
+>>> import msth # 导入数学模块
+>>> math.sqrt(9) # 9开方是3
+结果为：3
+
+
+>>> range(1,5) # 返回可迭代对象
+range(1, 5)
+>>> list(range(1,5)) # 列表
+[1, 2, 3, 4]
+>>> list(range(1,15,3)) #　步数为３的列表
+[1, 4, 7, 10, 13]
+>>> list(range(4,15,2)) # 步数为2的列表
+[4, 6, 8, 10, 12, 14]
+
+列表（append）添和（insert）插入
+>>> a = [23, 45, 1, -3434, 43624, 356, 234]
+>>> a.append(45)
+>>> a
+[23, 45, 1, -3434, 43624, 356, 234, 45]
+>>> a.insert(0, 1) # 在列表索引 0 位置添加元素 1
+>>> a
+[1, 23, 45, 1, -3434, 43624, 356, 234, 45]
+
+两列表合并
+>>> a = [1,2,3]
+>>> b = 'abc'
+>>> a.extend(b) # 不同类型合并
+>>> a
+[1, 2, 3, 'a', 'b', 'c']
+
+
+栈是我们通常所说的一种 LIFO （Last In First Out 后进先出）数据结构。
+>>> a = [1,2,3,4,5]
+>>> a.pop(0) # 弹出列表中第一个元素
+1
+>>> a
+[2, 3, 4, 5]
+
+>>> suquares = list(map(lambda x: x**2, range(10))) # 普通模式
+>>> suquares
+[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+
+squares = [x**2 for x in range(10)] # 列表推导式
+>>> suquares
+[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+
+
+列表推导式结合两个列表到元素,如果元素之间不相等的话：
+ >>> [(x, y) for x in [1,2,3] for y in [3,1,4] if x != y]
+[(1, 3), (1, 4), (2, 3), (2, 1), (2, 4), (3, 1), (3, 4)]
+等同于：
+>>> combs = []
+>>> for x in [1,2,3]:
+...     for y in [3,1,4]:
+...             if x != y:
+...                     combs.append((x,y))
+... 
+>>> combs
+[(1, 3), (1, 4), (2, 3), (2, 1), (2, 4), (3, 1), (3, 4)]
+
+列表推导式也可以嵌套。
+>>> a=[1,2,3]
+>>> z = [x + 1 for x in [x ** 2 for x in a]]
+>>> z
+[2, 5, 10]
+
+
+divmod() 函数把除数和余数运算结果结合起来,返回一个包含商和余数的元组(a // b, a % b)。
+实例
+>>>divmod(7, 2)
+(3, 1)
+>>> divmod(8, 2)
+(4, 0)
+>>> divmod(1+2j,1+0.5j)
+((1+0j), 1.5j)
+
+
+set集合例子：
+>>> basket = {'apple', 'orange', 'apple', 'pear', 'orange', 'banana'}
+>>> print(basket)                      # 你可以看到重复的元素被去除
+{'orange', 'banana', 'pear', 'apple'}
+>>> 'orange' in basket
+True
+>>> 'crabgrass' in basket
+False
+
+>>> # 演示对两个单词中的字母进行集合操作
+...
+>>> a = set('abracadabra')
+>>> b = set('alacazam')
+>>> a                                  # a 去重后的字母
+{'a', 'r', 'b', 'c', 'd'}
+>>> a - b                              # a 有而 b 没有的字母
+{'r', 'd', 'b'}
+>>> a | b                              # 存在于 a 或 b 的字母
+{'a', 'c', 'r', 'd', 'b', 'm', 'z', 'l'}
+>>> a & b                              # a 和 b 都有的字母
+{'a', 'c'}
+>>> a ^ b                              # 存在于 a 或 b 但不同时存在的字母
+{'r', 'd', 'b', 'm', 'z', 'l'}
+
+从集合中添加或弹出元素：
+
+>>> a = {'a','e','h','g'}
+>>> a.pop()  # pop 方法随机删除一个元素并打印
+'h'
+>>> a.add('c') # 添加集合元素
+>>> a
+{'c', 'e', 'g', 'a'}
+
+
+如果你想要遍历一个字典,使用字典的 items() 方法。
+>>> data
+{'Kushal': 'Fedora', 'Jace': 'Mac', 'kart_': 'Debian', 'parthan': 'Ubuntu'}
+>>> for x, y in data.items(): # 便利所有字典健和值
+...     print("{} uses {}".format(x, y))
+...
+Kushal uses Fedora
+Jace uses Mac
+kart_ uses Debian
+parthan uses Ubuntu
+
+
+许多时候我们需要往字典中的元素添加数据,我们首先要判断这个元素是否存在,不存在则创建一个默认值。如果在循环里执行这个操作,每次迭代都需要判断一次,降低程序性能。
+
+我们可以使用 dict.setdefault(key, default) 更有效率的完成这个事情。
+
+>>> data = {}
+>>> data.setdefault('names', []).append('Ruby') # setdefault字典值只添加不修改
+>>> data
+{'names': ['Ruby']}
+>>> data.setdefault('names', []).append('Python') # setdefault字典值只添加不修改
+>>> data
+{'names': ['Ruby', 'Python']}
+>>> data.setdefault('names', []).append('C') # setdefault字典值只添加不修改
+>>> data
+{'names': ['Ruby', 'Python', 'C']}
+
+
+试图索引一个不存在的键将会抛出一个 keyError 错误。我们可以使用 dict.get(key, default) 来索引键,如果键不存在,那么返回指定的 default 值。
+>>> data['foo']
+Traceback (most recent call last):
+File "<stdin>", line 1, in <module>
+KeyError: 'foo'
+>>> data.get('foo', 0) # 访问不存在到健返回0
+0
+
+
+如果你想要在遍历列表（或任何序列类型）的同时获得元素索引值,你可以使用 enumerate()。
+>>> for i, j in enumerate(['a', 'b', 'c']): # 打印索引和值
+...     print(i, j)
+...
+0 a
+1 b
+2 c
+你也许需要同时遍历两个序列类型,你可以使用 zip() 函数。
+
+>>> a = ['Pradeepto', 'Kushal']
+>>> b = ['OpenSUSE', 'Fedora']
+>>> for x, y in zip(a, b):
+...     print("{} uses {}".format(x, y))
+...
+Pradeepto uses OpenSUSE
+Kushal uses Fedora
+
+Python rjust() 返回一个原字符串右对齐,并使用空格填充至长度 width 的新字符串。如果指定的长度小于字符串的长度则返回原字符串。
+语法：
+str.rjust(width[, fillchar])
+参数：
+width -- 指定填充指定字符后中字符串的总长度.
+fillchar -- 填充的字符,默认为空格。
+返回值
+
+方法 isalnum() 检查所有字符是否只有字母和数字,上面的代码中第一行的字符串 s 中包含空格字符,所以返回 False。
+>>> s = "jdwb 2323bjb"
+>>> s.isalnum()
+False
+>>> s = "jdwb2323bjb"
+>>> s.isalnum()
+True
+
+方法 isalpha() 检查字符串之中是否只有字母。
+>>> s = "SankarshanSir"
+>>> s.isalpha()
+True
+>>> s = "Sankarshan Sir"
+>>> s.isalpha()
+False
+
+>>> s = "1234"
+>>> s.isdigit() # 检查字符串是否所有字符为数字
+True
+>>> s = "ShiYanLou is coming"
+>>> s.islower() # 检查字符串是否所有字符为小写
+False
+>>> s = "Shiyanlou Is Coming"
+>>> s.istitle() # To 检查字符串是否为标题样式
+True
+>>> s = "CHINA"
+>>> s.isupper() # 检查字符串是否所有字符为大写
+True
+
+
+------------------------
+win7 手动添加开机启动项
+\HKEY_CURRENT_USER\Software\Microsoft\windows\CurrentVersion\Run 添加
+------------------------
+
+我们可以使用 split() 分割任意字符串,split() 允许有一个参数,用来指定字符串以什么字符分隔（默认为 " "）,它返回一个包含所有分割后的字符串的列表。
+
+>>> s = "We all love Python"
+>>> s.split()
+['We', 'all', 'love', 'Python']
+>>> x = "shiyanlou:is:waiting"
+>>> x.split(':')
+['shiyanlou', 'is', 'waiting']
+相反的,方法 join() 使用指定字符连接多个字符串,它需要一个包含字符串元素的列表作为输入然后连接列表内的字符串元素。
+
+>>> "-".join("GNU/Linux is great".split())
+'GNU/Linux-is-great'
+在上面的例子中,我们基于空格 " " 分割字符串 "GNU/Linux is great",然后用 "-" 连接它们。
+>>> ''.join(['1','2'])
+'12'
+>>> '1,2'.split(',')
+['1', '2']
+
+
+>>> s = "    a bc\n "
+>>> s.strip() # 默认去掉左边所有空格
+'a bc'
+>>> s = '***********a bc\n '
+>>> s.strip('*') # 去掉左边所有'*'星号
+'a bc'
+>>> s = "www.foss.in" 
+>>> s.lstrip("cwsd.") #删除在字符串左边出现的'c','w','s','d','.'字符
+'foss.in'
+>>> s.rstrip("cnwdi.") #删除在字符串右边出现的'c','n','w','d','i','.'字符
+'www.foss'
+
+字符串有一些方法能够帮助你搜索字符串里的文本或子字符串。下面给出示例：
+>>> s = "faulty for a reason"
+>>> s.find("for")
+7
+>>> s.find("fora")
+-1
+>>> s.startswith("fa") # 检查字符串是否以 fa 开头
+True
+>>> s.endswith("reason") # 检查字符串是否以 reason 结尾
+True
+find() 能帮助你找到第一个匹配的子字符串,没有找到则返回 -1。
+
+
+函数的参数变量可以有默认值,也就是说如果我们对指定的参数变量没有给出任何值则会赋其默认值。
+
+>>> def test(a , b=-99):
+...     if a > b:
+...         return True
+...     else:
+...         return False
+在上面的例子里,我们在函数的参数列表写出 b = -99。这表示如果调用者未给出 b 的值,那么 b 的值默认为 -99。这是一个关于默认参数的非常简单的例子。
+
+你可以通过调用函数测试代码。
+
+>>> test(12, 23)
+False
+>>> test(12)
+True
+有两个非常重要的地方,第一个是具有默认值的参数后面不能再有普通参数,比如 f(a,b=90,c) 就是错误的。
+第二个是默认值只被赋值一次,因此如果默认值是任何可变对象时会有所不同,比如列表、字典或大多数类的实例。例如,下面的函数在后续调用过程中会累积（前面）传给它的参数:
+>>> def f(a, data=[]):
+...     data.append(a)
+...     return data
+...
+>>> print(f(1))
+[1]
+>>> print(f(2))
+[1, 2]
+>>> print(f(3))
+[1, 2, 3]
+要避免这个问题,你可以像下面这样：
+每回调用先默认清空data数据
+>>> def f(a, data=None):
+...     if data is None:
+...         data = []
+...     data.append(a)
+...     return data
+...
+>>> print(f(1))
+[1]
+>>> print(f(2))
+[2]
+
+六、强制关键字参数
+我们也能将函数的参数标记为只允许使用关键字参数。用户调用函数时将只能对每一个参数使用相应的关键字参数。
+
+>>> def hello(*, name='User'):
+...     print("Hello", name)
+...
+>>> hello('shiyanlou')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: hello() takes 0 positional arguments but 1 was given
+>>> hello(name='shiyanlou')
+Hello shiyanlou
+了解更多,请阅读PEP-3102。网址：https://www.python.org/dev/peps/pep-3102/
+
+七、文档字符串
+在 Python 里我们使用文档字符串（docstrings）来说明如何使用代码,这在交互模式非常有用,也能用于自动创建文档。下面我们来看看使用文档字符串的例子。
+
+#!/usr/bin/env python3
+import math
+
+def longest_side(a, b):
+    """
+    Function to find the length of the longest side of a right triangle.
+
+    :arg a: Side a of the triangle
+    :arg b: Side b of the triangle
+
+    :return: Length of the longest side c as float
+    """
+    return math.sqrt(a*a + b*b)
+
+if __name__ == '__main__':
+    print(longest_side.__doc__)
+    print(longest_side(4,5))
+运行程序：
+$ chmod +x longestside.py 
+$ ./longestside.py
+八、高阶函数
+高阶函数（Higher-order function）或仿函数（functor）是可以接受函数作为参数的函数：
+
+使用一个或多个函数作为参数
+返回另一个函数作为输出
+Python 里的任何函数都可以作为高阶函数,下面举一个简单的例子：
+
+# 创建一个函数,将参数列表中每个元素都变成全大写
+>>> def high(l):
+...     return [i.upper() for i in l]
+...
+# 创建高阶函数,接受一个函数和一个列表作为参数
+>>> def test(h, l):
+...     return h(l)
+...
+>>> l = ['python', 'Linux', 'Git']
+# 运行高阶函数,返回预期的结果
+>>> test(high, l)
+['PYTHON', 'LINUX', 'GIT']
+阅读官方文档了解更多。
+
+map 函数
+map 是一个在 Python 里非常有用的高阶函数。它接受一个函数和一个序列（迭代器）作为输入,然后对序列（迭代器）的每一个值应用这个函数,返回一个序列（迭代器）,其包含应用函数后的结果。
+sort 与 sorted 区别：
+
+sort 是应用在 list 上的方法,sorted 可以对所有可迭代的对象进行排序操作。
+
+list 的 sort 方法返回的是对已经存在的列表进行操作,无返回值,而内建函数 sorted 方法返回的是一个新的 list,而不是在原来的基础上进行的操作。
+sorted 语法：
+sorted(iterable[, cmp[, key[, reverse]]])
+
+
+>>> lst = [1, 2, 3, 4, 5]
+>>> def square(num):
+...     "返回所给数字的平方."
+...     return num * num
+...
+>>> print(list(map(square, lst)))
+[1, 4, 9, 16, 25]
+sorted() 函数对所有可迭代的对象进行排序操作。
+九、总结
+经过本实验应当知道如何定义函数,局域变量和全局变量一定要弄清楚,参数默认值、关键字参数也需要掌握。
+
+另外,其它高级语言常见的函数重载,Python 是没有的,这是因为 Python 有默认参数这个功能,函数重载 的功能大都可以使用默认参数达到。
+
+在后面我们还介绍了高阶函数的概念并使用了 map() 函数。在 Python 中还有其它的高阶函数,如 sorted()、filter() 以及 functools 模块中的函数,大家可以了解一下。 
+
+使用 readlines() 方法读取所有行到一个列表中。
+>>> fobj = open('sample.txt')
+>>> fobj.readlines()
+['I love Python\n', 'I love shiyanlou\n']
+>>> fobj.close()
+
+# 准备实验材料：
+$ wget http://labfile.oss.aliyuncs.com/courses/596/sample.txt
+
+
+ 2.4 抛出异常
+使用 raise 语句抛出一个异常。
+>>> raise ValueError("A value error happened.")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: A value error happened.
+
+我们可以捕获任何其它普通异常一样,来捕获这些异常。
+>>> try:
+...     raise ValueError("A value error happened.")
+... except ValueError:
+...     print("ValueError in our code.")
+...
+ValueError in our code.
+
+在真实场景的应用程序中,finally 子句用于释放外部资源（文件或网络连接之类的）,无论它们的使用过程中是否出错。
+
+
+
+#执行 ~/Code$ ./parsefile.py sample.txt 
+print(sys.argv) # 打印列表文件位置(path)和文件名,默认格式上字符串
+# 结果: ['./parsefile.py', 'sample.txt']
+
+@装饰器
+你可能想要更精确的调整控制属性访问权限,你可以使用 @property 装饰器,@property 装饰器就是负责把一个方法变成属性调用的。
+下面有个银行账号的例子,我们要确保没人能设置金额为负,并且有个只读属性 cny 返回换算人民币后的金额。
+
+代码写入文件 /home/shiyanlou/property.py
+
+#!/usr/bin/env python3
+
+class Account(object):
+    """账号类,
+    amount 是美元金额.
+    """
+    def __init__(self, rate):
+        self.__amt = 0
+        self.rate = rate
+
+    @property
+    def amount(self):
+        """账号余额（美元）"""
+        return self.__amt
+
+    @property
+    def cny(self):
+        """账号余额（人民币）"""
+        return self.__amt * self.rate
+
+    @amount.setter
+    def amount(self, value):
+        if value < 0:
+            print("Sorry, no negative amount in the account.")
+            return
+        self.__amt = value
+
+if __name__ == '__main__':
+    acc = Account(rate=6.6) # 基于课程编写时的汇率
+    acc.amount = 20
+    print("Dollar amount:", acc.amount)
+    print("In CNY:", acc.cny)
+    acc.amount = -100
+    print("Dollar amount:", acc.amount)
+	
+
+return greet,welcome 和return greet(),welcome()区别		菜鸟函数装饰器教材地址：http://www.runoob.com/w3cnote/python-func-decorators.html
+返回 greet 和 welcome,而不是 greet() 和 welcome()。为什么那样？这是因为当你把一对小括号放在后面,这个函数就会执行；然而如果你不放括号在它后面,那它可以被到处传递,并且可以赋值给别的变量而不去执行它。
+
+
+一、函数中使用：
+形参出现在函数定义中,在整个函数体内都可以使用, 离开该函数则不能使用。
+实参出现在主调函数中,进入被调函数后,实参变量也不能使用。 
+
+#这里的a和b就是形参
+def add(a,b):
+    return a+b
+#这里的1和2是实参
+add(1,2)
+x=2
+y=3
+#这里的x和y是实参
+add(x,y)
+# 形参是局部替换,实参是全局替换,一句话理解 实参>=形参
+
+
+>>> help() # 帮助
+help> modules # 获取输入所有模块
+
+Collections (收集)模块
+>>> import collections
+>>> help(collections.Counter) # 收集计数帮助
+
+Counter （计数）示例
+>>> from collections import Counter
+>>> import re
+>>> path = '/usr/lib/python3.5/LICENSE.txt'
+>>> words = re.findall('\w+', open(path).read().lower())
+>>> Counter(words).most_common(10)
+[('the', 80), ('or', 78), ('1', 66), ('of', 61), ('to', 50), ('and', 48), ('python', 46), ('in', 38), ('license', 37), ('any', 37)]
+
+>>> from collections import Counter
+>>> c = Counter(a=4, b=2, c=0, d=-2)
+>>> list(c.elements()) # 依次显示列表序列中元素,元素顺序是无序的
+['b','b','a', 'a', 'a', 'a']
+
+most_common() 方法返回最常见的元素及其计数,顺序为最常见到最少。
+>>> from collections import Counter
+>>> Counter('abracadabra').most_common(3)
+[('a', 5), ('r', 2), ('b', 2)]
+
+defaultdict 是内建 dict 类的子类,它覆写了一个方法并添加了一个可写的实例变量。其余功能与字典相同。
+
+defaultdict() 第一个参数提供了 default_factory 属性的初始值,默认值为 None,default_factory 属性值将作为字典的默认数据类型。所有剩余的参数与字典的构造方法相同,包括关键字参数。
+
+同样的功能使用 defaultdict 比使用 dict.setdefault 方法快。
+
+defaultdict 用例
+
+>>> from collections import defaultdict
+>>> s = [('yellow', 1), ('blue', 2), ('yellow', 3), ('blue', 4), ('red', 1)]
+>>> d = defaultdict(list)
+>>> for k, v in s:
+...     d[k].append(v)
+...
+>>> d.items()
+dict_items([('blue', [2, 4]), ('red', [1]), ('yellow', [1, 3])])
+在例子中你可以看到,即使 defaultdict 对象不存在某个键,它会自动创建一个空列表。
+
+四、namedtuple（命名元组）
+命名元组有助于对元组每个位置赋予意义,并且让我们的代码有更好的可读性和自文档性。你可以在任何使用元组地方使用命名元组。在例子中我们会创建一个命名元组以展示为元组每个位置保存信息。
+
+>>> from collections import namedtuple
+>>> Point = namedtuple('Point', ['x', 'y'])  # 定义命名元组
+>>> p = Point(10, y=20)  # 创建一个对象
+>>> p
+Point(x=10, y=20)
+>>> p.x + p.y
+30
+>>> p[0] + p[1]  # 像普通元组那样访问元素
+30
+>>> x, y = p     # 元组拆封
+>>> x
+10
+>>> y
+20
+
+PEP8 代码风格指南
+一、实验介绍
+编程语言不是艺术,而是工作或者说是工具,所以整理并遵循一套编码规范是十分必要的。 这篇文章原文实际上来自于这里：https://www.python.org/dev/peps/pep-0008/
+
+知识点
+代码排版
+字符串引号
+表达式和语句中的空格
+注释
+版本注记
+命名约定
+公共和内部接口
+程序编写建议
+二、实验步骤
+ 2.1 介绍
+ 2.2 愚蠢的一致性就像没脑子的妖怪
+ 2.3 代码排版
+ 在标准库中,非缺省的编码应该仅仅用于测试目的,或者注释或文档字符串中的作者名包含非ASCII码字符；否则,优先使用\x、\u、\U或者\N来转义字符串中的非ASCII数据。
+ 
+ 2.4 字符串引号
+ 2.5 表达式和语句中的空格
+ 
+ >>> def greeting(name: str) -> str: # 函数标注通常用于 类型提示
+...     return 'Hello ' + name
+... 
+>>> greeting('jjj')
+'Hello jjj'
+
+函数标注通常用于 类型提示：例如以下函数预期接受两个 int 参数并预期返回一个 int 值:
+```
+def sum_two_numbers(a: int, b: int) -> int: # 函数标注通常用于 类型提示
+return a + b
+```
+
+ 2.6 注释
+ 2.7 版本注记
+ 2.8 命名约定
+ 2.9 公共和内部接口
+ 2.10 程序编写建议
+ 不要依赖于 CPython 在字符串拼接时的优化实现,像这种语句形式a += b和a = a + b。即使是 CPython（仅对某些类型起作用） 这种优化也是脆弱的,不是在所有的实现中都不使用引用计数。在库中性能敏感的部分,用''.join 形式来代替。这会确保在所有不同的实现中字符串拼接是线性时间的。
+ 
+ 如果代码需要做一些清理工作,但后面用raise向上抛出异常。try .. finally是处理这种情况更好的方式。
+ 
+try:
+    value = collection[key]
+except KeyError:
+    return key_not_found(key)
+else: #  #如果try里面的语句成功执行,那么就执行else里面的语句
+    return handle_value(value)
+ 
+startswith()和endswith()是更简洁的,不容易出错的。例如：
+Yes: if foo.startswith('bar'): # 正确规范
+No:  if foo[:3] == 'bar': # 错误规范
+ 
+Python 中的isinstance函数,isinstance是Python中的一个内建函数。是用来判断一个对象的变量类型。
+对象类型的比较应该始终使用isinstance()而不是直接比较。
+Yes: if isinstance(obj, int): # 正确规范
+No:  if type(obj) is type(1): # 错误规范
+
+
+对于序列（字符串、列表、元组）来说,空的序列为False
+空的字符串、列表、元组序列为False
+
+ 
+ 
+有道词典里的vi. n. vt. 是什么意思？
+vi是不及物动词
+vt是及物动词
+n是名词
+v是动词
+adj.是形容词
+adv.是副词。
+
+
+begin transaction 命令 
+启动一个事务处理。仅对数据库中的表支持事务处理。有关如何在数据库中创建和增加表的详细信息,请参阅 CREATE DATABASE 和 ADD TABLE 。 
+
+
+
+
+
+迭代器、生成器、装饰器
+一、实验介绍
+二、迭代器
+三、生成器
+四、生成器表达式
+生成器是一定不能重复循环的
+
+五、闭包
+六、装饰器
+七、总结
+
+
+Virtualenv
+一、实验介绍
+二、安装 virtualenv
+三、用法
+我们会创建一个叫做 virtual 的目录,在里面我们会有两个不同的虚拟环境。
+
+$ cd /home/shiyanlou
+$ mkdir virtual
+下面的命令创建一个叫做 virt1 的环境。
+
+$ cd virtual
+$ virtualenv virt1
+此处输入图片的描述
+
+现在我们激活这个 virt1 环境。
+
+$ source virt1/bin/activate
+(virt1)shiyanlou：~/$
+提示符的第一部分是当前虚拟环境的名字,当你有多个环境的时候它会帮助你识别你在哪个环境里面。
+
+现在我们将安装 redis 这个 Python 模块。
+
+(virt1)$ sudo pip3 install redis
+此处输入图片的描述
+
+使用 deactivate 命令关闭虚拟环境。
+
+(virt1)$ deactivate
+$
+现在我们将创建另一个虚拟环境 virt2,我们会在里面同样安装 redis 模块,但版本是 2.8 的旧版本。
+
+$ virtualenv virt2
+$ source virt2/bin/activate
+(virt2)$ sudo pip3 install redis==2.8
+此处输入图片的描述
+
+这样可以为你的所有开发需求拥有许多不同的环境。
+
+五、总结
+永远记住当开发新应用时创建虚拟环境,这会帮助你的系统模块保持干净。
+
+
+测试
+一、实验介绍
+二、测试范围
+三、单元测试
+ 3.1 第一个测试用例
+ 测试哪个函数？
+正如你所看到的, fact(n) 这个函数执行所有的计算,所以我们至少应该测试这个函数。
+
+编辑 /home/shiyanlou/factorial_test.py 文件,代码如下：
+
+import unittest
+from factorial import fact
+
+class TestFactorial(unittest.TestCase):
+    """
+    我们的基本测试类
+    """
+
+    def test_fact(self):
+        """
+        实际测试
+        任何以 `test_` 开头的方法都被视作测试用例
+        """
+        res = fact(5)
+        self.assertEqual(res, 120)
+
+
+if __name__ == '__main__':
+    unittest.main()
+运行测试：
+
+$ python3 factorial_test.py
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
+说明
+
+我们首先导入了 unittest 模块,然后测试我们需要测试的函数。
+
+测试用例是通过子类化 unittest.TestCase 创建的。
+
+现在我们打开测试文件并且把 120 更改为 121,然后看看会发生什么？报错提示如下
+F
+======================================================================
+FAIL: test_fact (__main__.TestFactorial)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "factorial_test.py", line 15, in test_fact
+    self.assertEqual(res, 121)
+AssertionError: 120 != 121
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (failures=1)
+
+
+ 3.2 各类 assert 语句
+ Method						Checks that			New in
+assertEqual(a, b)			a == b	
+assertNotEqual(a, b)		a != b	
+assertTrue(x)				bool(x) is True	
+assertFalse(x)				bool(x) is False	
+assertIs(a, b)				a is b				2.7
+assertIsNot(a, b)			a is not b			2.7
+assertIsNone(x)				x is None			2.7
+assertIsNotNone(x)			x is not None		2.7
+assertIn(a, b)				a in b				2.7
+assertNotIn(a, b)			a not in b			2.7
+assertIsInstance(a, b)		isinstance(a, b)	2.7
+assertNotIsInstance(a, b)	not isinstance(a, b)  2.7
+ 3.3 异常测试
+ 3.4 mounttab.py
+ 3.5 测试覆盖率
+四、总结
+本实验了解了什么是单元测试,unittest 模块怎么用,测试用例怎么写。以及最后我们使用第三方模块 coverage 进行了覆盖率测试。
+
+在实际生产环境中,测试环节是非常重要的的一环,即便志不在测试工程师,但以后的趋势就是 DevOps,所以掌握良好的测试技能也是很有用的。
+
+
+
+项目结构
+一、实验介绍
+本实验阐述了一个完整的 Python 项目结构,你可以使用什么样的目录布局以及怎样发布软件到网络上。
+
+知识点
+创建项目,编写 __init__ 文件
+使用 setuptools 模块,编写 setup.py 和 MANIFEST.in 文件
+创建源文件的发布版本
+项目注册&上传到 PyPI
+二、创建 Python 项目
+我们的实验项目名为 factorial,放到 /home/shiyanlou/factorial 目录：
+
+$ cd /home/shiyanlou
+$ mkdir factorial
+$ cd factorial/
+我们给将要创建的 Python 模块取名为 myfact,因此我们下一步创建 myfact 目录。
+
+$ mkdir myfact
+$ cd myfact/
+主代码将在 fact.py 文件里面。
+
+"myfact module"
+
+def factorial(num):
+    """
+    返回给定数字的阶乘值
+
+    :arg num: 我们将计算其阶乘的整数值
+
+    :return: 阶乘值,若传递的参数为负数,则为 -1
+    """
+    if num >= 0:
+        if num == 0:
+            return 1
+        return num * factorial(num -1)
+    else:
+        return -1
+我们还有模块的 __init__.py 文件,内容如下：
+
+from fact import factorial
+__all__ = [factorial, ]
+我们还在 factorial 目录下添加了一个 README.rst 文件。因此,目录结构看起来像下面这样：
+
+此处输入图片的描述
+ 2.1 MANIFEST.in
+ 现在我们要写一个 /home/shiyanlou/factorial/MANIFEST.in 文件,它用来在使用 sdist 命令的时候找出将成为项目源代码压缩包一部分的所有文件。
+
+include *.py
+include README.rst
+如果你想要排除某些文件,你可以在这个文件中使用 exclude 语句。
+
+ 2.2 安装 python-setuptools 包
+ 我们使用 virtualenv（这里不示范步骤）。
+
+$ sudo pip3 install setuptools
+
+ 2.3 setup.py
+ 最终我们需要写一个 /home/shiyanlou/factorial/setup.py,用来创建源代码压缩包或安装软件。
+
+#!/usr/bin/env python3
+"""Factorial project"""
+from setuptools import find_packages, setup
+
+setup(name = 'factorial',  # 注意这里的name不要使用factorial相关的名字,因为会重复,需要另外取一个不会与其他人重复的名字
+    version = '0.1',
+    description = "Factorial module.",
+    long_description = "A test module for our book.",
+    platforms = ["Linux"],
+    author="ShiYanLou",
+    author_email="support@shiyanlou.com",
+    url="https://www.shiyanlou.com/courses/596",
+    license = "MIT",
+    packages=find_packages()
+    )
+name 是项目名称,version 是发布版本,description 和 long_description 分别是项目介绍,项目长描述。platforms 是此模块的支持平台列表。find_packages() 是一个能在你源目录下找到所有模块的特殊函数,packaging docs。
+
+2.3.1. setup.py 用例
+要创建一个源文件发布版本,执行以下命令。
+
+$ python3 setup.py sdist
+执行完毕会返回类似下面的信息：
+
+running sdist
+running egg_info
+creating factorial.egg-info
+writing factorial.egg-info/PKG-INFO
+writing top-level names to factorial.egg-info/top_level.txt
+writing dependency_links to factorial.egg-info/dependency_links.txt
+writing manifest file 'factorial.egg-info/SOURCES.txt'
+reading manifest file 'factorial.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+writing manifest file 'factorial.egg-info/SOURCES.txt'
+running check
+creating factorial-0.1
+creating factorial-0.1/factorial.egg-info
+creating factorial-0.1/myfact
+making hard links in factorial-0.1...
+hard linking MANIFEST.in -> factorial-0.1
+hard linking README.rst -> factorial-0.1
+hard linking setup.py -> factorial-0.1
+hard linking factorial.egg-info/PKG-INFO -> factorial-0.1/factorial.egg-info
+hard linking factorial.egg-info/SOURCES.txt -> factorial-0.1/factorial.egg-info
+hard linking factorial.egg-info/dependency_links.txt -> factorial-0.1/factorial.egg-info
+hard linking factorial.egg-info/top_level.txt -> factorial-0.1/factorial.egg-info
+hard linking myfact/__init__.py -> factorial-0.1/myfact
+hard linking myfact/fact.py -> factorial-0.1/myfact
+Writing factorial-0.1/setup.cfg
+creating dist
+Creating tar archive
+removing 'factorial-0.1' (and everything under it)
+我们能在 dist 目录下看到一个 tar 压缩包。
+
+$ ls dist/
+factorial-0.1.tar.gz
+记住尝试安装代码时使用 virtualenv。
+
+执行下面的命令从源代码安装。
+
+$ sudo python3 setup.py install
+学习更多可前往 packaging.python.org。
+
+
+ 2.4 Python Package Index (PyPI)
+ 你还记得我们经常使用的 pip 命令吗？有没有想过这些包是从哪里来的？答案是 PyPI。这是 Python 的软件包管理系统。
+
+为了实验,我们会使用 PyPI 的测试服务器 https://testpypi.python.org/pypi。
+
+2.4.1 创建账号
+首先在这个链接注册账号。你会收到带有链接的邮件,点击这个链接确认你的注册。
+
+创建 ~/.pypirc 文件,存放你的账号详细信息,其内容格式如下：
+
+[distutils]
+index-servers = pypi
+    testpypi
+
+[pypi]
+repository: https://upload.pypi.org/legacy/
+username: <username>
+password: <password>
+
+[testpypi]
+repository:https://test.pypi.org/legacy/
+username: <username>
+password: <password>
+
+替换 <username> 和 <password> 为您新创建的帐户的详细信息。在这里,由于我们是到 testpypi的网页上去注册账号,即将相应的服务上传到 testpypi,所以在这里,你只需修改[testpypi]的用户名和密码
+
+记得在 setup.py 中更改项目的名称为其它的名字来测试下面的指令,在接下来的命令中我将项目名称修改为factorial2,为了不重复,大家需要自行修改至其它名称（不要使用 factorial 和 factorial2,因为已经被使用了）。
+
+2.4.2 上传到 TestPyPI 服务
+下一步我们会将我们的项目到 TestPyPI 服务。这通过 twine 命令完成。
+
+我们也会使用 -r 把它指向测试服务器。
+
+$ sudo pip3 install twine
+$ twine upload dist/* -r testpypi
+执行完毕会返回类似下面的信息：
+
+Uploading distributions to https://test.pypi.org/legacy/
+Uploading factorial2-0.1.tar.gz
+现在如果你浏览这个页面,你会发现你的项目已经准备好被别人使用了。
+
+此处输入图片的描述
+
+在这里你也可以使用下面的命令上传到 PyPI 服务上,但这里需要注意,在 ~/.pypirc 里面,你需要到 https://pypi.python.org页面,按照上面的步骤去注册一个账号,然后到~/.pypirc 的 [pypi] 下填写相应的用户名和密码。testpypi 和 pypi 的账号密码并不通用。
+
+$ twine upload dist/* -r pypi
+
+三、总结
+实验知识点回顾：
+
+创建项目,编写 __init__ 文件
+使用 setuptools 模块,编写 setup.py 和 MANIFEST.in 文件
+创建源文件的发布版本
+项目注册&上传到 PyPI
+本实验使用了 setuptools 包,并完成了较为完整的项目创建&发布流程,最后还将项目发布到了网络 （PyPI）上。
+
+
+
+Flask 介绍
+一、实验介绍
+本节实验通过一些简单的示例,学习 Flask 框架的基本使用。
+
+知识点
+微框架、WSGI、模板引擎概念
+使用 Flask 做 web 应用
+模板的使用
+根据 URL 返回特定网页
+
+二、基本概念
+什么是 Flask?
+Flask 是一个 web 框架。也就是说 Flask 为你提供工具,库和技术来允许你构建一个 web 应用程序。这个 web 应用程序可以是一些 web 页面、博客、wiki、基于 web 的日历应用或商业网站。
+
+Flask 属于微框架（micro-framework）这一类别,微架构通常是很小的不依赖于外部库的框架。这既有优点也有缺点,优点是框架很轻量,更新时依赖少,并且专注安全方面的 bug,缺点是,你不得不自己做更多的工作,或通过添加插件增加自己的依赖列表。Flask 的依赖如下：
+
+Werkzeug 一个 WSGI 工具包
+jinja2 模板引擎
+维基百科 WSGI 的介绍：
+
+Web服务器网关接口（Python Web Server Gateway Interface,缩写为WSGI）是为Python语言定义的Web服务器和Web应用程序或框架之间的一种简单而通用的接口。自从WSGI被开发出来以后,许多其它语言中也出现了类似接口。
+
+什么是模板引擎？
+你搭建过一个网站吗？你面对过保持网站风格一致的问题吗,你不得不写多次相同的文本吗？你有没有试图改变这种网站的风格？
+
+如果你的网站只包含几个网页,改变网站风格会花费你一些时间,这确实可行。尽管如此,如果你有许多页面（比如在你商店里的售卖物品列表）,这个任务便很艰巨。
+
+使用模板你可以设置你的页面的基本布局,并提及哪个元素将发生变化。这种方式可以定义您的网页头部并在您的网站的所有页面使它保持一致,如果你需要改变网页头部,你只需要更新一个地方。
+
+使用模板引擎创建/更新/维护你的应用会节约你很多时间。
+
+三、"Hello World" 应用
+我们将使用 flask 完成一个非常基础的应用。
+
+安装 flask
+$ sudo pip3 install flask
+创建项目结构
+$ cd /home/shiyanlou
+$ mkdir -p hello_flask/{templates,static} # hello_flask/下两个目录
+这是你的 web 应用的基本结构：
+
+$ tree hello_flask/ # 查看文件夹结构
+hello_flask
+|-- static
+`-- templates
+
+2 directories, 0 files
+templates 文件夹是存放模板的地方,static 文件夹存放 web 应用所需的静态文件（images, css, javascript）。
+
+创建应用文件
+$ cd hello_flask
+$ vim hello_flask.py
+hello_flask.py 文件里编写如下代码：
+
+#!/usr/bin/env python3
+
+import flask
+
+
+# Create the application.
+APP = flask.Flask(__name__)
+
+
+@APP.route('/')
+def index():
+    """ 显示可在 '/' 访问的 index 页面
+    """
+    return flask.render_template('index.html')
+
+
+if __name__ == '__main__':
+    APP.debug=True
+    APP.run()
+创建模板文件 index.html
+$ vim templates/index.html
+index.html 文件内容如下：
+
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset="utf-8" />
+  <title>Hello world!</title>
+  <link type="text/css" rel="stylesheet"
+        href="{{ url_for('static',
+              filename='hello.css')}}" />
+</head>
+<body>
+
+It works!
+
+</body>
+</html>
+运行 flask 应用程序
+$ python3 hello_flask.py
+访问 http://127.0.0.1:5000/,这应该只是显示黑字白底的 "It works!" 文本,如下图：
+
+
+四、Flask 中使用参数
+在本节中我们将要看到如何根据用户使用的 URL 返回网页。
+
+为此我们更新 hello_flask.py 文件。
+
+在 hello_flask.py 文件中添加以下条目
+@APP.route('/hello/<name>/')
+def hello(name):
+    """ Displays the page greats who ever comes to visit it.
+    """
+    return flask.render_template('hello.html', name=name)
+创建下面这个模板 hello.html
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset="utf-8" />
+    <title>Hello</title>
+    <link type="text/css" rel="stylesheet"
+          href="{{ url_for('static',
+               filename='hello.css')}}" />
+</head>
+<body>
+
+      Hello {{name}}
+
+</body>
+</html>
+运行 flask 应用
+$ python3 hello_flask.py
+访问 http://127.0.0.1:5000/ ,这应该只是显示黑字白底的 "It works!" 文本。
+
+访问http://127.0.0.1:5000/hello/you,这应该返回文本 "Hello you",见下图：
+
+此处输入图片的描述
+
+无论你在 URL 中 /hello/ 后填写的什么,都会出现在返回的网页中。
+
+这是你第一次使用模板,我们在 hello_flask.py 中建立了 name 变量（参见 hello 函数的 return 行）。通过语法 {{name}},name 变量之后在页面中显示其自身。
+
+五、额外工作
+目前,对于每一个页面我们都创建了一个模板,其实这是不好的做法,我们应该做的是创建一个主模板并且在每个页面使用它。
+
+创建模板文件 master.html。
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset="utf-8" />
+  <title>{% block title %}{% endblock %} - Hello Flask!</title>
+  <link type="text/css" rel="stylesheet"
+       href="{{ url_for('static',
+                        filename='hello.css')}}" />
+</head>
+<body>
+
+{% block body %}{% endblock %}
+
+</body>
+</html>
+调整模板 index.html。
+{% extends "master.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+It works!
+{% endblock %}
+正如你所看到的,在 master.html 模板中我们定义了两部分,名为 title 和 body 的 blocks。
+
+在模板 index.html 中,我们声明这个模板扩展自 master.html 模板,然后我们定义了内容来放在这两个部分中（blocks）。在第一个 block title 中,我们放置了 Home 单词,在第二个 block body 中我们定义了我们想要在页面的 body 中有的东西。
+
+作为练习,更改其他模板 hello.html,同样要使用 master.html。
+在 hello 页面添加首页链接。
+调整模板 hello.html,添加到首页的链接。
+
+<a href="{{ url_for('index') }}"><button>Home</button></a>
+作为你的任务,在首页添加到 hello 页面的链接。
+
+六、总结
+实验知识点回顾：
+
+微框架、WSGI、模板引擎概念
+使用 Flask 做 web 应用
+模板的使用
+根据 URL 返回特定网页
+本实验中我们了解了微框架、WSGI、模板引擎等概念,学习使用 Flask 做一个 web 应用,在这个 web 应用中,我们使用了模板。而用户以正确的不同 URL访问服务器时,服务器返回不同的网页。最后还给大家留了一个小任务,希望大家能完成。
+
+想要深入学习Flask,你还可以学习实验楼的Python Flask Web框架课程。
+
+当然,在学习过程中有任何不懂的地方或者对Flsak非常感兴趣,推荐学习Flask官方文档。
+
+
+2019-4-27 前锋教育笔记
+进制开头标示
+b：二进制 c：Unicode编码 d：十进制 o：八进制 x,X:十六进制
+
+八进制转换二进制 8421法则
+【一转三位】八进制到一位相当于二进制到三位,转换时按照十进制转换
+比喻 o65（8） == b110101（2）
+8 4 2 1（法） 	6（8） 
+  1 1 0
+  1 0 1         5（8）
+结果：110101
+
+十六进制 -》 二进制 （内存地址上用十六进制表示的）
+【一转四位】十六进制的一位相当于二进制的四位,转换时按照十进制转换 8421法
+xa4（16） -》 b10100100（2）
+
+
+>>> import keyword # 
+>>> print(keyword.kwlist) # 打印python关键字
+
+>>> import math
+>>> print(math.ceil(18.1)) # 向上取整 
+结果为：19
+>>> print(math.floor(18.9)) # 向下取整
+结果为：18
+print(math.modf(22.3)) # 获取元组小数部位和整数
+结果为：(0.3000000000000007, 22.0)
+
+import random # 导入随机数模块
+print(random.choice([1,3,5,7,9])) # 随机生成列表中一个数
+
+win7 cmd 命令
+arp -a # 	查看局域网所有ip地址
+--------字符串与循环中的while02 --------
+
+
+字符串的方法及注释
+如在使用上有不懂可以看视频教程：《零基础入门学习Python》第014讲 
+
+str方法和注释
+capitalize()	把字符串的第一个字符改为大写/首字符大写
+casefold()	把整个字符串的所有字符改为小写/全部小写
+center(width)	将字符串居中,并使用空格填充至长度 width 的新字符串
+count(sub[, start[, end]])	返回 sub 在字符串里边出现的次数,start 和 end 参数表示范围,可选。
+encode(encoding='utf-8', errors='strict')	以 encoding 指定的编码格式对字符串进行编码。
+endswith(sub[, start[, end]])	检查字符串是否以 sub 子字符串结束,如果是返回 True,否则返回 False。start 和 end 参数表示范围,可选。
+expandtabs([tabsize=8])	把字符串中的 tab 符号（\t）转换为空格,如不指定参数,默认的空格数是 tabsize=8。
+find(sub[, start[, end]])	检测 sub 是否包含在字符串中,如果有则返回索引值,否则返回 -1,start 和 end 参数表示范围,可选。
+index(sub[, start[, end]])	跟 find 方法一样,不过如果 sub 不在 string 中会产生一个异常。
+isalnum()	如果字符串至少有一个字符并且所有字符都是字母或数字则返回 True,否则返回 False。
+isalpha()	如果字符串至少有一个字符并且所有字符都是字母则返回 True,否则返回 False。
+isdecimal()	如果字符串只包含十进制数字则返回 True,否则返回 False。
+isdigit()	如果字符串只包含数字则返回 True,否则返回 False。
+islower()	如果字符串中至少包含一个区分大小写的字符,并且这些字符都是小写,则返回 True,否则返回 False。
+isnumeric()	如果字符串中只包含数字字符,则返回 True,否则返回 False。
+isspace()	如果字符串中只包含空格,则返回 True,否则返回 False。
+istitle()	如果字符串是标题化（所有的单词都是以大写开始,其余字母均小写）,则返回 True,否则返回 False。
+isupper()	如果字符串中至少包含一个区分大小写的字符,并且这些字符都是大写,则返回 True,否则返回 False。
+join(sub)	以字符串作为分隔符,插入到 sub 中所有的字符之间。
+ljust(width)	返回一个左对齐的字符串,并使用空格填充至长度为 width 的新字符串。
+lower()	转换字符串中所有大写字符为小写。
+lstrip()	去掉字符串左边的所有空格
+partition(sub)	找到子字符串 sub,把字符串分成一个 3 元组 (pre_sub, sub, fol_sub),如果字符串中不包含 sub 则返回 ('原字符串', '', '')
+replace(old, new[, count])	把字符串中的 old 子字符串替换成 new 子字符串,如果 count 指定,则替换不超过 count 次。
+rfind(sub[, start[, end]])	类似于 find() 方法,不过是从右边开始查找。
+rindex(sub[, start[, end]])	类似于 index() 方法,不过是从右边开始。
+rjust(width)	返回一个右对齐的字符串,并使用空格填充至长度为 width 的新字符串。
+rpartition(sub)	类似于 partition() 方法,不过是从右边开始查找。
+rstrip()	删除字符串末尾的空格。
+split(sep=None, maxsplit=-1)	不带参数默认是以空格为分隔符切片字符串,如果 maxsplit 参数有设置,则仅分隔 maxsplit 个子字符串,返回切片后的子字符串拼接的列表。
+splitlines(([keepends]))	在输出结果里是否去掉换行符,默认为 False,不包含换行符；如果为 True,则保留换行符。。  参数 keepends -- 在输出结果里是否保留换行符('\r', '\r\n', \n'),默认为 False,不包含换行符,如果为 True,则保留换行符。
+返回一个包含各行作为元素的列表。
+
+startswith(prefix[, start[, end]])	检查字符串是否以 prefix 开头,是则返回 True,否则返回 False。start 和 end 参数可以指定范围检查,可选。
+strip([chars])	删除字符串前边和后边所有的空格,chars 参数可以定制删除的字符,可选。
+swapcase()	翻转字符串中的大小写。
+title()	返回标题化（所有的单词都是以大写开始,其余字母均小写）的字符串。
+translate(table)	根据 table 的规则（可以由 str.maketrans('a', 'b') 定制）转换字符串中的字符。
+upper()	转换字符串中的所有小写字符为大写。
+zfill(width)	返回长度为 width 的字符串,原字符串右对齐,前边用 0 填充。
+
+
+# 使程序暂停的方法
+#1. 输入回车程序结束！
+import os,time #导入os,time模块
+print('您好！')
+#input('输入回车程序结束！')
+
+#2.任意键继续程序
+#os.system('pause') # 
+
+# 3.使程序停留5秒在继续
+time.sleep(5)
+
+
+调试程序方法：
+1.首先在–所有程序–打开python IDLE如图：
+2.打开你的py脚本文件 
+file–open
+3.在如上脚本窗口点击–Run–Run module(F5)打开python shell窗口
+4.在如上python shell窗口点击Debug– Debugger打开Debug Control窗口
+同时原python shell窗口最后面出现如下：
+5.在原py脚本文件(第二步)需要调试的代码行设置断点,点击右键 
+set breakpoint此行变黄
+6.此时在如上py脚本文件内再次点击运行（F5）,即可进入调试程序状态：
+7.对于调试窗口,可以根据需求自我选择所要显示的东西如：stack、source、locals、globals等； 
+点击Go即可运行到断点处（一次运行所有、直到遇到断点）,step为一步步往下运行,over为进入所调用的函数内部,out为跳出函数体,qiut为停止运行。
+
+
+
+python魔法方法详解
+ 
+
+据说，Python 的对象天生拥有一些神奇的方法，它们总被双下划线所包围，他们是面向对象的 Python 的一切。
+
+他们是可以给你的类增加魔力的特殊方法，如果你的对象实现（重载）了这些方法中的某一个，那么这个方法就会在特殊的情况下被 Python 所调用，你可以定义自己想要的行为，而这一切都是自动发生的。
+
+Python 的魔术方法非常强大，然而随之而来的则是责任。了解正确的方法去使用非常重要！
+
+
+魔法方法
+含义
+ 	
+基本的魔法方法
+__new__(cls[, ...])	1. __new__ 是在一个对象实例化的时候所调用的第一个方法
+2. 它的第一个参数是这个类，其他的参数是用来直接传递给 __init__ 方法
+3. __new__ 决定是否要使用该 __init__ 方法，因为 __new__ 可以调用其他类的构造方法或者直接返回别的实例对象来作为本类的实例，如果 __new__ 没有返回实例对象，则 __init__ 不会被调用
+4. __new__ 主要是用于继承一个不可变的类型比如一个 tuple 或者 string
+__init__(self[, ...])	构造器，当一个实例被创建的时候调用的初始化方法
+__del__(self)	析构器，当一个实例被销毁的时候调用的方法
+__call__(self[, args...])	允许一个类的实例像函数一样被调用：x(a, b) 调用 x.__call__(a, b)
+__len__(self)	定义当被 len() 调用时的行为
+__repr__(self)	定义当被 repr() 调用时的行为
+__str__(self)	定义当被 str() 调用时的行为
+__bytes__(self)	定义当被 bytes() 调用时的行为
+__hash__(self)	定义当被 hash() 调用时的行为
+__bool__(self)	定义当被 bool() 调用时的行为，应该返回 True 或 False
+__format__(self, format_spec)	定义当被 format() 调用时的行为
+ 	有关属性
+__getattr__(self, name)	定义当用户试图获取一个不存在的属性时的行为
+__getattribute__(self, name)	定义当该类的属性被访问时的行为
+__setattr__(self, name, value)	定义当一个属性被设置时的行为
+__delattr__(self, name)	定义当一个属性被删除时的行为
+__dir__(self)	定义当 dir() 被调用时的行为
+__get__(self, instance, owner)	定义当描述符的值被取得时的行为
+__set__(self, instance, value)	定义当描述符的值被改变时的行为
+__delete__(self, instance)	定义当描述符的值被删除时的行为
+ 	比较操作符
+__lt__(self, other)	定义小于号的行为：x < y 调用 x.__lt__(y)
+__le__(self, other)	定义小于等于号的行为：x <= y 调用 x.__le__(y)
+__eq__(self, other)	定义等于号的行为：x == y 调用 x.__eq__(y)
+__ne__(self, other)	定义不等号的行为：x != y 调用 x.__ne__(y)
+__gt__(self, other)	定义大于号的行为：x > y 调用 x.__gt__(y)
+__ge__(self, other)	定义大于等于号的行为：x >= y 调用 x.__ge__(y)
+ 	算数运算符
+__add__(self, other)	定义加法的行为：+
+__sub__(self, other)	定义减法的行为：-
+__mul__(self, other)	定义乘法的行为：*
+__truediv__(self, other)	定义真除法的行为：/
+__floordiv__(self, other)	定义整数除法的行为：//
+__mod__(self, other)	定义取模算法的行为：%
+__divmod__(self, other)	定义当被 divmod() 调用时的行为
+__pow__(self, other[, modulo])	定义当被 power() 调用或 ** 运算时的行为
+__lshift__(self, other)	定义按位左移位的行为：<<
+__rshift__(self, other)	定义按位右移位的行为：>>
+__and__(self, other)	定义按位与操作的行为：&
+__xor__(self, other)	定义按位异或操作的行为：^
+__or__(self, other)	定义按位或操作的行为：|
+ 	反运算
+__radd__(self, other)	（与上方相同，当左操作数不支持相应的操作时被调用）
+__rsub__(self, other)	（与上方相同，当左操作数不支持相应的操作时被调用）
+__rmul__(self, other)	（与上方相同，当左操作数不支持相应的操作时被调用）
+__rtruediv__(self, other)	（与上方相同，当左操作数不支持相应的操作时被调用）
+__rfloordiv__(self, other)	（与上方相同，当左操作数不支持相应的操作时被调用）
+__rmod__(self, other)	（与上方相同，当左操作数不支持相应的操作时被调用）
+__rdivmod__(self, other)	（与上方相同，当左操作数不支持相应的操作时被调用）
+__rpow__(self, other)	（与上方相同，当左操作数不支持相应的操作时被调用）
+__rlshift__(self, other)	（与上方相同，当左操作数不支持相应的操作时被调用）
+__rrshift__(self, other)	（与上方相同，当左操作数不支持相应的操作时被调用）
+__rxor__(self, other)	（与上方相同，当左操作数不支持相应的操作时被调用）
+__ror__(self, other)	（与上方相同，当左操作数不支持相应的操作时被调用）
+ 	增量赋值运算
+__iadd__(self, other)	定义赋值加法的行为：+=
+__isub__(self, other)	定义赋值减法的行为：-=
+__imul__(self, other)	定义赋值乘法的行为：*=
+__itruediv__(self, other)	定义赋值真除法的行为：/=
+__ifloordiv__(self, other)	定义赋值整数除法的行为：//=
+__imod__(self, other)	定义赋值取模算法的行为：%=
+__ipow__(self, other[, modulo])	定义赋值幂运算的行为：**=
+__ilshift__(self, other)	定义赋值按位左移位的行为：<<=
+__irshift__(self, other)	定义赋值按位右移位的行为：>>=
+__iand__(self, other)	定义赋值按位与操作的行为：&=
+__ixor__(self, other)	定义赋值按位异或操作的行为：^=
+__ior__(self, other)	定义赋值按位或操作的行为：|=
+ 	一元操作符
+__neg__(self)	定义正号的行为：+x
+__pos__(self)	定义负号的行为：-x
+__abs__(self)	定义当被 abs() 调用时的行为
+__invert__(self)	定义按位求反的行为：~x
+ 	类型转换
+__complex__(self)	定义当被 complex() 调用时的行为（需要返回恰当的值）
+__int__(self)	定义当被 int() 调用时的行为（需要返回恰当的值）
+__float__(self)	定义当被 float() 调用时的行为（需要返回恰当的值）
+__round__(self[, n])	定义当被 round() 调用时的行为（需要返回恰当的值）
+__index__(self)	1. 当对象是被应用在切片表达式中时，实现整形强制转换
+2. 如果你定义了一个可能在切片时用到的定制的数值型,你应该定义 __index__
+3. 如果 __index__ 被定义，则 __int__ 也需要被定义，且返回相同的值
+ 	上下文管理（with 语句）
+__enter__(self)	1. 定义当使用 with 语句时的初始化行为
+2. __enter__ 的返回值被 with 语句的目标或者 as 后的名字绑定
+__exit__(self, exc_type, exc_value, traceback)	1. 定义当一个代码块被执行或者终止后上下文管理器应该做什么
+2. 一般被用来处理异常，清除工作或者做一些代码块执行完毕之后的日常工作
+ 	容器类型
+__len__(self)	定义当被 len() 调用时的行为（返回容器中元素的个数）
+__getitem__(self, key)	定义获取容器中指定元素的行为，相当于 self[key]
+__setitem__(self, key, value)	定义设置容器中指定元素的行为，相当于 self[key] = value
+__delitem__(self, key)	定义删除容器中指定元素的行为，相当于 del self[key]
+__iter__(self)	定义当迭代容器中的元素的行为
+__reversed__(self)	定义当被 reversed() 调用时的行为
+__contains__(self, item)	定义当使用成员测试运算符（in 或 not in）时的行为
+
+sort（key）高级用法：
+a = ['ab','ba','cd']
+print(a.sort(key = lambda s:s[1]))  # 已第二个字母排序
+结果为：['ba', 'ab', 'cd']
+print(a.sort(key = lambda s:s[0]))  # # 已第一个字母排序
+['ab', 'ba', 'cd']
+
+
+一般python常用库
+Python3 math模块以及运算优先级
+2018年03月06日 21:23:23 窒息的鱼 阅读数 2666
+# 在数学之中, 除了加减乘除四则运算之外, 还有其它跟多的运算, 比如乘方, 开方, 对数运算等等, 要实现这些运算, 需要用到Python中的一个模块: math
+
+# math 模块是Python标准库中的, 所以可以直接使用
+
+# import math
+
+# 对于这个模块你可以:
+
+# dir(math): dir(模块)是个非常有用的指令, 可以通过它查看任何模块中所包含的工具, 这里可以用一个变量接收一下, 在输出就可
+
+# help(math): 可以展示math模块的函数的使用方法和相关说明, 它的使用方法和dir(math)一样
+
+
+ math.e	 自然常数e	 >>> math.e
+2.718281828459045
+ math.pi	 圆周率pi	 >>> math.pi
+3.141592653589793
+ math.degrees(x)	 弧度转度	 >>> math.degrees(math.pi)
+180.0
+ math.radians(x)	 度转弧度	 >>> math.radians(45)
+0.7853981633974483
+ math.exp(x)	 返回e的x次方	 >>> math.exp(2)
+7.38905609893065
+ math.expm1(x)	 返回e的x次方减1	 >>> math.expm1(2)
+6.38905609893065
+ math.log(x[, base])	 返回x的以base为底的对数，base默认为e	 >>> math.log(math.e)
+1.0
+>>> math.log(2, 10)
+0.30102999566398114
+ math.log10(x)	 返回x的以10为底的对数	 >>> math.log10(2)
+0.30102999566398114
+ math.log1p(x)	 返回1+x的自然对数（以e为底）	 >>> math.log1p(math.e-1)
+1.0
+ math.pow(x, y)	 返回x的y次方	 >>> math.pow(5,3)
+125.0
+ math.sqrt(x)	 返回x的平方根	 >>> math.sqrt(3)
+1.7320508075688772
+ math.ceil(x)	 返回不小于x的整数	 >>> math.ceil(5.2)
+6.0
+ math.floor(x)	 返回不大于x的整数	 >>> math.floor(5.8)
+5.0
+ math.trunc(x)	 返回x的整数部分	 >>> math.trunc(5.8)
+5
+ math.modf(x)	 返回x的小数和整数	 >>> math.modf(5.2)
+(0.20000000000000018, 5.0)
+ math.fabs(x)	 返回x的绝对值	 >>> math.fabs(-5)
+5.0
+ math.fmod(x, y)	 返回x%y（取余）	 >>> math.fmod(5,2)
+1.0
+ math.fsum([x, y, ...])	 返回无损精度的和	 >>> 0.1+0.2+0.3
+0.6000000000000001
+>>> math.fsum([0.1, 0.2, 0.3])
+0.6
+ math.factorial(x)	 返回x的阶乘	 >>> math.factorial(5)
+120
+ math.isinf(x)	 若x为无穷大，返回True；否则，返回False	 >>> math.isinf(1.0e+308)
+False
+>>> math.isinf(1.0e+309)
+True
+ math.isnan(x)	 若x不是数字，返回True；否则，返回False	 >>> math.isnan(1.2e3)
+False
+ math.hypot(x, y)	 返回以x和y为直角边的斜边长	 >>> math.hypot(3,4)
+5.0
+ math.copysign(x, y)	 若y<0，返回-1乘以x的绝对值；
+ 否则，返回x的绝对值	 >>> math.copysign(5.2, -1)
+-5.2
+ math.frexp(x)	 返回m和i，满足m乘以2的i次方	 >>> math.frexp(3)
+(0.75, 2)
+ math.ldexp(m, i)	 返回m乘以2的i次方	 >>> math.ldexp(0.75, 2)
+3.0
+ math.sin(x)	 返回x（弧度）的三角正弦值	 >>> math.sin(math.radians(30))
+0.49999999999999994
+ math.asin(x)	 返回x的反三角正弦值	 >>> math.asin(0.5)
+0.5235987755982989
+ math.cos(x)	 返回x（弧度）的三角余弦值	 >>> math.cos(math.radians(45))
+0.7071067811865476
+ math.acos(x)	 返回x的反三角余弦值	 >>> math.acos(math.sqrt(2)/2)
+0.7853981633974483
+ math.tan(x)	 返回x（弧度）的三角正切值	 >>> math.tan(math.radians(60))
+1.7320508075688767
+ math.atan(x)	 返回x的反三角正切值	 >>> math.atan(1.7320508075688767)
+1.0471975511965976
+ math.atan2(x, y)	 返回x/y的反三角正切值	 >>> math.atan2(2,1)
+1.1071487177940904
+ math.sinh(x)	 返回x的双曲正弦函数	 
+ math.asinh(x)	 返回x的反双曲正弦函数	 
+ math.cosh(x)	 返回x的双曲余弦函数	 
+ math.acosh(x)	 返回x的反双曲余弦函数	 
+ math.tanh(x)	 返回x的双曲正切函数	 
+ math.atanh(x)	 返回x的反双曲正切函数	 
+ math.erf(x)	 返回x的误差函数	 
+ math.erfc(x)	 返回x的余误差函数	 
+ math.gamma(x)	 返回x的伽玛函数	 
+ math.lgamma(x)	 返回x的绝对值的自然对数的伽玛函数
+
+
+# 运算优先级
+
+# 下面表格中列出了Python中的各种运算的优先级顺序, 是按照从低到高的属性列出的
+
+
+运算符
+描述
+lambda	Lambda 表达式
+or	布尔“或”
+and	布尔“与”
+not x	布尔“非”
+in，not in	成员测试
+is，is not	同一性测试
+<，<=，>，>=，!=，==	比较
+|	按位或
+^	按位异或
+&	按位与
+<<，>>	移位
++，-	加法与减法
+*，/，%	乘法、除法与取余
++x，-x	正负号
+~x	按位翻转
+**	指数
+x.attribute	属性参考
+x[index]	下标
+x[index:index]	寻址段
+f(arguments...)	函数调用
+(experession,...)	绑定或元组显示
+[expression,...]	列表显示
+{key:datum,...}	字典显示
+'expression,...'	字符串转换
+ ———————————————— 
+版权声明：本文为CSDN博主「窒息的鱼」的原创文章，遵循CC 4.0 by-sa版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/qq_41664526/article/details/79463751
